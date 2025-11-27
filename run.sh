@@ -5,7 +5,7 @@ docker run -e DISPLAY=$DISPLAY \
            -v ./xarm_ros2:/home/$USER/xarm_ros2/ \
            -it \
            --rm \
-            osrf/ros:jazzy-desktop-full
+            xarm_ros2:jazzy
 
 # --network host \
 # -v /dev/shm:/dev/shm \
