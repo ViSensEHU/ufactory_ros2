@@ -1,3 +1,9 @@
+# FALTA AÑADIR CÓMO HE ARREGLADO LO DE NVIDIA
+en el host es necesario: sudo prime-select nvidia
+y al ejecutar "glxinfo | grep "OpenGL renderer" que aparezca NVIDIA
+
+--
+
 # Visualizar en RVIZ2 y mover las joints
 En una terminal: 
 ```bash

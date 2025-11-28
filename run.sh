@@ -1,15 +1,17 @@
-xhost +local:*
-docker run -e DISPLAY=$DISPLAY \
-           -e USER=$USER \
-           -e XDG_RUNTIME_DIR=/tmp/runtime-root \
-           -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-           -v ./xarm_ros2:/home/$USER/xarm_ros2/ \
-           -it \
-           --rm \
-           --device /dev/dri:/dev/dri \
-           --gpus all \
-           --name xarm_ros2 \
-            xarm_ros2:jazzy
+#en el host es necesario: sudo prime-select nvidia
+# y al ejecutar "glxinfo | grep "OpenGL renderer" que aparezca NVIDIA
+xhost +local:docker
+docker run -it --rm \
+    --gpus all \
+    --runtime=nvidia \
+    -e DISPLAY=$DISPLAY \
+    -e NVIDIA_VISIBLE_DEVICES=all \
+    -e NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ./xarm_ros2:/home/$USER/xarm_ros2 \
+    --name xarm_ros2 \
+    xarm_ros2:jazzy
+
 
 # --network host \
 # -v /dev/shm:/dev/shm \
