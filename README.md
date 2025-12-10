@@ -1,6 +1,7 @@
 
 # NOTA: la carpeta ``ri-misc`` contiene el proyecto que estoy desarrollando en la asignatura de Robótica Industrial del Máster. El fichero ``ri-misc/memoria/main.pdf`` es la memoria en desarrollo en la que describo el robot de UFactory, por lo que es de interés para conocer el brazo manipulador. En este sentido, en dicha carpeta se encuentran varios manuales y trabajos publicados en internet en los que han utilizado en mismo robot.
 
+# NOTA2: la cámara en gazebo harmonic funciona diferente a classic. Ya no funciona el plugin, y no he encontrado documentación de cómo hacerlo, solo este repo: https://github.com/MOGI-ROS/Week-5-6-Gazebo-sensors que he conseguido ejecutar en un docker para aprender a usar la cámara. Todavía No he documentado ni compartido el dockerfile para ejecutarlo, lo tengo yo en local porque he conseguido ejecutarlo (con errores pero la cámara va y es lo que nos interesa) y ahora tendría que descubrir cómo lo hace y aprender, y ya con eso documentar.
 --
 
 # UFactory XArm6 ROS2 + Docker - EIB/EHU
