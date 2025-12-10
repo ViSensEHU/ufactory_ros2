@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "topic_tools_interfaces/srv/MuxDelete_Response",
+      "fields": [
+        {
+          "name": "success",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "topic_tools_interfaces/srv/MuxDelete_Response",
+      "hash_string": "RIHS01_28f16e51ccb416139f752547dc27816debe7c5a774be7f88a02e444e42aed4b1"
+    }
+  ]
+}

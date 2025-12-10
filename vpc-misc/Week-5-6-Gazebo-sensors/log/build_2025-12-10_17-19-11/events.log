@@ -1,0 +1,1025 @@
+[0.000000] (-) TimerEvent: {}
+[0.000672] (-) JobUnselected: {'identifier': 'bme_gazebo_sensors'}
+[0.000787] (-) JobUnselected: {'identifier': 'bme_gazebo_sensors_py'}
+[0.000823] (-) JobUnselected: {'identifier': 'gazebo_models'}
+[0.000875] (-) JobUnselected: {'identifier': 'mogi_trajectory_server'}
+[0.000969] (topic_tools_interfaces) JobQueued: {'identifier': 'topic_tools_interfaces', 'dependencies': OrderedDict()}
+[0.001008] (topic_tools) JobQueued: {'identifier': 'topic_tools', 'dependencies': OrderedDict({'topic_tools_interfaces': '/home/javierac/camera_gz/install/topic_tools_interfaces'})}
+[0.001052] (topic_tools_interfaces) JobStarted: {'identifier': 'topic_tools_interfaces'}
+[0.012765] (topic_tools_interfaces) JobProgress: {'identifier': 'topic_tools_interfaces', 'progress': 'cmake'}
+[0.013631] (topic_tools_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/javierac/camera_gz/src/topic_tools/topic_tools_interfaces', '-DCMAKE_INSTALL_PREFIX=/home/javierac/camera_gz/install/topic_tools_interfaces'], 'cwd': '/home/javierac/camera_gz/build/topic_tools_interfaces', 'env': OrderedDict({'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'GZ_SIM_RESOURCE_PATH': '/home/javierac/camera_gz/gazebo-11', 'USER': 'javierac', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '90fcba602f5a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/xarm_ws/install/xarm_planner/lib:/home/xarm_ws/install/xarm_moveit_servo/lib:/home/xarm_ws/install/xarm_controller/lib:/home/xarm_ws/install/xarm_api/lib:/home/xarm_ws/install/xarm_sdk/lib:/home/xarm_ws/install/xarm_msgs/lib:/home/xarm_ws/install/realsense_gazebo_plugin/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/home/javierac/camera_gz/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/javierac/camera_gz/install:/home/xarm_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'graphics,utility,compute', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/uf_ros_lib:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/javierac/camera_gz/build/topic_tools_interfaces', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/javierac/camera_gz/install/mogi_trajectory_server/lib/python3.12/site-packages:/home/javierac/camera_gz/install/bme_gazebo_sensors_py/lib/python3.12/site-packages:/home/xarm_ws/install/xarm_msgs/lib/python3.12/site-packages:/home/xarm_ws/build/uf_ros_lib:/home/xarm_ws/install/uf_ros_lib/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'void', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/xarm_ws/install/uf_ros_lib:/opt/ros/jazzy'}), 'shell': False}
+[0.081709] (topic_tools_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099641] (-) TimerEvent: {}
+[0.144746] (topic_tools_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.166988] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199818] (-) TimerEvent: {}
+[0.282181] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.292157] (topic_tools_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.292360] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.292795] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.299923] (-) TimerEvent: {}
+[0.305160] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.400104] (-) TimerEvent: {}
+[0.426563] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.437145] (topic_tools_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.437493] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.437986] (topic_tools_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.444612] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.500271] (-) TimerEvent: {}
+[0.600516] (-) TimerEvent: {}
+[0.628912] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.700610] (-) TimerEvent: {}
+[0.792233] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.800860] (-) TimerEvent: {}
+[0.806476] (topic_tools_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.896098] (topic_tools_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.901073] (-) TimerEvent: {}
+[0.969616] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.5 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[0.976388] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found builtin_interfaces: 2.0.2 (/opt/ros/jazzy/share/builtin_interfaces/cmake)\n'}
+[1.001240] (-) TimerEvent: {}
+[1.101475] (-) TimerEvent: {}
+[1.201718] (-) TimerEvent: {}
+[1.302016] (-) TimerEvent: {}
+[1.402331] (-) TimerEvent: {}
+[1.502644] (-) TimerEvent: {}
+[1.602953] (-) TimerEvent: {}
+[1.679395] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[1.703057] (-) TimerEvent: {}
+[1.803374] (-) TimerEvent: {}
+[1.903598] (-) TimerEvent: {}
+[2.003895] (-) TimerEvent: {}
+[2.104213] (-) TimerEvent: {}
+[2.185333] (topic_tools_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.204358] (-) TimerEvent: {}
+[2.304573] (-) TimerEvent: {}
+[2.404794] (-) TimerEvent: {}
+[2.505090] (-) TimerEvent: {}
+[2.605394] (-) TimerEvent: {}
+[2.705625] (-) TimerEvent: {}
+[2.805931] (-) TimerEvent: {}
+[2.829560] (topic_tools_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.836116] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[2.906101] (-) TimerEvent: {}
+[2.991015] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[3.006260] (-) TimerEvent: {}
+[3.106555] (-) TimerEvent: {}
+[3.206803] (-) TimerEvent: {}
+[3.307107] (-) TimerEvent: {}
+[3.407416] (-) TimerEvent: {}
+[3.478445] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[3.507588] (-) TimerEvent: {}
+[3.525624] (topic_tools_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.580570] (topic_tools_interfaces) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[3.583254] (topic_tools_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.584957] (topic_tools_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.588246] (topic_tools_interfaces) StdoutLine: {'line': b'-- Configuring done (3.6s)\n'}
+[3.607695] (-) TimerEvent: {}
+[3.635062] (topic_tools_interfaces) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.648487] (topic_tools_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/javierac/camera_gz/build/topic_tools_interfaces\n'}
+[3.657968] (topic_tools_interfaces) CommandEnded: {'returncode': 0}
+[3.658564] (topic_tools_interfaces) JobProgress: {'identifier': 'topic_tools_interfaces', 'progress': 'build'}
+[3.659716] (topic_tools_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/javierac/camera_gz/build/topic_tools_interfaces', '--', '-j20', '-l20'], 'cwd': '/home/javierac/camera_gz/build/topic_tools_interfaces', 'env': OrderedDict({'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'GZ_SIM_RESOURCE_PATH': '/home/javierac/camera_gz/gazebo-11', 'USER': 'javierac', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '90fcba602f5a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/xarm_ws/install/xarm_planner/lib:/home/xarm_ws/install/xarm_moveit_servo/lib:/home/xarm_ws/install/xarm_controller/lib:/home/xarm_ws/install/xarm_api/lib:/home/xarm_ws/install/xarm_sdk/lib:/home/xarm_ws/install/xarm_msgs/lib:/home/xarm_ws/install/realsense_gazebo_plugin/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/home/javierac/camera_gz/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/javierac/camera_gz/install:/home/xarm_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'graphics,utility,compute', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/uf_ros_lib:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/javierac/camera_gz/build/topic_tools_interfaces', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/javierac/camera_gz/install/mogi_trajectory_server/lib/python3.12/site-packages:/home/javierac/camera_gz/install/bme_gazebo_sensors_py/lib/python3.12/site-packages:/home/xarm_ws/install/xarm_msgs/lib/python3.12/site-packages:/home/xarm_ws/build/uf_ros_lib:/home/xarm_ws/install/uf_ros_lib/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'void', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/xarm_ws/install/uf_ros_lib:/opt/ros/jazzy'}), 'shell': False}
+[3.707883] (-) TimerEvent: {}
+[3.740336] (topic_tools_interfaces) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[3.755256] (topic_tools_interfaces) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_copy_topic_tools_interfaces\n'}
+[3.808064] (-) TimerEvent: {}
+[3.908472] (-) TimerEvent: {}
+[3.959407] (topic_tools_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[3.960304] (topic_tools_interfaces) StdoutLine: {'line': b'creating topic_tools_interfaces.egg-info\n'}
+[3.974884] (topic_tools_interfaces) StdoutLine: {'line': b'writing topic_tools_interfaces.egg-info/PKG-INFO\n'}
+[3.975248] (topic_tools_interfaces) StdoutLine: {'line': b'writing dependency_links to topic_tools_interfaces.egg-info/dependency_links.txt\n'}
+[3.975453] (topic_tools_interfaces) StdoutLine: {'line': b'writing top-level names to topic_tools_interfaces.egg-info/top_level.txt\n'}
+[3.975608] (topic_tools_interfaces) StdoutLine: {'line': b"writing manifest file 'topic_tools_interfaces.egg-info/SOURCES.txt'\n"}
+[4.006442] (topic_tools_interfaces) StdoutLine: {'line': b'[  1%] Built target topic_tools_interfaces__rosidl_generator_type_description\n'}
+[4.008576] (-) TimerEvent: {}
+[4.019687] (topic_tools_interfaces) StdoutLine: {'line': b"reading manifest file 'topic_tools_interfaces.egg-info/SOURCES.txt'\n"}
+[4.020231] (topic_tools_interfaces) StdoutLine: {'line': b"writing manifest file 'topic_tools_interfaces.egg-info/SOURCES.txt'\n"}
+[4.023089] (topic_tools_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[4.038664] (topic_tools_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[4.048720] (topic_tools_interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_build_topic_tools_interfaces_egg\n'}
+[4.108799] (-) TimerEvent: {}
+[4.209196] (-) TimerEvent: {}
+[4.309601] (-) TimerEvent: {}
+[4.409999] (-) TimerEvent: {}
+[4.510374] (-) TimerEvent: {}
+[4.610749] (-) TimerEvent: {}
+[4.711357] (-) TimerEvent: {}
+[4.755623] (topic_tools_interfaces) StdoutLine: {'line': b'[  2%] Built target topic_tools_interfaces__cpp\n'}
+[4.811567] (-) TimerEvent: {}
+[4.888349] (topic_tools_interfaces) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_delete__type_support.c.o\x1b[0m\n'}
+[4.888731] (topic_tools_interfaces) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_list__functions.c.o\x1b[0m\n'}
+[4.889002] (topic_tools_interfaces) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_list__type_support.c.o\x1b[0m\n'}
+[4.889201] (topic_tools_interfaces) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_select__functions.c.o\x1b[0m\n'}
+[4.889378] (topic_tools_interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_add__description.c.o\x1b[0m\n'}
+[4.889533] (topic_tools_interfaces) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_select__type_support.c.o\x1b[0m\n'}
+[4.890852] (topic_tools_interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_add__functions.c.o\x1b[0m\n'}
+[4.891030] (topic_tools_interfaces) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_delete__description.c.o\x1b[0m\n'}
+[4.891168] (topic_tools_interfaces) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_delete__functions.c.o\x1b[0m\n'}
+[4.891322] (topic_tools_interfaces) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_add__type_support.c.o\x1b[0m\n'}
+[4.891474] (topic_tools_interfaces) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_add__type_support.c.o\x1b[0m\n'}
+[4.891607] (topic_tools_interfaces) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_list__description.c.o\x1b[0m\n'}
+[4.891749] (topic_tools_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_list__description.c.o\x1b[0m\n'}
+[4.892108] (topic_tools_interfaces) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_delete__description.c.o\x1b[0m\n'}
+[4.892256] (topic_tools_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_add__description.c.o\x1b[0m\n'}
+[4.892405] (topic_tools_interfaces) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/demux_select__description.c.o\x1b[0m\n'}
+[4.892542] (topic_tools_interfaces) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_delete__functions.c.o\x1b[0m\n'}
+[4.894332] (topic_tools_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_add__functions.c.o\x1b[0m\n'}
+[4.894887] (topic_tools_interfaces) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_delete__type_support.c.o\x1b[0m\n'}
+[4.896371] (topic_tools_interfaces) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_list__functions.c.o\x1b[0m\n'}
+[4.911695] (-) TimerEvent: {}
+[4.946772] (topic_tools_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_list__type_support.c.o\x1b[0m\n'}
+[4.950673] (topic_tools_interfaces) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_select__description.c.o\x1b[0m\n'}
+[4.950884] (topic_tools_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_select__functions.c.o\x1b[0m\n'}
+[4.951232] (topic_tools_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_c.dir/rosidl_generator_c/topic_tools_interfaces/srv/detail/mux_select__type_support.c.o\x1b[0m\n'}
+[5.011825] (-) TimerEvent: {}
+[5.047470] (topic_tools_interfaces) StdoutLine: {'line': b'[ 26%] \x1b[32m\x1b[1mLinking C shared library libtopic_tools_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[5.100040] (topic_tools_interfaces) StdoutLine: {'line': b'[ 26%] Built target topic_tools_interfaces__rosidl_generator_c\n'}
+[5.111993] (-) TimerEvent: {}
+[5.112464] (topic_tools_interfaces) StdoutLine: {'line': b'[ 27%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.112798] (topic_tools_interfaces) StdoutLine: {'line': b'[ 27%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[5.115395] (topic_tools_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.116087] (topic_tools_interfaces) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.118028] (topic_tools_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[5.118523] (topic_tools_interfaces) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.212130] (-) TimerEvent: {}
+[5.312479] (-) TimerEvent: {}
+[5.412802] (-) TimerEvent: {}
+[5.513082] (-) TimerEvent: {}
+[5.518857] (topic_tools_interfaces) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/demux_list__type_support.cpp.o\x1b[0m\n'}
+[5.519443] (topic_tools_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/mux_select__type_support.cpp.o\x1b[0m\n'}
+[5.523323] (topic_tools_interfaces) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/demux_add__type_support.cpp.o\x1b[0m\n'}
+[5.523725] (topic_tools_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/mux_delete__type_support.cpp.o\x1b[0m\n'}
+[5.524539] (topic_tools_interfaces) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/demux_delete__type_support.cpp.o\x1b[0m\n'}
+[5.524778] (topic_tools_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/demux_select__type_support.cpp.o\x1b[0m\n'}
+[5.525049] (topic_tools_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/mux_add__type_support.cpp.o\x1b[0m\n'}
+[5.528396] (topic_tools_interfaces) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/topic_tools_interfaces/srv/mux_list__type_support.cpp.o\x1b[0m\n'}
+[5.537011] (topic_tools_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/demux_list__type_support.cpp.o\x1b[0m\n'}
+[5.537244] (topic_tools_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/demux_delete__type_support.cpp.o\x1b[0m\n'}
+[5.537388] (topic_tools_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/demux_select__type_support.cpp.o\x1b[0m\n'}
+[5.537613] (topic_tools_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/mux_add__type_support.cpp.o\x1b[0m\n'}
+[5.537742] (topic_tools_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/mux_select__type_support.cpp.o\x1b[0m\n'}
+[5.539368] (topic_tools_interfaces) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/demux_add__type_support.cpp.o\x1b[0m\n'}
+[5.540506] (topic_tools_interfaces) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/mux_delete__type_support.cpp.o\x1b[0m\n'}
+[5.541057] (topic_tools_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/topic_tools_interfaces/srv/mux_list__type_support.cpp.o\x1b[0m\n'}
+[5.605584] (topic_tools_interfaces) StdoutLine: {'line': b'[ 47%] \x1b[32m\x1b[1mLinking CXX shared library libtopic_tools_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[5.613189] (-) TimerEvent: {}
+[5.649713] (topic_tools_interfaces) StdoutLine: {'line': b'[ 47%] Built target topic_tools_interfaces__rosidl_typesupport_c\n'}
+[5.713537] (-) TimerEvent: {}
+[5.743445] (topic_tools_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/mux_delete__type_support.c.o\x1b[0m\n'}
+[5.743687] (topic_tools_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/demux_list__type_support.c.o\x1b[0m\n'}
+[5.743877] (topic_tools_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/demux_select__type_support.c.o\x1b[0m\n'}
+[5.744010] (topic_tools_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/demux_add__type_support.c.o\x1b[0m\n'}
+[5.744151] (topic_tools_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/mux_add__type_support.c.o\x1b[0m\n'}
+[5.744257] (topic_tools_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/mux_list__type_support.c.o\x1b[0m\n'}
+[5.744394] (topic_tools_interfaces) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/mux_select__type_support.c.o\x1b[0m\n'}
+[5.744489] (topic_tools_interfaces) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/topic_tools_interfaces/srv/detail/demux_delete__type_support.c.o\x1b[0m\n'}
+[5.813641] (-) TimerEvent: {}
+[5.837571] (topic_tools_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking C shared library libtopic_tools_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[5.871895] (topic_tools_interfaces) StdoutLine: {'line': b'[ 56%] Built target topic_tools_interfaces__rosidl_typesupport_introspection_c\n'}
+[5.913764] (-) TimerEvent: {}
+[6.014175] (-) TimerEvent: {}
+[6.091331] (topic_tools_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/demux_select__type_support.cpp.o\x1b[0m\n'}
+[6.091614] (topic_tools_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/demux_add__type_support.cpp.o\x1b[0m\n'}
+[6.091719] (topic_tools_interfaces) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/mux_add__type_support.cpp.o\x1b[0m\n'}
+[6.097486] (topic_tools_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/mux_delete__type_support.cpp.o\x1b[0m\n'}
+[6.097878] (topic_tools_interfaces) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/mux_select__type_support.cpp.o\x1b[0m\n'}
+[6.098528] (topic_tools_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/demux_delete__type_support.cpp.o\x1b[0m\n'}
+[6.098717] (topic_tools_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/mux_list__type_support.cpp.o\x1b[0m\n'}
+[6.098825] (topic_tools_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/topic_tools_interfaces/srv/detail/demux_list__type_support.cpp.o\x1b[0m\n'}
+[6.109444] (topic_tools_interfaces) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/demux_add__type_support_c.cpp.o\x1b[0m\n'}
+[6.109835] (topic_tools_interfaces) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/demux_select__type_support_c.cpp.o\x1b[0m\n'}
+[6.110319] (topic_tools_interfaces) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/demux_delete__type_support_c.cpp.o\x1b[0m\n'}
+[6.110552] (topic_tools_interfaces) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/mux_list__type_support_c.cpp.o\x1b[0m\n'}
+[6.111224] (topic_tools_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/demux_list__type_support_c.cpp.o\x1b[0m\n'}
+[6.112313] (topic_tools_interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/mux_add__type_support_c.cpp.o\x1b[0m\n'}
+[6.114376] (-) TimerEvent: {}
+[6.114915] (topic_tools_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/mux_delete__type_support_c.cpp.o\x1b[0m\n'}
+[6.147924] (topic_tools_interfaces) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/topic_tools_interfaces/srv/detail/mux_select__type_support_c.cpp.o\x1b[0m\n'}
+[6.214354] (-) TimerEvent: {}
+[6.241450] (topic_tools_interfaces) StdoutLine: {'line': b'[ 73%] \x1b[32m\x1b[1mLinking CXX shared library libtopic_tools_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[6.315352] (-) TimerEvent: {}
+[6.372752] (topic_tools_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/demux_delete__type_support.cpp.o\x1b[0m\n'}
+[6.385316] (topic_tools_interfaces) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/demux_add__type_support.cpp.o\x1b[0m\n'}
+[6.385741] (topic_tools_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/demux_list__type_support.cpp.o\x1b[0m\n'}
+[6.415465] (-) TimerEvent: {}
+[6.516011] (-) TimerEvent: {}
+[6.611559] (topic_tools_interfaces) StdoutLine: {'line': b'[ 76%] Built target topic_tools_interfaces__rosidl_typesupport_cpp\n'}
+[6.616147] (-) TimerEvent: {}
+[6.625533] (topic_tools_interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/demux_select__type_support.cpp.o\x1b[0m\n'}
+[6.716364] (-) TimerEvent: {}
+[6.723071] (topic_tools_interfaces) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/mux_add__type_support.cpp.o\x1b[0m\n'}
+[6.746442] (topic_tools_interfaces) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/mux_delete__type_support.cpp.o\x1b[0m\n'}
+[6.788546] (topic_tools_interfaces) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/mux_list__type_support.cpp.o\x1b[0m\n'}
+[6.816509] (-) TimerEvent: {}
+[6.864870] (topic_tools_interfaces) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/topic_tools_interfaces/srv/detail/dds_fastrtps/mux_select__type_support.cpp.o\x1b[0m\n'}
+[6.916622] (-) TimerEvent: {}
+[7.014932] (topic_tools_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking CXX shared library libtopic_tools_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[7.016727] (-) TimerEvent: {}
+[7.114904] (topic_tools_interfaces) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libtopic_tools_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[7.116828] (-) TimerEvent: {}
+[7.183776] (topic_tools_interfaces) StdoutLine: {'line': b'[ 83%] Built target topic_tools_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[7.216949] (-) TimerEvent: {}
+[7.258668] (topic_tools_interfaces) StdoutLine: {'line': b'[ 83%] Built target topic_tools_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[7.317064] (-) TimerEvent: {}
+[7.417349] (-) TimerEvent: {}
+[7.507503] (topic_tools_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking CXX shared library libtopic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[7.517434] (-) TimerEvent: {}
+[7.605818] (topic_tools_interfaces) StdoutLine: {'line': b'[ 84%] Built target topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[7.617605] (-) TimerEvent: {}
+[7.637205] (topic_tools_interfaces) StdoutLine: {'line': b'[ 84%] Built target topic_tools_interfaces\n'}
+[7.667947] (topic_tools_interfaces) StdoutLine: {'line': b'[ 85%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[7.717788] (-) TimerEvent: {}
+[7.818107] (-) TimerEvent: {}
+[7.918437] (-) TimerEvent: {}
+[8.018852] (-) TimerEvent: {}
+[8.119133] (-) TimerEvent: {}
+[8.219435] (-) TimerEvent: {}
+[8.319676] (-) TimerEvent: {}
+[8.419979] (-) TimerEvent: {}
+[8.520275] (-) TimerEvent: {}
+[8.620584] (-) TimerEvent: {}
+[8.720924] (-) TimerEvent: {}
+[8.821203] (-) TimerEvent: {}
+[8.848229] (topic_tools_interfaces) StdoutLine: {'line': b'[ 85%] Built target topic_tools_interfaces__py\n'}
+[8.874877] (topic_tools_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_mux_delete_s.c.o\x1b[0m\n'}
+[8.875215] (topic_tools_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_mux_add_s.c.o\x1b[0m\n'}
+[8.875385] (topic_tools_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_demux_select_s.c.o\x1b[0m\n'}
+[8.875525] (topic_tools_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_mux_list_s.c.o\x1b[0m\n'}
+[8.875669] (topic_tools_interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_demux_list_s.c.o\x1b[0m\n'}
+[8.879261] (topic_tools_interfaces) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_demux_add_s.c.o\x1b[0m\n'}
+[8.879538] (topic_tools_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_demux_delete_s.c.o\x1b[0m\n'}
+[8.881433] (topic_tools_interfaces) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces__rosidl_generator_py.dir/rosidl_generator_py/topic_tools_interfaces/srv/_mux_select_s.c.o\x1b[0m\n'}
+[8.921367] (-) TimerEvent: {}
+[9.021700] (-) TimerEvent: {}
+[9.091994] (topic_tools_interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library libtopic_tools_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[9.121843] (-) TimerEvent: {}
+[9.145058] (topic_tools_interfaces) StdoutLine: {'line': b'[ 94%] Built target topic_tools_interfaces__rosidl_generator_py\n'}
+[9.176502] (topic_tools_interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/topic_tools_interfaces/_topic_tools_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[9.178042] (topic_tools_interfaces) StdoutLine: {'line': b'[ 96%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/topic_tools_interfaces/_topic_tools_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[9.179363] (topic_tools_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/topic_tools_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/topic_tools_interfaces/_topic_tools_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[9.222057] (-) TimerEvent: {}
+[9.322459] (-) TimerEvent: {}
+[9.350209] (topic_tools_interfaces) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.351922] (topic_tools_interfaces) StdoutLine: {'line': b'[ 99%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[9.352598] (topic_tools_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[9.388363] (topic_tools_interfaces) StdoutLine: {'line': b'[100%] Built target topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c\n'}
+[9.395804] (topic_tools_interfaces) StdoutLine: {'line': b'[100%] Built target topic_tools_interfaces_s__rosidl_typesupport_introspection_c\n'}
+[9.399389] (topic_tools_interfaces) StdoutLine: {'line': b'[100%] Built target topic_tools_interfaces_s__rosidl_typesupport_c\n'}
+[9.413439] (topic_tools_interfaces) CommandEnded: {'returncode': 0}
+[9.414103] (topic_tools_interfaces) JobProgress: {'identifier': 'topic_tools_interfaces', 'progress': 'install'}
+[9.422531] (-) TimerEvent: {}
+[9.425968] (topic_tools_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/javierac/camera_gz/build/topic_tools_interfaces'], 'cwd': '/home/javierac/camera_gz/build/topic_tools_interfaces', 'env': OrderedDict({'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'GZ_SIM_RESOURCE_PATH': '/home/javierac/camera_gz/gazebo-11', 'USER': 'javierac', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '90fcba602f5a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/xarm_ws/install/xarm_planner/lib:/home/xarm_ws/install/xarm_moveit_servo/lib:/home/xarm_ws/install/xarm_controller/lib:/home/xarm_ws/install/xarm_api/lib:/home/xarm_ws/install/xarm_sdk/lib:/home/xarm_ws/install/xarm_msgs/lib:/home/xarm_ws/install/realsense_gazebo_plugin/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/home/javierac/camera_gz/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/javierac/camera_gz/install:/home/xarm_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'graphics,utility,compute', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/uf_ros_lib:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/javierac/camera_gz/build/topic_tools_interfaces', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/javierac/camera_gz/install/mogi_trajectory_server/lib/python3.12/site-packages:/home/javierac/camera_gz/install/bme_gazebo_sensors_py/lib/python3.12/site-packages:/home/xarm_ws/install/xarm_msgs/lib/python3.12/site-packages:/home/xarm_ws/build/uf_ros_lib:/home/xarm_ws/install/uf_ros_lib/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'void', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/xarm_ws/install/uf_ros_lib:/opt/ros/jazzy'}), 'shell': False}
+[9.435351] (topic_tools_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.435597] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/ament_index/resource_index/rosidl_interfaces/topic_tools_interfaces\n'}
+[9.435858] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxAdd.json\n'}
+[9.436142] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxDelete.json\n'}
+[9.436366] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxList.json\n'}
+[9.436544] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxSelect.json\n'}
+[9.436739] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxAdd.json\n'}
+[9.436914] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxDelete.json\n'}
+[9.437082] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxList.json\n'}
+[9.437256] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxSelect.json\n'}
+[9.437433] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces\n'}
+[9.437603] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv\n'}
+[9.437749] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_list.h\n'}
+[9.437922] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_list.h\n'}
+[9.438094] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_select.h\n'}
+[9.438240] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_select.h\n'}
+[9.438440] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_add.h\n'}
+[9.438593] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_delete.h\n'}
+[9.438764] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_add.h\n'}
+[9.438934] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_delete.h\n'}
+[9.439104] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail\n'}
+[9.439284] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__type_support.h\n'}
+[9.439460] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__description.c\n'}
+[9.439633] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__description.c\n'}
+[9.439804] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__functions.h\n'}
+[9.439972] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__functions.h\n'}
+[9.440151] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__description.c\n'}
+[9.440330] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__functions.c\n'}
+[9.440507] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__struct.h\n'}
+[9.440679] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__type_support.c\n'}
+[9.440834] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__functions.c\n'}
+[9.441002] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__description.c\n'}
+[9.441173] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__functions.c\n'}
+[9.441338] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__struct.h\n'}
+[9.441504] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__description.c\n'}
+[9.441657] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__functions.h\n'}
+[9.441823] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__functions.h\n'}
+[9.441975] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__struct.h\n'}
+[9.442098] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__functions.c\n'}
+[9.442223] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__functions.c\n'}
+[9.442360] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__type_support.h\n'}
+[9.442568] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__type_support.c\n'}
+[9.442740] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__type_support.h\n'}
+[9.442901] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__type_support.h\n'}
+[9.443072] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__type_support.h\n'}
+[9.443240] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__type_support.h\n'}
+[9.443433] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__type_support.c\n'}
+[9.443558] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__type_support.h\n'}
+[9.443682] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__type_support.c\n'}
+[9.443806] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__functions.c\n'}
+[9.444010] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__functions.h\n'}
+[9.444170] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__type_support.c\n'}
+[9.444345] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__functions.h\n'}
+[9.444495] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__struct.h\n'}
+[9.444659] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__struct.h\n'}
+[9.444826] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__struct.h\n'}
+[9.444960] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__struct.h\n'}
+[9.445136] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__type_support.c\n'}
+[9.445303] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__functions.c\n'}
+[9.445532] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__functions.h\n'}
+[9.445751] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__struct.h\n'}
+[9.445816] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__type_support.h\n'}
+[9.446044] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__type_support.c\n'}
+[9.446123] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__type_support.c\n'}
+[9.446174] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__description.c\n'}
+[9.446222] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__functions.h\n'}
+[9.446272] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__functions.c\n'}
+[9.446383] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__description.c\n'}
+[9.446435] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__description.c\n'}
+[9.446487] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg\n'}
+[9.446535] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[9.446581] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/library_path.sh\n'}
+[9.446837] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/library_path.dsv\n'}
+[9.446900] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_generator_c.so\n'}
+[9.446956] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_generator_c.so" to ""\n'}
+[9.447011] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces\n'}
+[9.447064] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv\n'}
+[9.447117] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail\n'}
+[9.447359] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447450] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447511] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447582] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447652] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447719] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447785] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447848] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__rosidl_typesupport_fastrtps_c.h\n'}
+[9.447911] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg\n'}
+[9.448004] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[9.448072] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[9.448137] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[9.448202] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces\n'}
+[9.448264] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv\n'}
+[9.448334] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail\n'}
+[9.448397] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__rosidl_typesupport_introspection_c.h\n'}
+[9.448462] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__rosidl_typesupport_introspection_c.h\n'}
+[9.448526] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__type_support.c\n'}
+[9.448603] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__rosidl_typesupport_introspection_c.h\n'}
+[9.448666] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__type_support.c\n'}
+[9.448728] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__rosidl_typesupport_introspection_c.h\n'}
+[9.448827] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__rosidl_typesupport_introspection_c.h\n'}
+[9.448893] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__type_support.c\n'}
+[9.448974] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__type_support.c\n'}
+[9.449051] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__type_support.c\n'}
+[9.449117] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__type_support.c\n'}
+[9.449170] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__rosidl_typesupport_introspection_c.h\n'}
+[9.449234] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__type_support.c\n'}
+[9.449304] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__rosidl_typesupport_introspection_c.h\n'}
+[9.449367] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__type_support.c\n'}
+[9.449430] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__rosidl_typesupport_introspection_c.h\n'}
+[9.449493] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg\n'}
+[9.449554] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[9.449615] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[9.449679] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[9.449741] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_c.so\n'}
+[9.449801] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[9.449863] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces\n'}
+[9.449925] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv\n'}
+[9.450003] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_list.hpp\n'}
+[9.450065] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_add.hpp\n'}
+[9.450129] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_delete.hpp\n'}
+[9.450191] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_add.hpp\n'}
+[9.450252] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_list.hpp\n'}
+[9.450369] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_select.hpp\n'}
+[9.450463] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/demux_delete.hpp\n'}
+[9.450534] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/mux_select.hpp\n'}
+[9.450588] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail\n'}
+[9.450696] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__builder.hpp\n'}
+[9.450768] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__traits.hpp\n'}
+[9.450836] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__traits.hpp\n'}
+[9.450927] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__type_support.hpp\n'}
+[9.450984] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__struct.hpp\n'}
+[9.451038] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__type_support.hpp\n'}
+[9.451091] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__struct.hpp\n'}
+[9.451144] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__struct.hpp\n'}
+[9.451198] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__builder.hpp\n'}
+[9.451251] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__type_support.hpp\n'}
+[9.451311] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__builder.hpp\n'}
+[9.451364] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__type_support.hpp\n'}
+[9.451417] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__traits.hpp\n'}
+[9.451471] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__struct.hpp\n'}
+[9.451522] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__struct.hpp\n'}
+[9.451574] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__builder.hpp\n'}
+[9.451625] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__traits.hpp\n'}
+[9.451679] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__traits.hpp\n'}
+[9.451732] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__builder.hpp\n'}
+[9.451781] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__builder.hpp\n'}
+[9.451830] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__type_support.hpp\n'}
+[9.451878] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__type_support.hpp\n'}
+[9.451927] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__builder.hpp\n'}
+[9.451977] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__struct.hpp\n'}
+[9.452030] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__type_support.hpp\n'}
+[9.452079] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__traits.hpp\n'}
+[9.452128] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__type_support.hpp\n'}
+[9.452176] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__builder.hpp\n'}
+[9.452260] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__traits.hpp\n'}
+[9.452325] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__traits.hpp\n'}
+[9.452379] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__struct.hpp\n'}
+[9.452431] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__struct.hpp\n'}
+[9.452481] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg\n'}
+[9.452530] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[9.452582] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces\n'}
+[9.452631] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv\n'}
+[9.452681] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail\n'}
+[9.452732] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.452784] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.452836] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/dds_fastrtps\n'}
+[9.452941] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.453001] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.453056] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.453107] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.453158] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.453209] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[9.453262] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg\n'}
+[9.453318] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[9.453370] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[9.454095] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[9.454154] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces\n'}
+[9.454208] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv\n'}
+[9.454261] (topic_tools_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail\n'}
+[9.454319] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454375] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454485] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454540] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454592] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454645] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_list__type_support.cpp\n'}
+[9.454696] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_delete__type_support.cpp\n'}
+[9.454746] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__type_support.cpp\n'}
+[9.454796] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454846] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_add__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454898] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__rosidl_typesupport_introspection_cpp.hpp\n'}
+[9.454952] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_add__type_support.cpp\n'}
+[9.455002] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_select__type_support.cpp\n'}
+[9.455054] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_select__type_support.cpp\n'}
+[9.455149] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/demux_delete__type_support.cpp\n'}
+[9.455201] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/include/topic_tools_interfaces/topic_tools_interfaces/srv/detail/mux_list__type_support.cpp\n'}
+[9.455255] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[9.455342] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[9.455426] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_cpp.so\n'}
+[9.455940] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[9.456023] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/pythonpath.sh\n'}
+[9.456101] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/pythonpath.dsv\n'}
+[9.456180] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces-1.4.3-py3.12.egg-info\n'}
+[9.456255] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces-1.4.3-py3.12.egg-info/dependency_links.txt\n'}
+[9.456345] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces-1.4.3-py3.12.egg-info/PKG-INFO\n'}
+[9.456425] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces-1.4.3-py3.12.egg-info/SOURCES.txt\n'}
+[9.456503] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces-1.4.3-py3.12.egg-info/top_level.txt\n'}
+[9.456612] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces\n'}
+[9.456683] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/__init__.py\n'}
+[9.456748] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[9.456881] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[9.457011] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_c.so\n'}
+[9.457142] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/_topic_tools_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[9.457299] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv\n'}
+[9.457379] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/__init__.py\n'}
+[9.457448] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_delete.py\n'}
+[9.457534] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_list.py\n'}
+[9.457624] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_delete.py\n'}
+[9.457714] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_list.py\n'}
+[9.457803] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_select_s.c\n'}
+[9.457889] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_select_s.c\n'}
+[9.457975] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_delete_s.c\n'}
+[9.458064] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_select.py\n'}
+[9.458154] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_add.py\n'}
+[9.458245] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_select.py\n'}
+[9.458379] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_delete_s.c\n'}
+[9.458466] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_list_s.c\n'}
+[9.458552] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_add_s.c\n'}
+[9.458639] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_list_s.c\n'}
+[9.458730] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_add.py\n'}
+[9.458821] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_add_s.c\n'}
+[9.458910] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/_topic_tools_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[9.459067] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/_topic_tools_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[9.522701] (-) TimerEvent: {}
+[9.525126] (topic_tools_interfaces) StdoutLine: {'line': b"Listing '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces'...\n"}
+[9.525296] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/__init__.py'...\n"}
+[9.525360] (topic_tools_interfaces) StdoutLine: {'line': b"Listing '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv'...\n"}
+[9.525412] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/__init__.py'...\n"}
+[9.525465] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_add.py'...\n"}
+[9.525513] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_delete.py'...\n"}
+[9.525562] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_list.py'...\n"}
+[9.525609] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_demux_select.py'...\n"}
+[9.525655] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_add.py'...\n"}
+[9.525700] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_delete.py'...\n"}
+[9.525746] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_list.py'...\n"}
+[9.525794] (topic_tools_interfaces) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/srv/_mux_select.py'...\n"}
+[9.531576] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[9.531806] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[9.531943] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[9.532307] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_introspection_c.so" to ""\n'}
+[9.532439] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_c.so\n'}
+[9.532723] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages/topic_tools_interfaces/topic_tools_interfaces_s__rosidl_typesupport_c.so" to ""\n'}
+[9.532782] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_generator_py.so\n'}
+[9.533123] (topic_tools_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools_interfaces/lib/libtopic_tools_interfaces__rosidl_generator_py.so" to ""\n'}
+[9.533200] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxAdd.idl\n'}
+[9.533252] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxDelete.idl\n'}
+[9.533343] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxList.idl\n'}
+[9.533413] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxSelect.idl\n'}
+[9.533492] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxAdd.idl\n'}
+[9.533589] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxDelete.idl\n'}
+[9.533689] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxList.idl\n'}
+[9.533779] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxSelect.idl\n'}
+[9.533883] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxAdd.srv\n'}
+[9.533980] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxDelete.srv\n'}
+[9.534082] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxList.srv\n'}
+[9.534176] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/DemuxSelect.srv\n'}
+[9.534281] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxAdd.srv\n'}
+[9.534380] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxDelete.srv\n'}
+[9.534478] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxList.srv\n'}
+[9.534570] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/srv/MuxSelect.srv\n'}
+[9.534723] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/ament_index/resource_index/package_run_dependencies/topic_tools_interfaces\n'}
+[9.534855] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/ament_index/resource_index/parent_prefix_path/topic_tools_interfaces\n'}
+[9.534971] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/ament_prefix_path.sh\n'}
+[9.535078] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/ament_prefix_path.dsv\n'}
+[9.535188] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/path.sh\n'}
+[9.535295] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/environment/path.dsv\n'}
+[9.535396] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/local_setup.bash\n'}
+[9.535490] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/local_setup.sh\n'}
+[9.535597] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/local_setup.zsh\n'}
+[9.535695] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/local_setup.dsv\n'}
+[9.535792] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/package.dsv\n'}
+[9.535908] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/ament_index/resource_index/packages/topic_tools_interfaces\n'}
+[9.536065] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_generator_cExport.cmake\n'}
+[9.536189] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[9.536378] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[9.536485] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[9.536611] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[9.536720] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[9.536843] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[9.536945] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[9.537078] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_generator_cppExport.cmake\n'}
+[9.537198] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[9.537319] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[9.537437] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[9.537553] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[9.537670] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[9.537785] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[9.537907] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_generator_pyExport.cmake\n'}
+[9.538025] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/export_topic_tools_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[9.538132] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[9.538239] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[9.538354] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[9.538464] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[9.538569] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[9.538675] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[9.538779] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[9.538897] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfacesConfig.cmake\n'}
+[9.538977] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake/topic_tools_interfacesConfig-version.cmake\n'}
+[9.539079] (topic_tools_interfaces) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/package.xml\n'}
+[9.541335] (topic_tools_interfaces) CommandEnded: {'returncode': 0}
+[9.561696] (topic_tools_interfaces) JobEnded: {'identifier': 'topic_tools_interfaces', 'rc': 0}
+[9.562121] (topic_tools) JobStarted: {'identifier': 'topic_tools'}
+[9.574931] (topic_tools) JobProgress: {'identifier': 'topic_tools', 'progress': 'cmake'}
+[9.575874] (topic_tools) Command: {'cmd': ['/usr/bin/cmake', '/home/javierac/camera_gz/src/topic_tools/topic_tools', '-DCMAKE_INSTALL_PREFIX=/home/javierac/camera_gz/install/topic_tools'], 'cwd': '/home/javierac/camera_gz/build/topic_tools', 'env': OrderedDict({'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'GZ_SIM_RESOURCE_PATH': '/home/javierac/camera_gz/gazebo-11', 'USER': 'javierac', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '90fcba602f5a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces/lib:/home/xarm_ws/install/xarm_planner/lib:/home/xarm_ws/install/xarm_moveit_servo/lib:/home/xarm_ws/install/xarm_controller/lib:/home/xarm_ws/install/xarm_api/lib:/home/xarm_ws/install/xarm_sdk/lib:/home/xarm_ws/install/xarm_msgs/lib:/home/xarm_ws/install/realsense_gazebo_plugin/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/home/javierac/camera_gz/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/javierac/camera_gz/install:/home/xarm_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'graphics,utility,compute', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/uf_ros_lib:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/javierac/camera_gz/build/topic_tools', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages:/home/javierac/camera_gz/install/mogi_trajectory_server/lib/python3.12/site-packages:/home/javierac/camera_gz/install/bme_gazebo_sensors_py/lib/python3.12/site-packages:/home/xarm_ws/install/xarm_msgs/lib/python3.12/site-packages:/home/xarm_ws/build/uf_ros_lib:/home/xarm_ws/install/uf_ros_lib/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'void', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/xarm_ws/install/uf_ros_lib:/opt/ros/jazzy'}), 'shell': False}
+[9.622881] (-) TimerEvent: {}
+[9.646350] (topic_tools) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[9.708816] (topic_tools) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[9.723052] (-) TimerEvent: {}
+[9.729922] (topic_tools) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[9.823247] (-) TimerEvent: {}
+[9.844482] (topic_tools) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[9.854301] (topic_tools) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[9.854465] (topic_tools) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[9.854679] (topic_tools) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[9.865485] (topic_tools) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[9.923477] (-) TimerEvent: {}
+[9.981422] (topic_tools) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[9.992550] (topic_tools) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[9.992819] (topic_tools) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[9.993285] (topic_tools) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[9.999646] (topic_tools) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[10.023638] (-) TimerEvent: {}
+[10.123933] (-) TimerEvent: {}
+[10.191231] (topic_tools) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[10.224101] (-) TimerEvent: {}
+[10.324417] (-) TimerEvent: {}
+[10.353086] (topic_tools) StdoutLine: {'line': b'-- Found rclcpp: 28.1.10 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[10.424582] (-) TimerEvent: {}
+[10.425563] (topic_tools) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[10.450052] (topic_tools) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[10.477404] (topic_tools) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[10.506993] (topic_tools) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[10.524768] (-) TimerEvent: {}
+[10.623681] (topic_tools) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[10.624875] (-) TimerEvent: {}
+[10.630547] (topic_tools) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[10.725066] (-) TimerEvent: {}
+[10.762810] (topic_tools) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[10.787908] (topic_tools) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[10.814637] (topic_tools) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[10.825228] (-) TimerEvent: {}
+[10.918133] (topic_tools) StdoutLine: {'line': b'-- Found rclcpp_components: 28.1.10 (/opt/ros/jazzy/share/rclcpp_components/cmake)\n'}
+[10.925395] (-) TimerEvent: {}
+[10.968198] (topic_tools) StdoutLine: {'line': b'-- Found topic_tools_interfaces: 1.4.3 (/home/javierac/camera_gz/install/topic_tools_interfaces/share/topic_tools_interfaces/cmake)\n'}
+[11.001542] (topic_tools) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[11.025562] (-) TimerEvent: {}
+[11.030363] (topic_tools) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[11.125734] (-) TimerEvent: {}
+[11.207676] (topic_tools) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[11.214455] (topic_tools) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[11.225896] (-) TimerEvent: {}
+[11.322589] (topic_tools) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[11.323767] (topic_tools) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[11.326053] (-) TimerEvent: {}
+[11.359867] (topic_tools) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[11.362842] (topic_tools) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[11.363777] (topic_tools) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/javierac/camera_gz/src/topic_tools/topic_tools/include;$<BUILD_INTERFACE:/home/javierac/camera_gz/src/topic_tools/topic_tools/include>\n'}
+[11.363909] (topic_tools) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[11.366625] (topic_tools) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[11.366756] (topic_tools) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[11.367934] (topic_tools) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[11.368064] (topic_tools) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[11.369188] (topic_tools) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[11.370363] (topic_tools) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[11.373040] (topic_tools) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[11.373170] (topic_tools) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[11.374321] (topic_tools) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[11.376483] (topic_tools) StdoutLine: {'line': b'-- Configuring done (1.8s)\n'}
+[11.426228] (-) TimerEvent: {}
+[11.440792] (topic_tools) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[11.465593] (topic_tools) StdoutLine: {'line': b'-- Build files have been written to: /home/javierac/camera_gz/build/topic_tools\n'}
+[11.477068] (topic_tools) CommandEnded: {'returncode': 0}
+[11.478007] (topic_tools) JobProgress: {'identifier': 'topic_tools', 'progress': 'build'}
+[11.478030] (topic_tools) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/javierac/camera_gz/build/topic_tools', '--', '-j20', '-l20'], 'cwd': '/home/javierac/camera_gz/build/topic_tools', 'env': OrderedDict({'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'GZ_SIM_RESOURCE_PATH': '/home/javierac/camera_gz/gazebo-11', 'USER': 'javierac', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '90fcba602f5a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces/lib:/home/xarm_ws/install/xarm_planner/lib:/home/xarm_ws/install/xarm_moveit_servo/lib:/home/xarm_ws/install/xarm_controller/lib:/home/xarm_ws/install/xarm_api/lib:/home/xarm_ws/install/xarm_sdk/lib:/home/xarm_ws/install/xarm_msgs/lib:/home/xarm_ws/install/realsense_gazebo_plugin/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/home/javierac/camera_gz/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/javierac/camera_gz/install:/home/xarm_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'graphics,utility,compute', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/uf_ros_lib:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/javierac/camera_gz/build/topic_tools', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages:/home/javierac/camera_gz/install/mogi_trajectory_server/lib/python3.12/site-packages:/home/javierac/camera_gz/install/bme_gazebo_sensors_py/lib/python3.12/site-packages:/home/xarm_ws/install/xarm_msgs/lib/python3.12/site-packages:/home/xarm_ws/build/uf_ros_lib:/home/xarm_ws/install/uf_ros_lib/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'void', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/xarm_ws/install/uf_ros_lib:/opt/ros/jazzy'}), 'shell': False}
+[11.526348] (-) TimerEvent: {}
+[11.541975] (topic_tools) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o\x1b[0m\n'}
+[11.542952] (topic_tools) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object CMakeFiles/throttle_node.dir/src/throttle_node.cpp.o\x1b[0m\n'}
+[11.543295] (topic_tools) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/mux_node.dir/src/mux_node.cpp.o\x1b[0m\n'}
+[11.544918] (topic_tools) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/throttle_node.dir/src/tool_base_node.cpp.o\x1b[0m\n'}
+[11.545422] (topic_tools) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/mux_node.dir/src/tool_base_node.cpp.o\x1b[0m\n'}
+[11.546675] (topic_tools) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/relay_node.dir/src/relay_node.cpp.o\x1b[0m\n'}
+[11.548192] (topic_tools) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding CXX object CMakeFiles/relay_node.dir/src/tool_base_node.cpp.o\x1b[0m\n'}
+[11.549913] (topic_tools) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/delay_node.dir/src/delay_node.cpp.o\x1b[0m\n'}
+[11.550131] (topic_tools) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/delay_node.dir/src/tool_base_node.cpp.o\x1b[0m\n'}
+[11.551405] (topic_tools) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/demux_node.dir/src/demux_node.cpp.o\x1b[0m\n'}
+[11.552473] (topic_tools) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/demux_node.dir/src/tool_base_node.cpp.o\x1b[0m\n'}
+[11.557158] (topic_tools) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/drop_node.dir/src/drop_node.cpp.o\x1b[0m\n'}
+[11.557405] (topic_tools) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/drop_node.dir/src/tool_base_node.cpp.o\x1b[0m\n'}
+[11.557525] (topic_tools) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\x1b[0m\n'}
+[11.564220] (topic_tools) StdoutLine: {'line': b'[ 31%] Built target ament_cmake_python_copy_topic_tools\n'}
+[11.564813] (topic_tools) StdoutLine: {'line': b'[ 31%] Built target ament_cmake_python_copy_topic_tools_setup\n'}
+[11.626442] (-) TimerEvent: {}
+[11.726704] (-) TimerEvent: {}
+[11.803632] (topic_tools) StdoutLine: {'line': b'running install_scripts\n'}
+[11.822862] (topic_tools) StdoutLine: {'line': b'running egg_info\n'}
+[11.823918] (topic_tools) StdoutLine: {'line': b'creating topic_tools.egg-info\n'}
+[11.826786] (-) TimerEvent: {}
+[11.839764] (topic_tools) StdoutLine: {'line': b'writing topic_tools.egg-info/PKG-INFO\n'}
+[11.840023] (topic_tools) StdoutLine: {'line': b'writing dependency_links to topic_tools.egg-info/dependency_links.txt\n'}
+[11.840359] (topic_tools) StdoutLine: {'line': b'writing entry points to topic_tools.egg-info/entry_points.txt\n'}
+[11.840539] (topic_tools) StdoutLine: {'line': b'writing top-level names to topic_tools.egg-info/top_level.txt\n'}
+[11.840682] (topic_tools) StdoutLine: {'line': b"writing manifest file 'topic_tools.egg-info/SOURCES.txt'\n"}
+[11.841936] (topic_tools) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[11.842138] (topic_tools) StderrLine: {'line': b'!!\n'}
+[11.842257] (topic_tools) StderrLine: {'line': b'\n'}
+[11.842371] (topic_tools) StderrLine: {'line': b'        ********************************************************************************\n'}
+[11.842468] (topic_tools) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[11.842561] (topic_tools) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[11.842655] (topic_tools) StderrLine: {'line': b'        standards-based tools.\n'}
+[11.842751] (topic_tools) StderrLine: {'line': b'\n'}
+[11.842842] (topic_tools) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[11.842939] (topic_tools) StderrLine: {'line': b'        ********************************************************************************\n'}
+[11.843038] (topic_tools) StderrLine: {'line': b'\n'}
+[11.843133] (topic_tools) StderrLine: {'line': b'!!\n'}
+[11.843223] (topic_tools) StderrLine: {'line': b'  self.initialize_options()\n'}
+[11.852525] (topic_tools) StdoutLine: {'line': b'running egg_info\n'}
+[11.887541] (topic_tools) StdoutLine: {'line': b'writing topic_tools.egg-info/PKG-INFO\n'}
+[11.887829] (topic_tools) StdoutLine: {'line': b'writing dependency_links to topic_tools.egg-info/dependency_links.txt\n'}
+[11.888175] (topic_tools) StdoutLine: {'line': b'writing entry points to topic_tools.egg-info/entry_points.txt\n'}
+[11.888373] (topic_tools) StdoutLine: {'line': b'writing top-level names to topic_tools.egg-info/top_level.txt\n'}
+[11.889568] (topic_tools) StdoutLine: {'line': b"reading manifest file 'topic_tools.egg-info/SOURCES.txt'\n"}
+[11.890216] (topic_tools) StdoutLine: {'line': b"writing manifest file 'topic_tools.egg-info/SOURCES.txt'\n"}
+[11.921817] (topic_tools) StdoutLine: {'line': b"reading manifest file 'topic_tools.egg-info/SOURCES.txt'\n"}
+[11.922585] (topic_tools) StdoutLine: {'line': b"writing manifest file 'topic_tools.egg-info/SOURCES.txt'\n"}
+[11.923178] (topic_tools) StdoutLine: {'line': b'[ 31%] Built target ament_cmake_python_build_topic_tools_egg\n'}
+[11.926887] (-) TimerEvent: {}
+[12.023203] (topic_tools) StdoutLine: {'line': b'Installing relay_field script to scripts\n'}
+[12.023484] (topic_tools) StdoutLine: {'line': b'Installing transform script to scripts\n'}
+[12.027000] (-) TimerEvent: {}
+[12.064192] (topic_tools) StdoutLine: {'line': b'[ 31%] Built target ament_cmake_python_build_topic_tools_scripts\n'}
+[12.127119] (-) TimerEvent: {}
+[12.227465] (-) TimerEvent: {}
+[12.327789] (-) TimerEvent: {}
+[12.428114] (-) TimerEvent: {}
+[12.517281] (topic_tools) StdoutLine: {'line': b'[ 34%] \x1b[32m\x1b[1mLinking CXX static library libgtest_main.a\x1b[0m\n'}
+[12.528229] (-) TimerEvent: {}
+[12.581400] (topic_tools) StdoutLine: {'line': b'[ 34%] Built target gtest_main\n'}
+[12.628358] (-) TimerEvent: {}
+[12.728685] (-) TimerEvent: {}
+[12.829006] (-) TimerEvent: {}
+[12.929343] (-) TimerEvent: {}
+[13.029670] (-) TimerEvent: {}
+[13.129999] (-) TimerEvent: {}
+[13.230336] (-) TimerEvent: {}
+[13.330650] (-) TimerEvent: {}
+[13.430981] (-) TimerEvent: {}
+[13.531328] (-) TimerEvent: {}
+[13.631650] (-) TimerEvent: {}
+[13.731967] (-) TimerEvent: {}
+[13.832308] (-) TimerEvent: {}
+[13.932627] (-) TimerEvent: {}
+[14.032933] (-) TimerEvent: {}
+[14.133248] (-) TimerEvent: {}
+[14.233577] (-) TimerEvent: {}
+[14.333889] (-) TimerEvent: {}
+[14.434212] (-) TimerEvent: {}
+[14.534533] (-) TimerEvent: {}
+[14.634851] (-) TimerEvent: {}
+[14.735177] (-) TimerEvent: {}
+[14.835523] (-) TimerEvent: {}
+[14.935850] (-) TimerEvent: {}
+[15.036158] (-) TimerEvent: {}
+[15.136492] (-) TimerEvent: {}
+[15.236812] (-) TimerEvent: {}
+[15.337119] (-) TimerEvent: {}
+[15.437452] (-) TimerEvent: {}
+[15.537774] (-) TimerEvent: {}
+[15.638077] (-) TimerEvent: {}
+[15.738387] (-) TimerEvent: {}
+[15.838690] (-) TimerEvent: {}
+[15.938992] (-) TimerEvent: {}
+[16.039303] (-) TimerEvent: {}
+[16.104249] (topic_tools) StdoutLine: {'line': b'[ 36%] \x1b[32m\x1b[1mLinking CXX static library libgtest.a\x1b[0m\n'}
+[16.139422] (-) TimerEvent: {}
+[16.184717] (topic_tools) StdoutLine: {'line': b'[ 36%] Built target gtest\n'}
+[16.239540] (-) TimerEvent: {}
+[16.339839] (-) TimerEvent: {}
+[16.440158] (-) TimerEvent: {}
+[16.540492] (-) TimerEvent: {}
+[16.640810] (-) TimerEvent: {}
+[16.741124] (-) TimerEvent: {}
+[16.841447] (-) TimerEvent: {}
+[16.941752] (-) TimerEvent: {}
+[17.042055] (-) TimerEvent: {}
+[17.142359] (-) TimerEvent: {}
+[17.206725] (topic_tools) StdoutLine: {'line': b'[ 38%] \x1b[32m\x1b[1mLinking CXX shared library libdrop_node.so\x1b[0m\n'}
+[17.242479] (-) TimerEvent: {}
+[17.342782] (-) TimerEvent: {}
+[17.443075] (-) TimerEvent: {}
+[17.484566] (topic_tools) StdoutLine: {'line': b'[ 38%] Built target drop_node\n'}
+[17.508046] (topic_tools) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/test_drop.dir/test/test_drop.cpp.o\x1b[0m\n'}
+[17.517655] (topic_tools) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/drop.dir/src/drop.cpp.o\x1b[0m\n'}
+[17.543237] (-) TimerEvent: {}
+[17.593456] (topic_tools) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX shared library libthrottle_node.so\x1b[0m\n'}
+[17.615479] (topic_tools) StdoutLine: {'line': b'[ 47%] \x1b[32m\x1b[1mLinking CXX shared library libdelay_node.so\x1b[0m\n'}
+[17.643423] (-) TimerEvent: {}
+[17.718434] (topic_tools) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX shared library librelay_node.so\x1b[0m\n'}
+[17.743547] (-) TimerEvent: {}
+[17.751053] (topic_tools) StdoutLine: {'line': b'[ 50%] Built target throttle_node\n'}
+[17.787243] (topic_tools) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/test_throttle.dir/test/test_throttle.cpp.o\x1b[0m\n'}
+[17.793110] (topic_tools) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/throttle.dir/src/throttle.cpp.o\x1b[0m\n'}
+[17.834465] (topic_tools) StdoutLine: {'line': b'[ 54%] Built target delay_node\n'}
+[17.843702] (-) TimerEvent: {}
+[17.875075] (topic_tools) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/delay.dir/src/delay.cpp.o\x1b[0m\n'}
+[17.892025] (topic_tools) StdoutLine: {'line': b'[ 56%] Built target relay_node\n'}
+[17.924679] (topic_tools) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/relay.dir/src/relay.cpp.o\x1b[0m\n'}
+[17.927996] (topic_tools) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/test_relay.dir/test/test_relay.cpp.o\x1b[0m\n'}
+[17.943824] (-) TimerEvent: {}
+[18.044171] (-) TimerEvent: {}
+[18.109198] (topic_tools) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX shared library libmux_node.so\x1b[0m\n'}
+[18.144352] (-) TimerEvent: {}
+[18.244690] (-) TimerEvent: {}
+[18.345075] (-) TimerEvent: {}
+[18.367232] (topic_tools) StdoutLine: {'line': b'[ 63%] Built target mux_node\n'}
+[18.392319] (topic_tools) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/mux.dir/src/mux.cpp.o\x1b[0m\n'}
+[18.397220] (topic_tools) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/test_mux.dir/test/test_mux.cpp.o\x1b[0m\n'}
+[18.445189] (-) TimerEvent: {}
+[18.545522] (-) TimerEvent: {}
+[18.645842] (-) TimerEvent: {}
+[18.746173] (-) TimerEvent: {}
+[18.846512] (-) TimerEvent: {}
+[18.946830] (-) TimerEvent: {}
+[19.047157] (-) TimerEvent: {}
+[19.147507] (-) TimerEvent: {}
+[19.247840] (-) TimerEvent: {}
+[19.348171] (-) TimerEvent: {}
+[19.448508] (-) TimerEvent: {}
+[19.548834] (-) TimerEvent: {}
+[19.649160] (-) TimerEvent: {}
+[19.749502] (-) TimerEvent: {}
+[19.849820] (-) TimerEvent: {}
+[19.950147] (-) TimerEvent: {}
+[20.050514] (-) TimerEvent: {}
+[20.150905] (-) TimerEvent: {}
+[20.251311] (-) TimerEvent: {}
+[20.351660] (-) TimerEvent: {}
+[20.452058] (-) TimerEvent: {}
+[20.552410] (-) TimerEvent: {}
+[20.652803] (-) TimerEvent: {}
+[20.753183] (-) TimerEvent: {}
+[20.853579] (-) TimerEvent: {}
+[20.929260] (topic_tools) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX executable relay\x1b[0m\n'}
+[20.953699] (-) TimerEvent: {}
+[21.054084] (-) TimerEvent: {}
+[21.154486] (-) TimerEvent: {}
+[21.177654] (topic_tools) StdoutLine: {'line': b'[ 70%] Built target relay\n'}
+[21.230783] (topic_tools) StdoutLine: {'line': b'[ 72%] \x1b[32m\x1b[1mLinking CXX executable drop\x1b[0m\n'}
+[21.254643] (-) TimerEvent: {}
+[21.355034] (-) TimerEvent: {}
+[21.389100] (topic_tools) StdoutLine: {'line': b'[ 72%] Built target drop\n'}
+[21.400356] (topic_tools) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable mux\x1b[0m\n'}
+[21.455220] (-) TimerEvent: {}
+[21.555598] (-) TimerEvent: {}
+[21.655981] (-) TimerEvent: {}
+[21.662885] (topic_tools) StdoutLine: {'line': b'[ 75%] Built target mux\n'}
+[21.756110] (-) TimerEvent: {}
+[21.856528] (-) TimerEvent: {}
+[21.956932] (-) TimerEvent: {}
+[22.057373] (-) TimerEvent: {}
+[22.157704] (-) TimerEvent: {}
+[22.258097] (-) TimerEvent: {}
+[22.358464] (-) TimerEvent: {}
+[22.458846] (-) TimerEvent: {}
+[22.466344] (topic_tools) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX executable delay\x1b[0m\n'}
+[22.559022] (-) TimerEvent: {}
+[22.659405] (-) TimerEvent: {}
+[22.712367] (topic_tools) StdoutLine: {'line': b'[ 79%] \x1b[32m\x1b[1mLinking CXX shared library libdemux_node.so\x1b[0m\n'}
+[22.712767] (topic_tools) StdoutLine: {'line': b'[ 79%] Built target delay\n'}
+[22.759563] (-) TimerEvent: {}
+[22.860005] (-) TimerEvent: {}
+[22.885932] (topic_tools) StdoutLine: {'line': b'[ 81%] \x1b[32m\x1b[1mLinking CXX executable throttle\x1b[0m\n'}
+[22.960232] (-) TimerEvent: {}
+[23.003165] (topic_tools) StdoutLine: {'line': b'[ 81%] Built target demux_node\n'}
+[23.040057] (topic_tools) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding CXX object CMakeFiles/test_demux.dir/test/test_demux.cpp.o\x1b[0m\n'}
+[23.045477] (topic_tools) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding CXX object CMakeFiles/demux.dir/src/demux.cpp.o\x1b[0m\n'}
+[23.060420] (-) TimerEvent: {}
+[23.104457] (topic_tools) StdoutLine: {'line': b'[ 86%] Built target throttle\n'}
+[23.160548] (-) TimerEvent: {}
+[23.260988] (-) TimerEvent: {}
+[23.361432] (-) TimerEvent: {}
+[23.461768] (-) TimerEvent: {}
+[23.562209] (-) TimerEvent: {}
+[23.662662] (-) TimerEvent: {}
+[23.763106] (-) TimerEvent: {}
+[23.863560] (-) TimerEvent: {}
+[23.963989] (-) TimerEvent: {}
+[24.064350] (-) TimerEvent: {}
+[24.164733] (-) TimerEvent: {}
+[24.265173] (-) TimerEvent: {}
+[24.365616] (-) TimerEvent: {}
+[24.466023] (-) TimerEvent: {}
+[24.566450] (-) TimerEvent: {}
+[24.666841] (-) TimerEvent: {}
+[24.767217] (-) TimerEvent: {}
+[24.867566] (-) TimerEvent: {}
+[24.967972] (-) TimerEvent: {}
+[25.068415] (-) TimerEvent: {}
+[25.168754] (-) TimerEvent: {}
+[25.269110] (-) TimerEvent: {}
+[25.369450] (-) TimerEvent: {}
+[25.469797] (-) TimerEvent: {}
+[25.564608] (topic_tools) StdoutLine: {'line': b'[ 88%] \x1b[32m\x1b[1mLinking CXX executable test_drop\x1b[0m\n'}
+[25.569953] (-) TimerEvent: {}
+[25.670337] (-) TimerEvent: {}
+[25.734406] (topic_tools) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX executable test_relay\x1b[0m\n'}
+[25.770466] (-) TimerEvent: {}
+[25.870912] (-) TimerEvent: {}
+[25.971362] (-) TimerEvent: {}
+[25.997782] (topic_tools) StdoutLine: {'line': b'[ 90%] Built target test_drop\n'}
+[26.071465] (-) TimerEvent: {}
+[26.171842] (-) TimerEvent: {}
+[26.186074] (topic_tools) StdoutLine: {'line': b'[ 90%] Built target test_relay\n'}
+[26.272061] (-) TimerEvent: {}
+[26.372487] (-) TimerEvent: {}
+[26.452597] (topic_tools) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking CXX executable demux\x1b[0m\n'}
+[26.472613] (-) TimerEvent: {}
+[26.573048] (-) TimerEvent: {}
+[26.647121] (topic_tools) StdoutLine: {'line': b'[ 93%] Built target demux\n'}
+[26.673270] (-) TimerEvent: {}
+[26.773646] (-) TimerEvent: {}
+[26.874079] (-) TimerEvent: {}
+[26.974468] (-) TimerEvent: {}
+[26.976978] (topic_tools) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX executable test_mux\x1b[0m\n'}
+[27.074694] (-) TimerEvent: {}
+[27.128696] (topic_tools) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking CXX executable test_throttle\x1b[0m\n'}
+[27.174834] (-) TimerEvent: {}
+[27.275172] (-) TimerEvent: {}
+[27.375551] (-) TimerEvent: {}
+[27.418412] (topic_tools) StdoutLine: {'line': b'[ 97%] Built target test_mux\n'}
+[27.475676] (-) TimerEvent: {}
+[27.482941] (topic_tools) StdoutLine: {'line': b'[ 97%] Built target test_throttle\n'}
+[27.575865] (-) TimerEvent: {}
+[27.676223] (-) TimerEvent: {}
+[27.776496] (-) TimerEvent: {}
+[27.876810] (-) TimerEvent: {}
+[27.977262] (-) TimerEvent: {}
+[28.077694] (-) TimerEvent: {}
+[28.178116] (-) TimerEvent: {}
+[28.278508] (-) TimerEvent: {}
+[28.378901] (-) TimerEvent: {}
+[28.479340] (-) TimerEvent: {}
+[28.579759] (-) TimerEvent: {}
+[28.680186] (-) TimerEvent: {}
+[28.780612] (-) TimerEvent: {}
+[28.881035] (-) TimerEvent: {}
+[28.981500] (-) TimerEvent: {}
+[29.081931] (-) TimerEvent: {}
+[29.182365] (-) TimerEvent: {}
+[29.282691] (-) TimerEvent: {}
+[29.383108] (-) TimerEvent: {}
+[29.483452] (-) TimerEvent: {}
+[29.583791] (-) TimerEvent: {}
+[29.684219] (-) TimerEvent: {}
+[29.784598] (-) TimerEvent: {}
+[29.884924] (-) TimerEvent: {}
+[29.985248] (-) TimerEvent: {}
+[30.085508] (-) TimerEvent: {}
+[30.185742] (-) TimerEvent: {}
+[30.286062] (-) TimerEvent: {}
+[30.386386] (-) TimerEvent: {}
+[30.486629] (-) TimerEvent: {}
+[30.586890] (-) TimerEvent: {}
+[30.687216] (-) TimerEvent: {}
+[30.787487] (-) TimerEvent: {}
+[30.887746] (-) TimerEvent: {}
+[30.988074] (-) TimerEvent: {}
+[31.088397] (-) TimerEvent: {}
+[31.188652] (-) TimerEvent: {}
+[31.288997] (-) TimerEvent: {}
+[31.331605] (topic_tools) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable test_demux\x1b[0m\n'}
+[31.389176] (-) TimerEvent: {}
+[31.489452] (-) TimerEvent: {}
+[31.589716] (-) TimerEvent: {}
+[31.690050] (-) TimerEvent: {}
+[31.745228] (topic_tools) StdoutLine: {'line': b'[100%] Built target test_demux\n'}
+[31.759310] (topic_tools) CommandEnded: {'returncode': 0}
+[31.760005] (topic_tools) JobProgress: {'identifier': 'topic_tools', 'progress': 'install'}
+[31.760457] (topic_tools) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/javierac/camera_gz/build/topic_tools'], 'cwd': '/home/javierac/camera_gz/build/topic_tools', 'env': OrderedDict({'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'GZ_SIM_RESOURCE_PATH': '/home/javierac/camera_gz/gazebo-11', 'USER': 'javierac', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '90fcba602f5a', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces/lib:/home/xarm_ws/install/xarm_planner/lib:/home/xarm_ws/install/xarm_moveit_servo/lib:/home/xarm_ws/install/xarm_controller/lib:/home/xarm_ws/install/xarm_api/lib:/home/xarm_ws/install/xarm_sdk/lib:/home/xarm_ws/install/xarm_msgs/lib:/home/xarm_ws/install/realsense_gazebo_plugin/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/home/javierac/camera_gz/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/javierac/camera_gz/install:/home/xarm_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'graphics,utility,compute', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/uf_ros_lib:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/javierac/camera_gz/build/topic_tools', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/javierac/camera_gz/install/topic_tools_interfaces/lib/python3.12/site-packages:/home/javierac/camera_gz/install/mogi_trajectory_server/lib/python3.12/site-packages:/home/javierac/camera_gz/install/bme_gazebo_sensors_py/lib/python3.12/site-packages:/home/xarm_ws/install/xarm_msgs/lib/python3.12/site-packages:/home/xarm_ws/build/uf_ros_lib:/home/xarm_ws/install/uf_ros_lib/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'void', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/javierac/camera_gz/install/topic_tools_interfaces:/home/javierac/camera_gz/install/bme_gazebo_sensors:/home/xarm_ws/install/xarm_planner:/home/xarm_ws/install/xarm_moveit_servo:/home/xarm_ws/install/xarm_moveit_config:/home/xarm_ws/install/xarm_gazebo:/home/xarm_ws/install/xarm_controller:/home/xarm_ws/install/xarm_api:/home/xarm_ws/install/xarm_sdk:/home/xarm_ws/install/xarm_msgs:/home/xarm_ws/install/xarm_description:/home/xarm_ws/install/mbot_demo:/home/xarm_ws/install/realsense_gazebo_plugin:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/javierac/camera_gz/install/mogi_trajectory_server:/home/javierac/camera_gz/install/bme_gazebo_sensors_py:/home/xarm_ws/install/uf_ros_lib:/opt/ros/jazzy'}), 'shell': False}
+[31.769376] (topic_tools) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[31.769517] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/librelay_node.so\n'}
+[31.770603] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/librelay_node.so" to ""\n'}
+[31.770745] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/libthrottle_node.so\n'}
+[31.771903] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/libthrottle_node.so" to ""\n'}
+[31.772033] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/libdrop_node.so\n'}
+[31.773079] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/libdrop_node.so" to ""\n'}
+[31.773211] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/libmux_node.so\n'}
+[31.775638] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/libmux_node.so" to ""\n'}
+[31.775769] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/libdemux_node.so\n'}
+[31.778319] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/libdemux_node.so" to ""\n'}
+[31.778450] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/libdelay_node.so\n'}
+[31.779441] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/libdelay_node.so" to ""\n'}
+[31.779571] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/launch\n'}
+[31.779639] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/launch/relay.launch\n'}
+[31.779806] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/relay\n'}
+[31.780084] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/topic_tools/relay" to ""\n'}
+[31.780169] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/throttle\n'}
+[31.780266] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/topic_tools/throttle" to ""\n'}
+[31.780331] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/drop\n'}
+[31.780622] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/topic_tools/drop" to ""\n'}
+[31.780754] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/mux\n'}
+[31.780947] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/topic_tools/mux" to ""\n'}
+[31.781077] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/demux\n'}
+[31.781230] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/topic_tools/demux" to ""\n'}
+[31.781326] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/delay\n'}
+[31.781576] (topic_tools) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/javierac/camera_gz/install/topic_tools/lib/topic_tools/delay" to ""\n'}
+[31.781648] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/environment/pythonpath.sh\n'}
+[31.781740] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/environment/pythonpath.dsv\n'}
+[31.781826] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools-1.4.3-py3.12.egg-info\n'}
+[31.781903] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools-1.4.3-py3.12.egg-info/dependency_links.txt\n'}
+[31.781985] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools-1.4.3-py3.12.egg-info/PKG-INFO\n'}
+[31.782062] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools-1.4.3-py3.12.egg-info/entry_points.txt\n'}
+[31.782138] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools-1.4.3-py3.12.egg-info/SOURCES.txt\n'}
+[31.782254] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools-1.4.3-py3.12.egg-info/top_level.txt\n'}
+[31.782580] (topic_tools) StdoutLine: {'line': b'-- Up-to-date: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools/\n'}
+[31.782670] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools//transform\n'}
+[31.782859] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/topic_tools//relay_field\n'}
+[31.782995] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools\n'}
+[31.783059] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/__init__.py\n'}
+[31.783119] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/setup.cfg\n'}
+[31.783173] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/relay_field.py\n'}
+[31.783262] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/transform.py\n'}
+[31.790212] (-) TimerEvent: {}
+[31.826026] (topic_tools) StdoutLine: {'line': b"Listing '/home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools'...\n"}
+[31.826177] (topic_tools) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/__init__.py'...\n"}
+[31.826238] (topic_tools) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/relay_field.py'...\n"}
+[31.826302] (topic_tools) StdoutLine: {'line': b"Compiling '/home/javierac/camera_gz/install/topic_tools/lib/python3.12/site-packages/topic_tools/transform.py'...\n"}
+[31.832031] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/ament_index/resource_index/package_run_dependencies/topic_tools\n'}
+[31.832202] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/ament_index/resource_index/parent_prefix_path/topic_tools\n'}
+[31.832411] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/environment/ament_prefix_path.sh\n'}
+[31.832561] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/environment/ament_prefix_path.dsv\n'}
+[31.832626] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/environment/path.sh\n'}
+[31.832724] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/environment/path.dsv\n'}
+[31.832785] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/local_setup.bash\n'}
+[31.832952] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/local_setup.sh\n'}
+[31.833100] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/local_setup.zsh\n'}
+[31.833168] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/local_setup.dsv\n'}
+[31.833287] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/package.dsv\n'}
+[31.833347] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/ament_index/resource_index/packages/topic_tools\n'}
+[31.833400] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/ament_index/resource_index/rclcpp_components/topic_tools\n'}
+[31.833483] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/cmake/topic_toolsConfig.cmake\n'}
+[31.833567] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/cmake/topic_toolsConfig-version.cmake\n'}
+[31.833651] (topic_tools) StdoutLine: {'line': b'-- Installing: /home/javierac/camera_gz/install/topic_tools/share/topic_tools/package.xml\n'}
+[31.835598] (topic_tools) CommandEnded: {'returncode': 0}
+[31.849668] (topic_tools) JobEnded: {'identifier': 'topic_tools', 'rc': 0}
+[31.850409] (-) EventReactorShutdown: {}

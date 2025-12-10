@@ -12,8 +12,8 @@ docker run -it --rm \
     -v ./xarm_ros2:/home/$USER/xarm_ros2 \
     -v ./vpc_ws:/home/$USER/vpc_ws \
     -v ./Week-5-6-Gazebo-sensors:/home/$USER/camera_gz \
-    --name xarm_ros2 \
-    xarm_ros2:jazzy
+    --name camera_gz \
+    camera_gz:latest
 
 
 # --network host \

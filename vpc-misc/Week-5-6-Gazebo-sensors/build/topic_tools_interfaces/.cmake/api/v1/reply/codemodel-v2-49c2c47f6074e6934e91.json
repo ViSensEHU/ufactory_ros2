@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-16c88117a8c0a497768c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "topic_tools_interfaces__py",
+					"jsonFile" : "directory-topic_tools_interfaces__py-944ebf5cb2a121b28755.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/javierac/camera_gz/build/topic_tools_interfaces/topic_tools_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "topic_tools_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_topic_tools_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_topic_tools_interfaces_egg-c1d9197b8311f5333157.json",
+					"name" : "ament_cmake_python_build_topic_tools_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_topic_tools_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_topic_tools_interfaces-bfa6d29ccfd5e0137ba9.json",
+					"name" : "ament_cmake_python_copy_topic_tools_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces-e432f4ab82033f47e482.json",
+					"name" : "topic_tools_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__cpp-d77c0d69da1a12208855.json",
+					"name" : "topic_tools_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "topic_tools_interfaces__py::@4afe4fd173e224b8f0eb",
+					"jsonFile" : "target-topic_tools_interfaces__py-4f106354e123064674bc.json",
+					"name" : "topic_tools_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_generator_c-f641470b77a863509a2d.json",
+					"name" : "topic_tools_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_generator_py-fc25341b41886a80c33e.json",
+					"name" : "topic_tools_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_generator_type_description-fecfa37c410a6bdee1bc.json",
+					"name" : "topic_tools_interfaces__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_typesupport_c-4f928921b7533d7afd97.json",
+					"name" : "topic_tools_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_typesupport_cpp-844155cc6a3030e5fd63.json",
+					"name" : "topic_tools_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_typesupport_fastrtps_c-ed0bf7e86a5981293da9.json",
+					"name" : "topic_tools_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp-17fd390971947fd66a1c.json",
+					"name" : "topic_tools_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_typesupport_introspection_c-6a09dfe262d4fac6f01f.json",
+					"name" : "topic_tools_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces__rosidl_typesupport_introspection_cpp-561cee97088724108468.json",
+					"name" : "topic_tools_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces_s__rosidl_typesupport_c-d055c54f7a8a8271eb7d.json",
+					"name" : "topic_tools_interfaces_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c-0a030009c84492715c80.json",
+					"name" : "topic_tools_interfaces_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces_s__rosidl_typesupport_introspection_c-be13eb04e124018c047d.json",
+					"name" : "topic_tools_interfaces_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "topic_tools_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-topic_tools_interfaces_uninstall-f528b0be86cf4d976622.json",
+					"name" : "topic_tools_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-ca04587d295151b2ce54.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/javierac/camera_gz/build/topic_tools_interfaces",
+		"source" : "/home/javierac/camera_gz/src/topic_tools/topic_tools_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
