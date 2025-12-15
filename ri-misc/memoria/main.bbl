@@ -573,6 +573,29 @@
       \verb https://ntrs.nasa.gov/api/citations/19860018481/downloads/19860018481.pdf
       \endverb
     \endentry
+    \entry{moveit2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c675f16c785a845b4191bd1dee5606b2}{%
+           family={Contributors},
+           familyi={C\bibinitperiod},
+           given={MoveIt},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c675f16c785a845b4191bd1dee5606b2}
+      \strng{fullhash}{c675f16c785a845b4191bd1dee5606b2}
+      \strng{bibnamehash}{c675f16c785a845b4191bd1dee5606b2}
+      \strng{authorbibnamehash}{c675f16c785a845b4191bd1dee5606b2}
+      \strng{authornamehash}{c675f16c785a845b4191bd1dee5606b2}
+      \strng{authorfullhash}{c675f16c785a845b4191bd1dee5606b2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://moveit.ros.org}}
+      \field{note}{Accessed: 2025-01-15}
+      \field{title}{MoveIt 2}
+      \field{year}{2024}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

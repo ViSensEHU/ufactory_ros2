@@ -30,6 +30,11 @@
 \usepackage{multirow}
 \usepackage{hhline}
 
+\usepackage{float}
+\newfloat{listing}{htbp}{}
+\floatname{listing}{Código}
+
+
 \usepackage{listings}
 \lstset{
   language=Matlab,

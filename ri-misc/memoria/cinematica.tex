@@ -127,10 +127,20 @@ T_0^{\,6}(q) = A_1(q_1)\;A_2(q_2+\text{offset}_2)\;A_3(q_3+\text{offset}_3)\;A_4
 
 Podemos calcular y comprobar el resultado en \textit{Matlab} \cite{matlabonline2025} y la \textit{toolbox} de
 Peter Corke \cite{corke_robotics_toolbox}:
-\lstinputlisting[]{Matlab/dh.m}
-\lstinputlisting[]{Matlab/dh_salida.txt}
+\begin{listing}[htb]
+    \centering
+    \lstinputlisting[]{Matlab/dh.m}
+    \caption{Código Matlab para la cinemática directa con parámetros DH clásicos.}
+    \label{lst:dh}
+\end{listing}
+\begin{listing}[htb]
+    \centering
+    \lstinputlisting[]{Matlab/dh_salida.txt}
+    \caption{Salida numérica de la cinemática directa DH clásica.}
+    \label{lst:dh_salida}
+\end{listing}
 
-\newpage
+\clearpage
 \subsubsection{Parámetros modificados de Denavit-Hartenberg}
 El método clásico de Denavit-Hartenberg, propuesto en 1955, presentaba ciertas limitaciones en la colocación de los sistemas
 de referencia, especialmente cuando dos ejes consecutivos eran paralelos. En estos casos podían aparecer ambigüedades en la
@@ -275,9 +285,213 @@ T_0^{\,6}(q) = A_1(q_1)\;A_2(q_2+T2_{\text{offset}})\;A_3(q_3+T3_{\text{offset}}
 
 Podemos calcular y comprobar el resultado en \textit{Matlab} \cite{matlabonline2025} y la \textit{toolbox} de
 Peter Corke \cite{corke_robotics_toolbox}:
-\lstinputlisting[]{Matlab/dh_mod.m}
-\lstinputlisting[]{Matlab/dh_mod_salida.txt}
+\begin{listing}[htb]
+    \centering
+    \lstinputlisting[]{Matlab/dh_mod.m}
+    \caption{Código Matlab para la cinemática directa con parámetros DH modificados.}
+    \label{lst:dh_mod}
+\end{listing}
+\begin{listing}[htb]
+    \centering
+    \lstinputlisting[]{Matlab/dh_mod_salida.txt}
+    \caption{Salida numérica de la cinemática directa DH modificada.}
+    \label{lst:dh_mod_salida}
+\end{listing}
 
-\newpage
+\clearpage
 \subsection{Cinemática inversa}
+Tanto para los parámetros clásicos como para los modificados de Denavit-Hartenberg
+las ecuaciones obtenidas a resolver son geométricamente iguales, y obtienen los mismos 
+resultados, pero las ventajas de la convención modificada suelen facilitar su resolución.
+Por ello, se estudia la cinematica inversa sobre los parámetros modificados. \\
+
+Cuando la muñeca es esférica, es decir, los ejes de las articulaciones 4, 5 y 6 se cortan en 
+único punto o $a_4 = a_5 = a_6 = 0, d_5 = d_6 = 0$, se puede aplicar el método de desacoplo cinemático
+\cite{barrientos2007fundamentos}. Sin embargo, esta propiedad no se cumple en el robot
+\textit{UFactory xArm6}, ya que la posición y orientación depende de todas las articulaciones.
+Por tanto, no existe separación natural entre el brazo y la muñeca y la cinemática inversa 
+se vuelve mucho más compleja porque no existe en forma cerrada. \\
+
+Consecuentemente, este problema no puede resolverse analíticamente y tiene que ser resuelto 
+con métodos numéricos iterativos como el inverso, pseudo-inverso y transpuesto del Jacobiano, 
+Newton–Raphson o Levenberg–Marquardt, entre otros, utilizando las 12 ecuaciones de la matriz de 
+transformación $T_0^{\,6}$. Estos métodos aproximan la solución
+mediante iteraciones sucesivas, minimizando el error entre la posición y orientación deseada y 
+la alcanzada alcanzada por el robot.\\
+
+El repositorio oficial del fabricante \cite{xarm_ros2} utiliza \textit{MoveIt 2} \cite{moveit2}, que 
+resuelve la cinemática directa mediante Jacobiano pseudo-inverso y métodos iterativos de tipo 
+Newton–Raphson.
+
+De la matriz de transformación obtenida en el código \ref{lst:dh_mod},
+$T_0^{\,6} = \begin{bmatrix}
+r_{11} & r_{12} & r_{13} & p_x \\
+r_{21} & r_{22} & r_{23} & p_y \\
+r_{31} & r_{32} & r_{33} & p_z \\
+0      & 0      & 0      & 1
+\end{bmatrix}
+$, se obtienen las 
+siguientes ecuaciones de posición y orientación:
+
+\[
+\begin{aligned}
+p_x &= 
+\cos(q_1)\cos(T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3)
+\left( 76\cos q_4 \cos q_5 - 97\cos q_4 \sin q_5 + \frac{155}{2} \right) \\
+&\quad + a_2 \cos(q_1)\cos(T2_{\text{offset}} + q_2) \\
+&\quad - \cos(q_1)\sin(T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3)
+\left( 97\cos q_5 + 76\sin q_5 + \frac{685}{2} \right) \\
+&\quad + \sin(q_1)\sin(q_4)\left( 76\cos q_5 - 97\sin q_5 \right),
+\end{aligned}
+\] \\
+
+\[
+\begin{aligned}
+p_y &= 
+\sin(q_1)\cos(T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3)
+\left( 76\cos q_4 \cos q_5 - 97\cos q_4 \sin q_5 + \frac{155}{2} \right) \\
+&\quad + a_2 \sin(q_1)\cos(T2_{\text{offset}} + q_2) \\
+&\quad - \sin(q_1)\sin(T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3)
+\left( 97\cos q_5 + 76\sin q_5 + \frac{685}{2} \right) \\
+&\quad - \cos(q_1)\sin(q_4)\left( 76\cos q_5 - 97\sin q_5 \right),
+\end{aligned}
+\] \\
+
+
+\[
+\begin{aligned}
+p_z &= 
+267 - a_2 \sin(T2_{\text{offset}} + q_2) \\
+&\quad - \cos(T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3)
+\left( 97\cos q_5 + 76\sin q_5 + \frac{685}{2} \right) \\
+&\quad - \sin(T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3)
+\left( 76\cos q_4 \cos q_5 - 97\cos q_4 \sin q_5 + \frac{155}{2} \right).
+\end{aligned}
+\] \\
+
+Sea $\phi = T2_{\text{offset}} + T3_{\text{offset}} + q_2 + q_3$, 
+de modo que las expresiones de la matriz de rotación se simplifican.
+
+\[
+\begin{aligned}
+& r_{11} =
+\sin q_1 \left(\cos q_4 \sin q_6 + \cos q_5 \cos q_6 \sin q_4\right)
+- \cos q_1 \cos\phi \left(\sin q_4 \sin q_6 - \cos q_4 \cos q_5 \cos q_6\right) \\
+&\quad - \cos q_1 \sin\phi \,\cos q_6 \sin q_5
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+& r_{12} = 
+\sin q_1 \left(\cos q_4 \cos q_6 - \cos q_5 \sin q_4 \sin q_6\right) 
+- \cos q_1 \cos\phi \left(\cos q_6 \sin q_4 + \cos q_4 \cos q_5 \sin q_6\right) \\
+&\quad + \cos q_1 \sin\phi \,\sin q_5 \sin q_6 \end{aligned} \]
+
+\[
+\begin{aligned}
+r_{13} = 
+-\sin q_1 \sin q_4 \sin q_5
+- \cos q_1 \sin\phi \,\cos q_5
+- \cos q_1 \cos\phi \,\cos q_4 \sin q_5
+\end{aligned} \]
+
+\[
+\begin{aligned}
+& r_{21} =
+-\cos q_1 \left(\cos q_4 \sin q_6 + \cos q_5 \cos q_6 \sin q_4\right)
+- \sin q_1 \cos\phi \left(\sin q_4 \sin q_6 - \cos q_4 \cos q_5 \cos q_6\right) \\
+&\quad - \sin q_1 \sin\phi \,\cos q_6 \sin q_5 \end{aligned}\]
+
+\[
+\begin{aligned}
+& r_{22} =
+\sin q_1 \sin\phi \,\sin q_5 \sin q_6
+- \sin q_1 \cos\phi \left(\cos q_6 \sin q_4 + \cos q_4 \cos q_5 \sin q_6\right) \\
+&\quad - \cos q_1 \left(\cos q_4 \cos q_6 - \cos q_5 \sin q_4 \sin q_6\right) \end{aligned}\]
+
+\[ \begin{aligned}
+r_{23} =
+\cos q_1 \sin q_4 \sin q_5
+- \sin q_1 \sin\phi \,\cos q_5
+- \sin q_1 \cos\phi \,\cos q_4 \sin q_5
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+r_{31} &=
+\sin\phi \left(\sin q_4 \sin q_6 - \cos q_4 \cos q_5 \cos q_6\right)
+- \cos\phi \,\cos q_6 \sin q_5 \end{aligned} \]
+
+\[ \begin{aligned}
+r_{32} &=
+\sin\phi \left(\cos q_6 \sin q_4 + \cos q_4 \cos q_5 \sin q_6\right)
++ \cos\phi \,\sin q_5 \sin q_6 \end{aligned} \]
+
+\[ \begin{aligned}
+r_{33} &=
+\sin\phi \,\cos q_4 \sin q_5
+- \cos\phi \,\cos q_5
+\end{aligned}
+\] \\
+
+
+% https://www.youtube.com/watch?v=mxf5H84L0Wo
+
+Estas ecuaciones se han obtenido con la ayuda de \textit{Matlab} \cite{matlabonline2025} y la
+\textit{toolbox} de Peter Corke \cite{corke_robotics_toolbox}:
+\begin{listing}[htb]
+    \centering
+    \lstinputlisting[]{Matlab/ik.m}
+    \caption{Código Matlab para obtener las ecuaciones de posición y orientación con parámetros DH modificados.}
+    \label{lst:ik}
+\end{listing}
+
+\clearpage
+\subsection{Pseudoinversa del Jacobiano y Newton--Raphson}
+Como se expone en \cite{barrientos2007fundamentos}, la relación
+entre las velocidades articulares y la velocidad del efector final viene dada por
+
+\[
+\dot{x} = J(q)\,\dot{q},
+\]
+
+donde $J(q)$ es el Jacobiano geométrico. Para invertir esta relación y obtener un
+incremento articular a partir del error cartesiano, se emplea la pseudoinversa de
+Moore--Penrose:
+
+\[
+\dot{q} = J^{\dagger}(q)\,\dot{x},
+\qquad
+J^{\dagger} = (J^\top J)^{-1} J^\top,
+\]
+
+si el Jacobiano es de rango completo. Este enfoque permite calcular un incremento articular
+que minimiza en norma cuadrática el error cartesiano, incluso en configuraciones próximas a
+singularidades o en robots redundantes.
+
+Aplicando este principio a la cinemática inversa, se plantea el problema como la resolución
+iterativa de
+
+\[
+e = x_d - f(q),
+\]
+
+donde $f(q)$ es la cinemática directa. Linealizando mediante el Jacobiano se obtiene el
+método de Newton--Raphson:
+
+\[
+q_{k+1} = q_k + J^{\dagger}(q_k)\, (x_d - f(q_k)).
+\]
+
+Este procedimiento converge de forma eficiente cuando la estimación inicial es adecuada y
+constituye uno de los métodos numéricos más utilizados en robótica para resolver la
+cinemática inversa de manipuladores sin muñeca esférica.
+
+
+
+
+
+
 

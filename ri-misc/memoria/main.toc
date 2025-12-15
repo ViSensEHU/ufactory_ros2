@@ -12,6 +12,7 @@
 \contentsline {section}{\numberline {3}Estudio cinemático}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Cinemática directa}{11}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Parámetros de Denavit-Hartenberg}{11}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Parámetros modificados de Denavit-Hartenberg}{14}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Cinemática inversa}{18}{subsection.3.2}%
-\contentsline {section}{Referencias adicionales al material del Campus Virtual}{20}{section*.4}%
+\contentsline {subsubsection}{\numberline {3.1.2}Parámetros modificados de Denavit-Hartenberg}{15}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Cinemática inversa}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Pseudoinversa del Jacobiano y Newton--Raphson}{22}{subsection.3.3}%
+\contentsline {section}{Referencias adicionales al material del Campus Virtual}{24}{section*.4}%
