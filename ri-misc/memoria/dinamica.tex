@@ -547,15 +547,177 @@ del modelo (masas, centros de masa e inercias) extraídos del URDF oficial, y pe
 dinámica inversa (torques articulares $\tau$ dados $q,\dot{q},\ddot{q}$) como la dinámica directa
 (aceleraciones articulares $\ddot{q}$ dadas $q,\dot{q},\tau$). \\
 
-Al inicio, el programa solicita la posición articular de origen y la posición cartesiana a alcanzar,
-junto con la duración en segundos de la trayectoria. La aplicación comprueba que la posición final es
-alcanzable según el rango de trabajo del robot de $700$ mm, calcula las posiciones, velocidades y
-aceleraciones articulares necesarias para alcanzar la posición cartesiana final mediante cinemática inversa
-y genera la trayectoria correspondiente. A partir de estas trayectorias articulares, se aplica el algoritmo
-de Newton--Euler para obtener los torques requeridos en cada articulación. \\
+También es necesario introducir los siguientes parámetros dinámicos de cada link para que 
+\textit{Matlab} pueda calcular el par necesario:
+\begin{itemize}
+    \item \textbf{$J_m$}: inercia del rotor del motor reflejada en el eje de la articulación.
+    Este término representa la resistencia del motor a cambios de velocidad angular. En muchos modelos
+    simplificados se toma $J_m = 0$ al ser despreciable frente a la inercia de los eslabones.
 
-Las imágenes \ref{fig:din_control_tau}, \ref{fig:din_control_ddq} y \ref{fig:din_control_error}
-muestran los torques articulares calculados, las aceleraciones articulares obtenidas por dinámica directa
-y la comparación entre las aceleraciones de referencia y las reconstruidas. Los códigos 
-\ref{lst:din_control} y \ref{lst:din_control2} recogen la implementación en \textit{Matlab} y la salida
-por terminal. \\
+    \item \textbf{$G$}: relación de transmisión entre el motor y el eje de salida. Un valor
+    elevado de $G$ corresponde a reductores armónicos o planetarios que multiplican el par y reducen la
+    velocidad. En simulaciones básicas se suele fijar $G=1$.
+
+    \item \textbf{$B$}: coeficiente de fricción viscosa en la articulación, modelado como
+    un par proporcional a la velocidad angular ($\tau_B = B \cdot \dot{q}$). Representa pérdidas por rozamiento
+    fluido o lubricación interna.
+
+    \item \textbf{$T_c$}: par de fricción de tipo Coulomb, independiente de la velocidad
+    y dependiente únicamente del sentido de giro. Se define como un vector $T_c = [T_c^+, T_c^-]$ que
+    especifica el par de fricción en movimiento positivo y negativo respectivamente.
+\end{itemize}
+
+Estos parámetros permiten extender el modelo dinámico clásico añadiendo los términos de fricción
+y transmisión \cite{siciliano2009robotics}, de modo que la ecuación completa se expresa como:
+\[
+\tau = M(q)\ddot{q} + C(q,\dot{q})\dot{q} + g(q) + B\dot{q} + T_c.
+\] \\
+
+El fabricante no aporta estos valores, pero se puede realizar una estimación teórica, 
+\ref{tab:dynparams}, a partir de la tabla \ref{tab:actuators} \cite{siciliano2009robotics, craig2005}:
+
+\begin{itemize}
+    \item \textbf{Inercia del motor ($J_m$)}: se estima a partir de la potencia y el par máximo
+    de cada articulación. La relación básica es
+    
+
+\[
+    J_m \approx \frac{\tau_{\max}}{\alpha_{\max}},
+    \]
+
+
+    donde $\tau_{\max}$ es el par máximo y $\alpha_{\max}$ la aceleración angular máxima.
+    Con $\tau_{\max} = 8.4\,\text{Nm}$ y $\alpha_{\max} = 1500^\circ/\text{s}^2 \approx 26.2\,\text{rad/s}^2$,
+    se obtiene $J_m \approx 3.2 \times 10^{-1}\,\text{kg·m}^2$ reflejado en el eje.
+
+    \item \textbf{Relación de transmisión ($G$)}: los reductores armónicos suelen tener ratios
+    elevados (50:1 -- 100:1). En ausencia de datos exactos, se asignan valores aproximados
+    ($G=50$--$100$) según el par máximo de cada articulación. \\
+
+    \item \textbf{Fricción viscosa ($B$)}: se aproxima como una fracción del par máximo dividido
+    por la velocidad máxima, siendo este un caso límite:
+    
+
+\[
+    B \approx \frac{\tau_{\max}}{\dot{q}_{\max}}.
+    \]
+
+
+    Para $\tau_{\max} = 8.4\,\text{Nm}$ y $\dot{q}_{\max} = 180^\circ/\text{s} \approx 3.14\,\text{rad/s}$,
+    se obtiene $B \approx 2.7\,\text{N·m·s/rad}$. En la práctica, la fricción real es mucho menor,
+    por lo que se usan valores reducidos ($10^{-3}$--$10^{-2}$) para simulación. \\
+
+    \item \textbf{Fricción Coulomb ($T_c$)}: se estima como un pequeño porcentaje del par máximo
+    (5--10\%), representando el par necesario para iniciar el movimiento:
+    
+
+\[
+    T_c \approx 0.05 \cdot \tau_{\max}.
+    \]
+
+
+    Así, para $\tau_{\max} = 8.4\,\text{Nm}$ se obtiene $T_c \approx 0.42\,\text{Nm}$.
+\end{itemize}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} \textbf{Parámetro}} & {\color[HTML]{FFFFFF} \textbf{Joint 1}} & {\color[HTML]{FFFFFF} \textbf{Joint 2}} & {\color[HTML]{FFFFFF} \textbf{Joint 3}} & {\color[HTML]{FFFFFF} \textbf{Joint 4}} & {\color[HTML]{FFFFFF} \textbf{Joint 5}} & {\color[HTML]{FFFFFF} \textbf{Joint 6}} \\ \hline
+
+\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{$J_m$ (kg·m$^2$)}} 
+& $3.2 \times 10^{-1}$ & $3.2 \times 10^{-1}$ & $1.6 \times 10^{-1}$ & $5 \times 10^{-2}$ & $5 \times 10^{-2}$ & $5 \times 10^{-2}$ \\ \hline
+
+\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{$G$ (ratio)}} 
+& 80 & 80 & 60 & 100 & 100 & 100 \\ \hline
+
+\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{$B$ (N·m·s/rad)}} 
+& 2.68 & 2.68 & 1.34 & 0.48 & 0.48 & 0.48 \\ \hline
+
+\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{$T_c$ (N·m)}} 
+& $\pm 0.42$ & $\pm 0.42$ & $\pm 0.21$ & $\pm 0.075$ & $\pm 0.075$ & $\pm 0.075$ \\ \hline
+
+\end{tabular}
+\caption{Parámetros dinámicos aproximados aplicados al \textit{xArm 6} para simulación.}
+\label{tab:dynparams}
+\end{table}
+
+NOTA: en la \textit{toolbox} de Peter Corke, los parámetros dinámicos de fricción e inercia
+se definen en el lado del motor. Al existir una relación de transmisión $G$ entre el motor y la
+articulación, dichos parámetros se reflejan en el eje de salida de la siguiente forma:
+
+\begin{itemize}
+    \item \textbf{Fricción viscosa:}
+    
+
+\[
+        B_{\text{art}} = B_{\text{mot}} \cdot G^2
+    \]
+
+
+    donde $B_{\text{mot}}$ es el coeficiente de fricción viscosa en el rotor del motor, y $B_{\text{art}}$ es el valor efectivo en la articulación. 
+    El factor $G^2$ aparece porque la velocidad angular se reduce por $G$, mientras que el par se amplifica por $G$.
+
+    \item \textbf{Fricción Coulomb:}
+    
+
+\[
+        T_{c,\text{art}} = T_{c,\text{mot}} \cdot G
+    \]
+
+
+    donde $T_{c,\text{mot}}$ es el par de fricción en el motor y $T_{c,\text{art}}$ el reflejado en la articulación. 
+    Aquí sólo interviene un factor $G$, ya que el par se amplifica linealmente con la transmisión.
+
+    \item \textbf{Inercia del rotor:}
+    
+
+\[
+        J_{\text{ref}} = J_m \cdot G^2
+    \]
+
+
+    donde $J_m$ es la inercia del rotor del motor, y $J_{\text{ref}}$ es la inercia reflejada en el eje de salida. 
+    El factor $G^2$ aparece porque la energía cinética depende cuadráticamente de la velocidad angular.
+\end{itemize}
+
+Con todos estos parámetros definidos se implementa el código \ref{lst:din_control}, que 
+calcula los pares de los motores necesarios a aplicar. En la salida del programa, \ref{lst:din_control2},
+se observa que el par del tercer motor es superior a su par máximo: $|\tau_3(t)| > \tau_{3,\max}$. \\
+
+Esto se debe principalmente 
+a que únicamente se han introducido valores arbitrarios de velocidades, aceleraciones y posiciones 
+finales sin calcular correctamente la trayectoria como en el control cinemático. 
+Por tanto, en este caso la trayectoria planificada no es físicamente realizable en el tiempo nominal,
+pues el motor no puede generar el par necesario. La solución consiste en aplicar un
+escalado temporal de la trayectoria, aumentando el tiempo total de ejecución y reduciendo
+así las aceleraciones articulares. De este modo, el par requerido en cada articulación también
+disminuye y se mantiene dentro de los límites físicos del motor. La articulación que alcanza antes
+su límite de par es la que determina el nuevo tiempo mínimo necesario para completar el movimiento,
+y el resto de articulaciones deben ajustarse para avanzar de manera coordinada, garantizando que
+todas lleguen al objetivo simultáneamente. \\
+
+Finalmente, es necesario diseñar un controlador, habitualmente PID \cite{barrientos2007fundamentos},
+que aplicado a cada articulación combina el modelo cinemático y dinámico del robot para generar
+las señales de mando adecuadas. Este tipo de control permite corregir errores de posición y
+velocidad mediante la acción proporcional, integral y derivativa, garantizando que la trayectoria
+planificada se ejecute de forma estable y coordinada. \\
+
+No obstante, el diseño de estos controladores 
+queda fuera del alcance de esta asignatura, ya que requiere un desarrollo más profundo con teoría 
+de regulación automática. Además, el repositorio oficial del fabricante \cite{xarm_ros2}
+ya incorpora estos controladores. \\
+
+\lstinputlisting[
+    caption={Cálculo de pares de los actuadores.},
+    label={lst:din_control},
+    breaklines=true,
+    breakatwhitespace=true
+]{Matlab/din_control.m}
+\lstinputlisting[
+    caption={Salida del cálculo de pares de los actuadores.},
+    label={lst:din_control2},
+    breaklines=true,
+    breakatwhitespace=true
+]{Matlab/din_control_salida.m}

@@ -5,46 +5,46 @@
 \contentsline {section}{\numberline {2}\textit {UFactory xArm 6}}{8}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Estructura mecánica: eslabones y articulaciones}{8}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Actuadores}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Sensores integrados y opcionales}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Sensores integrados y opcionales}{10}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Efector}{11}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Sistema de control}{12}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}\textit {Software}}{13}{subsection.2.6}%
 \contentsline {section}{\numberline {3}Estudio cinemático}{14}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Cinemática directa}{14}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Parámetros de Denavit-Hartenberg}{14}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Parámetros modificados de Denavit-Hartenberg}{18}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Cinemática inversa}{22}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Pseudoinversa del Jacobiano y Newton--Raphson}{25}{subsubsection.3.2.1}%
-\contentsline {paragraph}{Iteración 1}{26}{section*.9}%
-\contentsline {paragraph}{Iteración 2}{26}{section*.10}%
-\contentsline {paragraph}{Iteración 3}{27}{section*.11}%
-\contentsline {subsubsection}{\numberline {3.2.2}Cálculo de cinemática inversa para \textit {UFactory xArm6}}{27}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Cinemática diferencial y Jacobiano}{31}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Generación de trayectorias}{34}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}\textbf {Trayectorias lineales en espacio cartesiano}}{34}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}\textbf {Trayectorias circulares en espacio cartesiano}}{34}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Corrección de discontinuidades mediante \textit {IPTP}}{34}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}\textbf {Trayectorias polinómicas en espacio articular}}{35}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}\textbf {Trayectorias \textit {spline} (\textit {multi-waypoint})}}{36}{subsubsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.5}Cálculo de la trayectoria en \textit {Matlab} con la \textit {toolbox} de Peter Corke}{37}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Control cinemático}{41}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Estudio dinámico}{49}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ecuaciones de movimiento}{51}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Enfoque energético (Lagrangiano)}{51}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Método recursivo de Newton--Euler}{52}{subsubsection.4.1.2}%
-\contentsline {paragraph}{Barrido hacia adelante}{52}{section*.12}%
-\contentsline {paragraph}{Fuerzas y momentos en el centro de masa}{52}{section*.13}%
-\contentsline {paragraph}{Barrido hacia atrás}{52}{section*.14}%
-\contentsline {paragraph}{Proyección sobre el eje articular}{53}{section*.15}%
-\contentsline {subsubsection}{\numberline {4.1.3}Ejemplo de una iteración para el eslabón 3 del \textit {UFactory xArm6}}{53}{subsubsection.4.1.3}%
-\contentsline {paragraph}{Transformaciones homogéneas y descomposición en rotación y traslación}{53}{section*.16}%
-\contentsline {paragraph}{Barrido hacia adelante}{54}{section*.17}%
-\contentsline {subparagraph}{Velocidad angular}{54}{section*.18}%
-\contentsline {subparagraph}{Aceleración angular}{54}{section*.19}%
-\contentsline {subparagraph}{Aceleración lineal del origen del marco 3}{55}{section*.20}%
-\contentsline {subparagraph}{Aceleración del centro de masa}{55}{section*.21}%
-\contentsline {paragraph}{Fuerzas y momentos en el centro de masa}{55}{section*.22}%
-\contentsline {paragraph}{Barrido hacia atrás}{55}{section*.23}%
-\contentsline {paragraph}{Proyección sobre el eje articular}{55}{section*.24}%
-\contentsline {subsection}{\numberline {4.2}Control dinámico}{56}{subsection.4.2}%
-\contentsline {section}{Referencias adicionales al material del Campus Virtual}{57}{Item.16}%
+\contentsline {subsubsection}{\numberline {3.1.2}Parámetros modificados de Denavit-Hartenberg}{17}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Cinemática inversa}{21}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Pseudoinversa del Jacobiano y Newton--Raphson}{24}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Iteración 1}{25}{section*.9}%
+\contentsline {paragraph}{Iteración 2}{25}{section*.10}%
+\contentsline {paragraph}{Iteración 3}{26}{section*.11}%
+\contentsline {subsubsection}{\numberline {3.2.2}Cálculo de cinemática inversa para \textit {UFactory xArm6}}{26}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Cinemática diferencial y Jacobiano}{30}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Generación de trayectorias}{33}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}\textbf {Trayectorias lineales en espacio cartesiano}}{33}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}\textbf {Trayectorias circulares en espacio cartesiano}}{33}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Corrección de discontinuidades mediante \textit {IPTP}}{33}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}\textbf {Trayectorias polinómicas en espacio articular}}{34}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}\textbf {Trayectorias \textit {spline} (\textit {multi-waypoint})}}{35}{subsubsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.5}Cálculo de la trayectoria en \textit {Matlab} con la \textit {toolbox} de Peter Corke}{36}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Control cinemático}{40}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Estudio dinámico}{48}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ecuaciones de movimiento}{50}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Enfoque energético (Lagrangiano)}{50}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Método recursivo de Newton--Euler}{51}{subsubsection.4.1.2}%
+\contentsline {paragraph}{Barrido hacia adelante}{51}{section*.12}%
+\contentsline {paragraph}{Fuerzas y momentos en el centro de masa}{51}{section*.13}%
+\contentsline {paragraph}{Barrido hacia atrás}{51}{section*.14}%
+\contentsline {paragraph}{Proyección sobre el eje articular}{52}{section*.15}%
+\contentsline {subsubsection}{\numberline {4.1.3}Ejemplo de una iteración para el eslabón 3 del \textit {UFactory xArm6}}{52}{subsubsection.4.1.3}%
+\contentsline {paragraph}{Transformaciones homogéneas y descomposición en rotación y traslación}{52}{section*.16}%
+\contentsline {paragraph}{Barrido hacia adelante}{53}{section*.17}%
+\contentsline {subparagraph}{Velocidad angular}{53}{section*.18}%
+\contentsline {subparagraph}{Aceleración angular}{53}{section*.19}%
+\contentsline {subparagraph}{Aceleración lineal del origen del marco 3}{54}{section*.20}%
+\contentsline {subparagraph}{Aceleración del centro de masa}{54}{section*.21}%
+\contentsline {paragraph}{Fuerzas y momentos en el centro de masa}{54}{section*.22}%
+\contentsline {paragraph}{Barrido hacia atrás}{54}{section*.23}%
+\contentsline {paragraph}{Proyección sobre el eje articular}{54}{section*.24}%
+\contentsline {subsection}{\numberline {4.2}Control dinámico}{55}{subsection.4.2}%
+\contentsline {section}{Referencias adicionales al material del Campus Virtual}{61}{section*.25}%

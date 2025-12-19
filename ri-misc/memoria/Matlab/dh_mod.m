@@ -11,7 +11,9 @@ L5_link = Link([0     0      0      pi2      0  0], 'modified');
 L6_link = Link([0     97     76    -pi2      0  0], 'modified'); 
 
 robot = SerialLink([L1_link L2_link L3_link L4_link L5_link L6_link], ...
-                   'name', 'MiRobot', 'modified');
+                   'name', 'xArm6', 'modified');
+
+robot.plot([0 0 0 0 0 0]);
 
 q = [q1 q2 q3 q4 q5 q6];
 

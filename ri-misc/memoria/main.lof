@@ -5,15 +5,16 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces \textit {Control box} analógico. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{12}{figure.4}%
 \contentsline {figure}{\numberline {5}{\ignorespaces \textit {Control box} digital. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{12}{figure.5}%
 \contentsline {figure}{\numberline {6}{\ignorespaces \textit {xArm Studio}. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{13}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Parámetros clásicos Denavit-Hartenberg. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{15}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Parámetros modificados Denavit-Hartenberg. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{19}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Trayectoria articular realizable.}}{40}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Trayectoria realizable del efector.}}{40}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Trayectoria articular realizable.}}{41}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Trayectoria realizable del efector.}}{42}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Velocidad cartesiana del efector.}}{42}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Velocidades articulares.}}{43}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Aceleración cartesiana del efector.}}{43}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Aceleraciones articulares.}}{44}{figure.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Sistemas de referencia para el estudio dinámico. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{49}{figure.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Parámetros de la dinámica del robot. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{49}{figure.18}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Parámetros clásicos Denavit-Hartenberg. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{14}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Parámetros modificados Denavit-Hartenberg. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{18}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Modelado del \textit {UFactory xArm6} en \textit {Matlab} con parámetros DH modificados.}}{20}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Trayectoria articular realizable.}}{39}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Trayectoria realizable del efector.}}{39}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Trayectoria articular realizable.}}{40}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Trayectoria realizable del efector.}}{41}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Velocidad cartesiana del efector.}}{41}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Velocidades articulares.}}{42}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Aceleración cartesiana del efector.}}{42}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Aceleraciones articulares.}}{43}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Sistemas de referencia para el estudio dinámico. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{48}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Parámetros de la dinámica del robot. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{48}{figure.19}%

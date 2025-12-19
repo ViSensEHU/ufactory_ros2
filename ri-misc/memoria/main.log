@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2025.10.21)  18 DEC 2025 11:01
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2025.10.21)  19 DEC 2025 13:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -772,6 +772,9 @@ LaTeX Warning: Label `fig:efector' multiply defined.
 
 ) (./cinematica.aux
 
+LaTeX Warning: Label `fig:dh' multiply defined.
+
+
 LaTeX Warning: Label `lst:ik_nr' multiply defined.
 
 ) (./dinamica.aux))
@@ -850,13 +853,20 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl
 
-No file main.bbl.
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                craig2005
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
 Package hyperref Info: Link coloring OFF on input line 5.
-(./main.out) (./main.out)
+ (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
@@ -932,15 +942,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-
-LaTeX Warning: Citation 'drawio' on page 2 undefined on input line 11.
-
-
-LaTeX Warning: Citation 'matlabonline2025' on page 2 undefined on input line 11.
-
-
-LaTeX Warning: Citation 'controlDinamico' on page 2 undefined on input line 12.
-
 ) [2
 
 ]
@@ -1011,17 +1012,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--9
  []
 
 
-LaTeX Warning: Citation 'ufactory_xarm6' on page 7 undefined on input line 10.
-
-
-LaTeX Warning: Citation 'doi:10.1126/scirobotics.abm6074' on page 7 undefined on input line 11.
-
-
-Underfull \hbox (badness 4899) in paragraph at lines 10--13
-[]\TU/4.ttf(0)/m/n/12 Para la realización del trabajo se ha utilizado como base el robot \TU/4.ttf(0)/m/it/12 UFactory xArm 6
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 10--13
 
  []
@@ -1035,18 +1025,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--17
 Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
-
-
-LaTeX Warning: Citation 'gazebo_harmonic' on page 7 undefined on input line 23.
-
-
-LaTeX Warning: Citation 'ros2_jazzy' on page 7 undefined on input line 23.
-
-
-LaTeX Warning: Citation 'xarm_ros2' on page 7 undefined on input line 24.
-
-
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 7 undefined on input line 25.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 22--26
@@ -1063,10 +1041,6 @@ File: Images/ucm_uned.png Graphic file (type bmp)
 <Images/ucm_uned.png>
 File: Images/ufactory/xarm6.jpg Graphic file (type bmp)
 <Images/ufactory/xarm6.jpg>
-
-
-LaTeX Warning: Citation 'ufactory_xarm' on page 8 undefined on input line 14.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--26
 
@@ -1106,37 +1080,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--61
 
  []
 
-
-LaTeX Warning: Citation 'articleReductor' on page 9 undefined on input line 62.
-
-
-Underfull \hbox (badness 1466) in paragraph at lines 62--68
-[]\TU/4.ttf(0)/m/n/12 Los reductores armónicos [[]], figura []2[], se basan en la deformación elástica
- []
-
 File: Images/ufactory/reductor2.png Graphic file (type bmp)
 <Images/ufactory/reductor2.png>
-
-LaTeX Warning: Citation 'articleReductor' on page 9 undefined on input line 77.
-
-
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 9 undefined on input line 116.
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 114--120
-\TU/4.ttf(0)/m/n/12 absolutos digitales, que permiten conocer de forma directa y precisa la posición angular
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--120
-\TU/4.ttf(0)/m/n/12 de cada eje sin necesidad de realizar un proceso de referencia tras el encendido
- []
-
-
-Underfull \hbox (badness 1137) in paragraph at lines 114--120
-\TU/4.ttf(0)/m/n/12 dispuestas radialmente. De este modo, cada posición queda codificada de forma única y
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 114--120
 
@@ -1162,22 +1107,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--167
 
  []
 
-
-LaTeX Warning: Citation 'IntelRealSenseD435' on page 11 undefined on input line 168.
-
-
-Underfull \hbox (badness 1990) in paragraph at lines 168--170
-[]\TU/4.ttf(0)/m/n/12 En la figura []6[] se observa la pinza mecánica junto con la cámara \TU/4.ttf(0)/m/it/12 Intel RealSense D435
- []
-
 File: Images/ufactory/pinza.jpg Graphic file (type bmp)
 <Images/ufactory/pinza.jpg>
-
-LaTeX Warning: Citation 'ufactory_xarm6' on page 11 undefined on input line 174.
-
-
-LaTeX Warning: Citation 'ISO9409-1' on page 11 undefined on input line 179.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 179--184
 
@@ -1221,41 +1152,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
 File: Images/ufactory/ac_controlBox.png Graphic file (type bmp)
 <Images/ufactory/ac_controlBox.png>
-
-LaTeX Warning: Citation 'ufactory_xarm6' on page 12 undefined on input line 250.
-
-
-LaTeX Warning: Citation 'ufactory_xarm6' on page 12 undefined on input line 250.
-
-
-Underfull \hbox (badness 2103) in paragraph at lines 250--250
-[]\TU/4.ttf(0)/m/n/12 Figura 4: []\TU/4.ttf(0)/m/it/12 Control box \TU/4.ttf(0)/m/n/12 analógico. Fuente:
- []
-
 File: Images/ufactory/dc_controlBox.png Graphic file (type bmp)
 <Images/ufactory/dc_controlBox.png>
-
-LaTeX Warning: Citation 'ufactory_xarm6' on page 12 undefined on input line 258.
-
-
-LaTeX Warning: Citation 'ufactory_xarm6' on page 12 undefined on input line 258.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 258--258
-[]\TU/4.ttf(0)/m/n/12 Figura 5: []\TU/4.ttf(0)/m/it/12 Control box \TU/4.ttf(0)/m/n/12 digital. Fuente:
- []
-
 [12]
-
-LaTeX Warning: Citation 'xarm_ros2' on page 13 undefined on input line 287.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 286--290
 
  []
-
-
-LaTeX Warning: Citation 'ufactory_xarmstudio' on page 13 undefined on input line 293.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 291--297
@@ -1264,30 +1166,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--297
 
 File: Images/ufactory/gui.png Graphic file (type bmp)
 <Images/ufactory/gui.png>
-
-LaTeX Warning: Citation 'ufactory_xarm6' on page 13 undefined on input line 301.
-
 ) [13]
 \openout2 = `cinematica.aux'.
 
  (./cinematica.tex
 File: Images/ucm_uned.png Graphic file (type bmp)
 <Images/ucm_uned.png>
-
-
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 14 undefined on input line 9.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-[]\TU/4.ttf(0)/m/n/12 En la figura []7[] se presentan los parámetros clásicos de Denavit-Hartenberg
- []
-
 File: Images/cinematica/dh.png Graphic file (type bmp)
 <Images/cinematica/dh.png>
-
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 14 undefined on input line 21.
-
-[14
+ [14
 
 
 
@@ -1302,43 +1189,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--36
  []
 
 
-LaTeX Warning: Citation 'corke1996' on page 15 undefined on input line 37.
-
-
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 15 undefined on input line 37.
-
-
-Underfull \hbox (badness 2237) in paragraph at lines 37--39
-[]\TU/4.ttf(0)/m/n/12 La secuencia de transformaciones [[]] y la matriz de transformación homogénea
- []
-
-[15]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
-
-LaTeX Warning: Citation 'matlabonline2025' on page 16 undefined on input line 128.
-
-
-LaTeX Warning: Citation 'corke_robotics_toolbox' on page 16 undefined on input line 129.
-
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 135.
-(./Matlab/dh.m [16]) (./Matlab/dh_salida.txt) [17]
+(./Matlab/dh.m) (./Matlab/dh_salida.txt) [16]
 Underfull \hbox (badness 10000) in paragraph at lines 145--148
 
  []
-
-
-LaTeX Warning: Citation 'craig1986' on page 18 undefined on input line 150.
-
-
-LaTeX Warning: Citation 'paul1986' on page 18 undefined on input line 150.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 149--154
@@ -1346,12 +1210,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--154
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--154
-\TU/4.ttf(0)/m/n/12 Denavit-Hartenberg o convención de Craig [[], []], que redefine las
+Underfull \hbox (badness 2644) in paragraph at lines 163--165
+[]\TU/4.ttf(0)/m/n/12 Consecuentemente, la secuencia de transformaciones [[]16[]] y la matriz de transformación
  []
-
-
-LaTeX Warning: Citation 'corke1996' on page 18 undefined on input line 163.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 183--184
@@ -1359,28 +1220,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--184
  []
 
 
-LaTeX Warning: Citation 'corke1996' on page 18 undefined on input line 187.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 185--190
 
  []
 
-[18
+[17
 
 ]
 File: Images/cinematica/dh_mod.png Graphic file (type bmp)
 <Images/cinematica/dh_mod.png>
 
-
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 19 undefined on input line 205.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 209--213
 
  []
 
-[19]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
@@ -1390,23 +1244,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
-[20]
-
-LaTeX Warning: Citation 'matlabonline2025' on page 21 undefined on input line 287.
-
-
-LaTeX Warning: Citation 'corke_robotics_toolbox' on page 21 undefined on input line 288.
-
-(./Matlab/dh_mod.m) (./Matlab/dh_mod_salida.txt) [21]
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
-
- []
-
-
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 22 undefined on input line 311.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--315
+[19] (./Matlab/dh_mod.m) (./Matlab/dh_mod_salida.txt)
+File: Images/cinematica/modelado2.png Graphic file (type bmp)
+<Images/cinematica/modelado2.png>
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 311--315
 
  []
 
@@ -1416,345 +1258,248 @@ Underfull \hbox (badness 10000) in paragraph at lines 316--322
  []
 
 
-LaTeX Warning: Citation 'xarm_ros2' on page 22 undefined on input line 323.
-
-
-LaTeX Warning: Citation 'moveit2' on page 22 undefined on input line 323.
-
-
-Underfull \hbox (badness 3449) in paragraph at lines 323--326
-[]\TU/4.ttf(0)/m/n/12 El repositorio oficial del fabricante [[]] utiliza \TU/4.ttf(0)/m/it/12 MoveIt 2 \TU/4.ttf(0)/m/n/12 [[]], que resuelve
- []
-
-
-Underfull \hbox (badness 3965) in paragraph at lines 323--326
-\TU/4.ttf(0)/m/n/12 la cinemática inversa mediante Jacobiano pseudo-inverso y métodos iterativos de tipo
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+Underfull \hbox (badness 10000) in paragraph at lines 323--329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
-[22
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+ []
+
+[21
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 
  []
 
-[23]
-
-LaTeX Warning: Citation 'matlabonline2025' on page 24 undefined on input line 444.
-
-
-LaTeX Warning: Citation 'corke_robotics_toolbox' on page 24 undefined on input line 445.
-
-(./Matlab/ik.m) [24]
-
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 25 undefined on input line 456.
-
-
-LaTeX Warning: Citation 'siciliano2009robotics' on page 25 undefined on input line 517.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
-[]\TU/4.ttf(0)/m/n/12 se obtiene la actualización iterativa característica del método de Newton–Raphson
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 527--533
+[22] (./Matlab/ik.m) [23]
+Underfull \hbox (badness 10000) in paragraph at lines 534--540
 
  []
 
-[25
+[24
 
-] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 656--658
+] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 663--665
 
  []
 
 
-LaTeX Warning: Citation 'siciliano2009robotics' on page 27 undefined on input line 666.
-
-
-LaTeX Warning: Citation 'nakamura1991advanced' on page 27 undefined on input line 666.
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 662--668
-[]\TU/4.ttf(0)/m/n/12 ], que introducen un término adicional en la actualización de las
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 662--668
+Underfull \hbox (badness 10000) in paragraph at lines 669--675
 
  []
 
 
-LaTeX Warning: Citation 'buss2004selectively' on page 27 undefined on input line 694.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 690--695
+Underfull \hbox (badness 10000) in paragraph at lines 697--702
 
  []
 
 
-LaTeX Warning: Citation 'wampler1986manipulator' on page 27 undefined on input line 698.
-
-
-LaTeX Warning: Citation 'nakamura1991advanced' on page 27 undefined on input line 698.
-
-
-Underfull \hbox (badness 4454) in paragraph at lines 696--699
+Underfull \hbox (badness 4454) in paragraph at lines 703--706
 \TU/4.ttf(0)/m/n/12 amortiguada del método, conocida como \TU/4.ttf(0)/m/it/12 Damped Least Squares \TU/4.ttf(0)/m/n/12 (DLS) o método de
  []
 
-
-Underfull \hbox (badness 2269) in paragraph at lines 696--699
-\TU/4.ttf(0)/m/n/12 Levenberg–Marquardt [[], []]. En este caso, la
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 702--705
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 709--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--709
+Underfull \hbox (badness 10000) in paragraph at lines 713--716
 
  []
 
-
-LaTeX Warning: Citation 'matlabonline2025' on page 28 undefined on input line 710.
-
-
-LaTeX Warning: Citation 'corke_robotics_toolbox' on page 28 undefined on input line 711.
-
-(./Matlab/ik_nr.m [28]
+(./Matlab/ik_nr.m [27]
 Missing character: There is no ∈ (U+2208) in font [lmmono8-regular]:!
 Missing character: There is no ∈ (U+2208) in font [lmmono8-regular]:!
-[29]) (./Matlab/ik_nr_salida.m) [30]
-Underfull \hbox (badness 2626) in paragraph at lines 732--741
+[28]) (./Matlab/ik_nr_salida.m) [29]
+Underfull \hbox (badness 2626) in paragraph at lines 739--748
 \TU/4.ttf(0)/m/n/12 donde $\OML/cmm/m/it/12 J\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 )$ \TU/4.ttf(0)/m/n/12 es el Jacobiano geométrico del manipulador. El Jacobiano recoge cómo las
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 732--741
+Underfull \hbox (badness 2111) in paragraph at lines 739--748
 \TU/4.ttf(0)/m/n/12 variaciones infinitesimales de las articulaciones se traducen en variaciones infinitesimales
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 732--741
+Underfull \hbox (badness 1320) in paragraph at lines 739--748
 \TU/4.ttf(0)/m/n/12 articular a partir de un desplazamiento cartesiano, es necesario invertir esta relación. Sin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--741
+Underfull \hbox (badness 10000) in paragraph at lines 739--748
 
  []
 
 
-LaTeX Warning: Citation 'matlabonline2025' on page 31 undefined on input line 750.
-
-
-LaTeX Warning: Citation 'corke_robotics_toolbox' on page 31 undefined on input line 750.
-
-
-Underfull \hbox (badness 1092) in paragraph at lines 746--756
-\TU/4.ttf(0)/m/n/12 manual simbólico resulta muy tedioso, por lo que se ha calculado con ayuda de \TU/4.ttf(0)/m/it/12 Matlab
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 746--756
+Underfull \hbox (badness 10000) in paragraph at lines 753--763
 
  []
 
-(./Matlab/jac.m [31] [32]) [33]
-
-LaTeX Warning: Citation 'xarm_ros2' on page 34 undefined on input line 763.
-
-
-LaTeX Warning: Citation 'ros2_control' on page 34 undefined on input line 765.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 761--766
+(./Matlab/jac.m [30] [31]) [32]
+Underfull \hbox (badness 10000) in paragraph at lines 768--773
 
  []
 
 
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 34 undefined on input line 767.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 767--769
+Underfull \hbox (badness 10000) in paragraph at lines 774--776
 
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 779--785
+Underfull \hbox (badness 1466) in paragraph at lines 786--792
 \TU/4.ttf(0)/m/n/12 suaviza la velocidad y aceleración, evitando discontinuidades. En particular, se emplea el
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--785
+Underfull \hbox (badness 10000) in paragraph at lines 786--792
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--799
+Underfull \hbox (badness 10000) in paragraph at lines 803--806
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 808--811
+Underfull \hbox (badness 10000) in paragraph at lines 815--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 812--816
+Underfull \hbox (badness 10000) in paragraph at lines 819--823
 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 852--854
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 859--861
 
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 875--881
+Underfull \hbox (badness 10000) in paragraph at lines 879--880
+
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 882--888
 \TU/4.ttf(0)/m/n/12 evitando saltos bruscos. Sin embargo, con el objetivo de asegurar que la trayectoria sea
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 875--881
+Underfull \hbox (badness 10000) in paragraph at lines 882--888
 
  []
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 896--897
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 918--919
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
 
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 921--928
+Underfull \hbox (badness 10000) in paragraph at lines 925--926
+
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 928--935
 []\TU/4.ttf(0)/m/n/12 Cuando se definen múltiples puntos intermedios en espacio cartesiano, \TU/4.ttf(0)/m/it/12 MoveIt \TU/4.ttf(0)/m/n/12 interpola
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 921--928
+Underfull \hbox (badness 10000) in paragraph at lines 928--935
 
  []
 
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 963--967
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 969--973
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 970--974
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 974--976
+Underfull \hbox (badness 10000) in paragraph at lines 976--980
 
  []
 
-(./Matlab/traj.m [37] [38]) (./Matlab/traj_salida.m) [39]
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--983
+
+ []
+
+(./Matlab/traj.m [36] [37]) (./Matlab/traj_salida.m) [38]
 File: Images/cinematica/traj.png Graphic file (type bmp)
 <Images/cinematica/traj.png>
 File: Images/cinematica/traj2.png Graphic file (type bmp)
 <Images/cinematica/traj2.png>
- [40
+ [39
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1019--1027
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1034
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1028--1032
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1039
 
  []
 
 File: Images/cinematica/cin_control.png Graphic file (type bmp)
 <Images/cinematica/cin_control.png>
-[41
+[40
 
 ]
 File: Images/cinematica/cin_control2.png Graphic file (type bmp)
 <Images/cinematica/cin_control2.png>
 File: Images/cinematica/cin_control_v_cart.png Graphic file (type bmp)
 <Images/cinematica/cin_control_v_cart.png>
- [42
+ [41
 
 ]
 File: Images/cinematica/cin_control_v_art.png Graphic file (type bmp)
 <Images/cinematica/cin_control_v_art.png>
 File: Images/cinematica/cin_control_a_cart.png Graphic file (type bmp)
 <Images/cinematica/cin_control_a_cart.png>
- [43
+ [42
 
 ]
 File: Images/cinematica/cin_control_a_art.png Graphic file (type bmp)
 <Images/cinematica/cin_control_a_art.png>
- (./Matlab/cin_control.m [44
+ (./Matlab/cin_control.m [43
 
-] [45]
+] [44]
 Overfull \hbox (2.87476pt too wide) in paragraph at lines 185--186
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[46] [47]) (./Matlab/cin_control_salida.m)) [48]
+[45] [46]) (./Matlab/cin_control_salida.m)) [47]
 \openout2 = `dinamica.aux'.
 
  (./dinamica.tex
 File: Images/ucm_uned.png Graphic file (type bmp)
 <Images/ucm_uned.png>
-
-
-LaTeX Warning: Citation 'Spong2006' on page 49 undefined on input line 7.
-
 File: Images/dinamica/sistemas.png Graphic file (type bmp)
 <Images/dinamica/sistemas.png>
 
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 49 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 49 undefined on input line 16.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]\TU/4.ttf(0)/m/n/12 Figura 17: []Sistemas
+[]\TU/4.ttf(0)/m/n/12 Figura 18: []Sistemas de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\TU/4.ttf(0)/m/n/12 de referencia para el
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\TU/4.ttf(0)/m/n/12 estudio dinámico. Fuente:
+Underfull \hbox (badness 6910) in paragraph at lines 16--16
+\TU/4.ttf(0)/m/n/12 referencia para el estudio
  []
 
 File: Images/dinamica/tabla.png Graphic file (type bmp)
@@ -1764,44 +1509,13 @@ Overfull \hbox (8.43185pt too wide) in paragraph at lines 21--22
  [][] 
  []
 
-
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 49 undefined on input line 22.
-
-
-LaTeX Warning: Citation 'ufactory_xarm_manual' on page 49 undefined on input line 22.
-
-
-Underfull \hbox (badness 4454) in paragraph at lines 22--22
-[]\TU/4.ttf(0)/m/n/12 Figura 18: []Parámetros de la dinámica del robot. Fuente:
- []
-
-(./Matlab/inercias.txt [49
+(./Matlab/inercias.txt [48
 
 
 
-]) [50]
-
-LaTeX Warning: Citation 'siciliano2009robotics' on page 51 undefined on input line 77.
-
-
+]) [49]
 Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
- []
-
-
-LaTeX Warning: Citation 'siciliano2009robotics' on page 51 undefined on input line 89.
-
-
-LaTeX Warning: Citation 'barrientos2007fundamentos' on page 51 undefined on input line 89.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
-[]\TU/4.ttf(0)/m/n/12 Las ecuaciones de movimiento pueden calcularse mediante el balance de energías
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
-\TU/4.ttf(0)/m/n/12 Lagrangiano [[]] o por el método recursivo de Newton–Euler
  []
 
 
@@ -1814,7 +1528,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
-[51]
+[50]
 Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
@@ -1824,10 +1538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--134
 
  []
 
-
-LaTeX Warning: Citation 'siciliano2009robotics' on page 52 undefined on input line 188.
-
-[52]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
@@ -1837,59 +1548,88 @@ Overfull \hbox (19.03545pt too wide) detected at line 241
 \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^R[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 q[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 T\OT1/cmr/m/n/12 2[]) = [] \OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ) [][] \OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ;  [][] p[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 :
  []
 
-[53] [54] [55]
+[52] [53] [54]
 Underfull \hbox (badness 10000) in paragraph at lines 544--549
 
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 550--556
-\TU/4.ttf(0)/m/n/12 y aceleraciones articulares necesarias para alcanzar la posición cartesiana final mediante
+Underfull \hbox (badness 1838) in paragraph at lines 565--568
+[]$\OML/cmm/m/it/12 T[]$\TU/4.ttf(0)/m/n/12 : par de fricción de tipo Coulomb, independiente de la velocidad y dependiente
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 550--556
-\TU/4.ttf(0)/m/n/12 cinemática inversa y genera la trayectoria correspondiente. A partir de estas trayectorias
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--556
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
 
  []
 
 
-LaTeX Warning: Reference `fig:din_control_tau' on page 56 undefined on input line 557.
+LaTeX Warning: Citation 'craig2005' on page 55 undefined on input line 577.
 
-
-LaTeX Warning: Reference `fig:din_control_ddq' on page 56 undefined on input line 557.
-
-
-LaTeX Warning: Reference `fig:din_control_error' on page 56 undefined on input line 557.
-
-
-LaTeX Warning: Reference `lst:din_control' on page 56 undefined on input line 560.
-
-
-LaTeX Warning: Reference `lst:din_control2' on page 56 undefined on input line 560.
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 557--42
-
- []
-
-[56
+[55
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 593--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 606--609
+
+ []
+
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 685--688
+
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 689--700
+[]\TU/4.ttf(0)/m/n/12 Esto se debe principalmente a que únicamente se han introducido valores arbitrarios de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--700
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 701--706
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 707--711
+
+ []
+
+(./Matlab/din_control.m [57]) [58] (./Matlab/din_control_salida.m)) [59]
 File: Images/ucm_uned.png Graphic file (type bmp)
 <Images/ucm_uned.png>
 
+Underfull \hbox (badness 1210) in paragraph at lines 48--48
+[]\TU/4.ttf(0)/m/n/12 Intel Corporation. \TU/4.ttf(0)/m/it/12 Intel RealSense Depth Camera D435\TU/4.ttf(0)/m/n/12 . Datasheet y documentación
+ []
 
-LaTeX Warning: Empty bibliography on input line 48.
 
-[57
+Underfull \hbox (badness 1242) in paragraph at lines 48--48
+\TU/4.ttf(0)/m/n/12 Parameters». En: \TU/4.ttf(0)/m/it/12 Proceedings of the IEEE International Conference on Robotics and
+ []
+
+[60
 
 
-] (./main.aux
+]
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+[]\TU/4.ttf(0)/m/n/12 Yoshihiko Nakamura. \TU/4.ttf(0)/m/it/12 Advanced Robotics: Redundancy and Optimization\TU/4.ttf(0)/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 6204) in paragraph at lines 48--48
+[]\TU/4.ttf(0)/m/n/12 Charles W. Wampler. «  Manipulator inverse kinematic solutions based on vector
+ []
+
+[61] (./main.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1900,35 +1640,21 @@ L3 programming layer <2024-01-22>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 80652185E479D18875234807C759FBDC;7219
-(rerunfilecheck)             After:  91ABDEE3D40386EEC3BE4CA8CCA633A3;7359.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D982240C40E2AF1C0345C31AC98BE346;7363.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27638 strings out of 476824
- 532474 string characters out of 5803866
+ 27798 strings out of 476824
+ 537800 string characters out of 5803866
  2223627 words of memory out of 5000000
- 49063 multiletter control sequences out of 15000+600000
+ 49214 multiletter control sequences out of 15000+600000
  563991 words of font info for 92 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 109i,14n,107p,736b,6667s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,107p,736b,6683s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (57 pages).
+Output written on main.pdf (61 pages).
