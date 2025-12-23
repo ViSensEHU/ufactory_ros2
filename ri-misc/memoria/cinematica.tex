@@ -804,91 +804,11 @@ polinómicas en espacio articular y multipunto (\textit{multi-waypoint}). \\
     pulido o soldadura. En este caso, también pueden aparecer discontinuidades en la velocidad
     y aceleración, siendo necesario aplicar el algoritmo \textit{IPTP}. \\
 
-
-\subsubsection{Corrección de discontinuidades mediante \textit{IPTP}}
-El procedimiento consiste en recorrer iterativamente la trayectoria 
-    planificada y asignar tiempos de paso a cada segmento de manera que:
-\[
-\dot{q}_i(t) \leq \dot{q}_{i,\text{max}}, 
-\qquad 
-\ddot{q}_i(t) \leq \ddot{q}_{i,\text{max}},
-\]
-para todas las articulaciones \(i\), garantizando que las velocidades y aceleraciones nunca 
-superen los valores máximos permitidos. \\
-
-El algoritmo \textit{IPTP} utiliza perfiles de velocidad parabólicos para cada segmento, de modo que 
-la aceleración se mantiene constante dentro de cada tramo y se ajusta en los puntos de unión 
-para asegurar continuidad. Esto permite que las trayectorias lineales o circulares en espacio 
-cartesiano se conviertan en trayectorias articulares suaves y físicamente realizables. \\
-
-Para ilustrar el problema, supóngase una trayectoria lineal cartesiana definida por dos 
-segmentos consecutivos en el espacio articular de una sola articulación \(q(t)\):
-\[
-q(t) = 
-\begin{cases}
-q_0 + \dfrac{t}{T_1}(q_1 - q_0), & t \in [0, T_1], \\
-q_1 + \dfrac{t-T_1}{T_2}(q_2 - q_1), & t \in [T_1, T_1+T_2].
-\end{cases}
-\]
-
-Las condiciones de contorno son:
-\[
-q(0) = q_0, \quad q(T_1) = q_1, \quad q(T_1+T_2) = q_2.
-\]
-
-La velocidad resultante en cada tramo es constante:
-\[
-\dot{q}(t) = 
-\begin{cases}
-\dfrac{q_1 - q_0}{T_1}, & t \in [0, T_1], \\
-\dfrac{q_2 - q_1}{T_2}, & t \in [T_1, T_1+T_2].
-\end{cases}
-\]
-
-Esto implica una discontinuidad en la velocidad en el punto de unión \(t = T_1\), ya que:
-\[
-\dot{q}(T_1^-) = \dfrac{q_1 - q_0}{T_1}
-\quad \neq \quad
-\dot{q}(T_1^+) = \dfrac{q_2 - q_1}{T_2}.
-\]
-
-Si los valores difieren, se produce un salto brusco en la velocidad, y por tanto una 
-aceleración infinita en ese instante:
-\[
-\ddot{q}(t) = \delta(t-T_1)\,\bigl(\dot{q}(T_1^+) - \dot{q}(T_1^-)\bigr),
-\]
-donde \(\delta(t-T_1)\) representa la función delta de Dirac, que permite modelar esa variación brusca. \\
-
-El algoritmo \textit{Iterative Parabolic Time Parameterization (IPTP)} corrige este problema 
-introduciendo perfiles de velocidad parabólicos en cada segmento. En lugar de mantener 
-velocidad constante, se define un perfil con aceleración constante en la fase inicial y 
-final de cada tramo y velocidad constante en la fase intermedia:
-\[
-\dot{q}(t) = 
-\begin{cases}
-\dot{q}_0 + \ddot{q}\,t, & \text{fase de aceleración}, \\
-\dot{q}_{\text{const}}, & \text{fase de velocidad constante}, \\
-\dot{q}_{\text{const}} - \ddot{q}\,(t-t_f), & \text{fase de deceleración}.
-\end{cases}
-\]
-
-De este modo, la aceleración \(\ddot{q}\) se mantiene finita y constante en cada tramo, 
-y la velocidad se ajusta suavemente en los puntos de unión, garantizando continuidad:
-\[
-\dot{q}(T_1^-) = \dot{q}(T_1^+).
-\] \\
-
-escalado temporal uniforme + reinterpolación quíntica.
-
-%Aunque la función se denomina iptp_scale_time, no implementa el algoritmo IPTP clásico de Bobrow Shin McKay. En su lugar, aplica un escalado temporal global para garantizar que la trayectoria quíntica cumple los límites de velocidad y aceleración, regenerando una nueva interpolación polinómica con el tiempo ampliado. Este procedimiento es una forma simplificada de Time Optimal Trajectory Generation (TOTG), pero no constituye un retiming diferencial ni una parametrización óptima en el sentido de IPTP.
-
-%El escalado temporal implementado no corresponde al algoritmo IPTP clásico de Bobrow Shin McKay, pero sí se inspira en la misma idea fundamental: ajustar la parametrización temporal de la trayectoria para garantizar el cumplimiento de límites de velocidad y aceleración. En este trabajo se utiliza una versión simplificada basada en un factor global de escalado, en lugar del retiming diferencial forward backward característico de IPTP.
-
 \subsubsection{\textbf{Trayectorias polinómicas en espacio articular}}
 Cuando se especifican directamente configuraciones articulares, \textit{MoveIt} genera 
 trayectorias suaves mediante interpolación polinómica que garantizan continuidad en posición
 y velocidad evitando saltos bruscos. Sin embargo, con el objetivo de asegurar que 
-la trayectoria sea físicamente realizable y que se respeten los límites dinámicos del robot, 
+la trayectoria sea físicamente realizable y que se respeten los límites de velocidad y aceleración del robot, 
 es necesario realizar una parametrización temporal mediante el algoritmo 
 \textit{Iterative Parabolic Time Parameterization (IPTP)}. \\
 
@@ -934,7 +854,7 @@ a_5 &= \frac{12(q_{i,f} - q_{i,0}) - (6\dot{q}_{i,f} + 6\dot{q}_{i,0})T - (\ddot
 Cuando se definen múltiples puntos intermedios en espacio cartesiano, \textit{MoveIt} 
 interpola mediante \textit{splines} cúbicos, asegurando continuidad en posición y velocidad a lo 
 largo de toda la trayectoria. Sin embargo, esta interpolación geométrica 
-no garantiza por sí sola que se respeten los límites dinámicos del robot. Por ello, el 
+no garantiza por sí sola que se respeten los límites de velocidad y aceleración del robot. Por ello, el 
 algoritmo de parametrización temporal \textit{Iterative Spline Parameterization (ISP)} 
 ajusta los tiempos de paso de cada segmento para evitar oscilaciones y asegurar un 
 movimiento fluido y físicamente realizable. \\

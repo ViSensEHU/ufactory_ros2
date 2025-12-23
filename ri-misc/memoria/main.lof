@@ -1,0 +1,31 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces \textit {UFactory xArm 6}. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm}.}}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {2}{\ignorespaces \textit {Reductor armónico}. Fuente: \blx@tocontentsinit {0}\cite {articleReductor}.}}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Ejemplo de elemento terminal. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {4}{\ignorespaces \textit {Control box} analógico. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {5}{\ignorespaces \textit {Control box} digital. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {6}{\ignorespaces \textit {xArm Studio}. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm6}.}}{14}{figure.caption.19}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Parámetros clásicos Denavit-Hartenberg. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{15}{figure.caption.21}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Parámetros modificados Denavit-Hartenberg. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Modelado del \textit {UFactory xArm6} en \textit {Matlab} con parámetros DH modificados.}}{21}{figure.caption.23}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Trayectoria articular realizable.}}{39}{figure.caption.29}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Trayectoria realizable del efector.}}{39}{figure.caption.30}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Trayectoria articular realizable.}}{40}{figure.caption.31}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Trayectoria realizable del efector.}}{41}{figure.caption.32}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Velocidad cartesiana del efector.}}{41}{figure.caption.33}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Velocidades articulares.}}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Aceleración cartesiana del efector.}}{42}{figure.caption.35}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Aceleraciones articulares.}}{43}{figure.caption.36}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Sistemas de referencia para el estudio dinámico. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{48}{figure.caption.38}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Parámetros de la dinámica del robot. Fuente: \blx@tocontentsinit {0}\cite {ufactory_xarm_manual}.}}{48}{figure.caption.38}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Par articular en la articulación 1.}}{64}{figure.caption.55}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Par articular en la articulación 2.}}{64}{figure.caption.55}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Par articular en la articulación 3.}}{64}{figure.caption.56}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Par articular en la articulación 4.}}{64}{figure.caption.56}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Par articular en la articulación 5.}}{64}{figure.caption.57}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Par articular en la articulación 6.}}{64}{figure.caption.57}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Trayectoria articular.}}{64}{figure.caption.58}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Trayectoria cartesiana.}}{64}{figure.caption.58}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Velocidades articulares.}}{65}{figure.caption.59}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Aceleraciones articulares.}}{65}{figure.caption.59}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Par articular total para las seis articulaciones durante el seguimiento.}}{65}{figure.caption.60}%

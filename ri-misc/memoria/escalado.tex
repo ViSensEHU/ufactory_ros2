@@ -1,3 +1,285 @@
 \datos{color}{}{}
 
-\section{ESCALADO}
+\section{Escalado y parametrización temporal de trayectorias}
+
+En esta sección se describen los principales métodos de parametrización temporal de trayectorias
+bajo restricciones cinemáticas y dinámicas. Estas técnicas permiten corregir discontinuidades 
+y respetar los límites de aceleración, velocidad o par máximos del robot en estudio. 
+Se incluyen los algoritmos clásicos de la literatura
+(\textit{IPTP, ISP, TOTG, TOPP-RA}) y las implementaciones desarrolladas en este trabajo, basadas en
+escalado temporal uniforme y \textit{retiming} dinámico por par articular.
+
+\subsection{\textit{IPTP: Iterative Parabolic Time Parameterization}}
+El procedimiento consiste en recorrer iterativamente la trayectoria 
+    planificada y asignar tiempos de paso a cada segmento de manera que:
+
+
+\[
+\dot{q}_i(t) \leq \dot{q}_{i,\text{max}}, 
+\qquad 
+\ddot{q}_i(t) \leq \ddot{q}_{i,\text{max}},
+\]
+
+
+para todas las articulaciones \(i\), garantizando que las velocidades y aceleraciones nunca 
+superen los valores máximos permitidos. \\
+
+El algoritmo \textit{IPTP} \cite{bobrow1985time, shin1986minimum} utiliza perfiles de velocidad parabólicos
+para cada segmento, de modo que 
+la aceleración se mantiene constante dentro de cada tramo y se ajusta en los puntos de unión 
+para asegurar continuidad. Esto permite que las trayectorias lineales o circulares en espacio 
+cartesiano se conviertan en trayectorias articulares suaves y físicamente realizables. \\
+
+Para ilustrar el problema, supóngase una trayectoria lineal cartesiana definida por dos 
+segmentos consecutivos en el espacio articular de una sola articulación \(q(t)\):
+\[
+q(t) = 
+\begin{cases}
+q_0 + \dfrac{t}{T_1}(q_1 - q_0), & t \in [0, T_1], \\
+q_1 + \dfrac{t-T_1}{T_2}(q_2 - q_1), & t \in [T_1, T_1+T_2].
+\end{cases}
+\]
+
+Las condiciones de contorno son:
+\[
+q(0) = q_0, \quad q(T_1) = q_1, \quad q(T_1+T_2) = q_2.
+\]
+
+La velocidad resultante en cada tramo es constante:
+\[
+\dot{q}(t) = 
+\begin{cases}
+\dfrac{q_1 - q_0}{T_1}, & t \in [0, T_1], \\
+\dfrac{q_2 - q_1}{T_2}, & t \in [T_1, T_1+T_2].
+\end{cases}
+\]
+
+Esto implica una discontinuidad en la velocidad en el punto de unión \(t = T_1\), ya que:
+\[
+\dot{q}(T_1^-) = \dfrac{q_1 - q_0}{T_1}
+\quad \neq \quad
+\dot{q}(T_1^+) = \dfrac{q_2 - q_1}{T_2}.
+\]
+
+Si los valores difieren, se produce un salto brusco en la velocidad, y por tanto una 
+aceleración infinita en ese instante:
+\[
+\ddot{q}(t) = \delta(t-T_1)\,\bigl(\dot{q}(T_1^+) - \dot{q}(T_1^-)\bigr),
+\]
+donde \(\delta(t-T_1)\) representa la función delta de Dirac, que permite modelar esa variación brusca. \\
+
+El algoritmo \textit{Iterative Parabolic Time Parameterization (IPTP)} corrige este problema 
+introduciendo perfiles de velocidad parabólicos en cada segmento. En lugar de mantener 
+velocidad constante, se define un perfil con aceleración constante en la fase inicial y 
+final de cada tramo y velocidad constante en la fase intermedia:
+\[
+\dot{q}(t) = 
+\begin{cases}
+\dot{q}_0 + \ddot{q}\,t, & \text{fase de aceleración}, \\
+\dot{q}_{\text{const}}, & \text{fase de velocidad constante}, \\
+\dot{q}_{\text{const}} - \ddot{q}\,(t-t_f), & \text{fase de deceleración}.
+\end{cases}
+\]
+
+De este modo, la aceleración \(\ddot{q}\) se mantiene finita y constante en cada tramo, 
+y la velocidad se ajusta suavemente en los puntos de unión, garantizando continuidad:
+\[
+\dot{q}(T_1^-) = \dot{q}(T_1^+).
+\]
+
+\subsection{\textit{ISP}: \textit{Iterative Spline Parameterization}}
+
+El método \textit{ISP} \cite{pham2018new, verscheure2009time} ajusta iterativamente la parametrización temporal
+de una trayectoria \textit{spline} para garantizar el cumplimiento de límites de velocidad y aceleración. \\
+\begin{comment}
+Sea una trayectoria
+parametrizada por un conjunto de instantes temporales:
+\[
+t_0 < t_1 < \dots < t_N,
+\]
+
+y una spline polinómica \(q(t)\) definida sobre dichos nodos.
+La velocidad y aceleración vienen dadas por:
+\[
+\dot{q}(t) = \frac{dq}{dt}, \qquad 
+\ddot{q}(t) = \frac{d^2 q}{dt^2}.
+\]
+El objetivo es garantizar:
+\[
+|\dot{q}(t)| \le \dot{q}_{\max}, \qquad
+|\ddot{q}(t)| \le \ddot{q}_{\max}, \qquad \forall t \in [t_0, t_N].
+\]
+\end{comment}
+
+Cuando se detecta una violación en un instante de tiempo $t_k$, por ejemplo:
+\[
+|\dot{q}(t_k)| > \dot{q}_{\max},
+\]
+se incrementa localmente el tiempo asociado a dicho nodo mediante un factor \(\alpha_k > 1\):
+\[
+t_k \leftarrow t_k + \Delta t_k, \qquad 
+\Delta t_k = (\alpha_k - 1)(t_k - t_{k-1}).
+\]
+Tras modificar las muestras temporales, se reconstruye la spline:
+\[
+q(t) = \text{spline}(q_0, q_1, \dots, q_N;\; t_0, t_1, \dots, t_N).
+\]
+
+El procedimiento es iterativo y se repite hasta converger o respetar los límites en estudio. Este enfoque es robusto
+y adecuado para trayectorias suaves de orden elevado, aunque no produce soluciones estrictamente óptimas en tiempo. \\
+
+\subsection{\textit{TOTG}: \textit{Time-Optimal Trajectory Generation}}
+
+El objetivo de \textit{TOTG} \cite{bobrow1985time, kunz2012timeoptimal} es encontrar la parametrización temporal \(s(t)\) de una
+trayectoria geométrica \(q(s)\), con \(s \in [0,1]\), que minimiza el tiempo total cumpliendo límites
+de velocidad y aceleración articulares. \\
+
+La velocidad articular viene dada por $\dot{q}(t) = q'(s)\,\dot{s}$ y la aceleración por 
+$\ddot{q}(t) = q'(s)\,\ddot{s} + q''(s)\,\dot{s}^2$. \\
+
+Las restricciones articulares se expresan como:
+\[
+|\dot{q}_i(t)| = |q_i'(s)\,\dot{s}| \le \dot{q}_{i,\max},
+\]
+
+\[
+|\ddot{q}_i(t)| = |q_i'(s)\,\ddot{s} + q_i''(s)\,\dot{s}^2| \le \ddot{q}_{i,\max}.
+\]
+
+De estas desigualdades se obtiene un rango admisible para la aceleración escalar:
+\[
+\ddot{s} \in [\ddot{s}_{\min}(s,\dot{s}),\; \ddot{s}_{\max}(s,\dot{s})].
+\]
+
+El algoritmo clásico se basa en dos barridos:
+\begin{enumerate}
+    \item Barrido hacia adelante (aceleración máxima). Se integra $\ddot{s} = \ddot{s}_{\max}(s,\dot{s})$
+hasta que alguna restricción se activa.
+
+    \item Barrido hacia atrás (deceleración máxima). Desde el final, se integra 
+    $\ddot{s} = \ddot{s}_{\min}(s,\dot{s})$ para garantizar que la trayectoria puede detenerse cumpliendo límites.
+
+
+\end{enumerate}
+
+Finalmente, el perfil óptimo de velocidad \(\dot{s}(s)\) es la envolvente superior de ambos barridos,
+por lo que el tiempo total óptimo se obtiene integrando:
+\[
+T_{\text{opt}} = \int_0^1 \frac{1}{\dot{s}(s)}\,ds.
+\]
+
+\textit{TOTG} produce una solución óptima en tiempo, pero requiere resolver ecuaciones diferenciales
+y manejar cambios de régimen dinámico, lo que dificulta su implementación. \\
+
+
+\subsection{\textit{TOPP-RA}: \textit{Time-Optimal Path Parameterization via Reachability Analysis}}
+
+\textit{TOPP-RA} \cite{pham2018toppra} reformula la parametrización temporal como un problema de alcanzabilidad en un
+sistema lineal con restricciones. Sea una trayectoria geométrica \(q(s)\) discretizada en \(N\) puntos,
+$s_0 < s_1 < \dots < s_N$, la velocidad escalar se discretiza como $\dot{s}_k = v_k$ y la aceleración escalar se
+aproxima mediante diferencias finitas:
+\[
+\ddot{s}_k \approx \frac{v_{k+1}^2 - v_k^2}{2\Delta s_k},
+\qquad
+\Delta s_k = s_{k+1} - s_k.
+\]
+
+Las restricciones articulares se expresan como un conjunto de desigualdades lineales en
+\(v_k^2\) y \(v_{k+1}^2\):
+\[
+A_k v_{k+1}^2 + B_k v_k^2 \le C_k,
+\]
+donde \(A_k, B_k, C_k\) dependen de \(q'(s_k)\), \(q''(s_k)\), \(\dot{q}_{\max}\) y
+\(\ddot{q}_{\max}\). \\
+
+El algoritmo se basa en dos barridos:
+\begin{enumerate}
+    \item Barrido hacia adelante. Se calcula el conjunto alcanzable de velocidades:
+\[
+v_{k+1}^2 \in \mathcal{R}_{k+1}(v_k^2),
+\]
+resolviendo las restricciones lineales, donde $\mathcal{R}_k(\cdot)$ representa el conjunto alcanzable de
+velocidades, modelado como un intervalo linealmente restringido 
+$\mathcal{V}_k = \bigl[\, v_k^{\min},\; v_k^{\max} \,\bigr]$.
+
+    \item Barrido hacia atrás. Se impone que la trayectoria pueda desacelerar hasta el final:
+\[
+v_k^2 \in \mathcal{R}_{k}(v_{k+1}^2).
+\]
+
+\end{enumerate}
+
+
+Por último, el perfil óptimo se obtiene seleccionando en cada punto el valor máximo admisible:
+\[
+v_k = \sqrt{v_k^{2,\max}}.
+\]
+
+El tiempo total se calcula como:
+\[
+T_{\text{RA}} = \sum_{k=0}^{N-1} \frac{\Delta s_k}{v_k}.
+\]
+
+\textit{TOPP-RA} es numéricamente estable, eficiente y robusto, y actualmente uno de los métodos
+más utilizados para \textit{retiming} bajo restricciones cinemáticas. \\
+
+
+\subsection{Implementación propia 1: escalado temporal uniforme y reinterpolación quíntica}
+Se aplica un escalado temporal global para garantizar que la trayectoria quíntica cumple los límites de velocidad
+y aceleración. El procedimiento es:
+
+\begin{enumerate}
+    \item Se genera una trayectoria quíntica base entre \(q_0\) y \(q_f\).
+    \item Se calculan numéricamente \(\dot{q}(t)\) y \(\ddot{q}(t)\).
+    \item Se obtiene el factor mínimo de escalado:
+\[
+    s = \max\left(1,\; 
+    \frac{\max|\dot{q}|}{\dot{q}_{\max}},\;
+    \sqrt{\frac{\max|\ddot{q}|}{\ddot{q}_{\max}}}
+    \right).
+    \]
+
+    \item Se genera una nueva quíntica con tiempo ampliado \(T_{\text{scaled}} = s\,T_0\).
+\end{enumerate}
+
+Este método es una forma simplificada de \textit{TOTG}, pero no constituye un \textit{retiming} diferencial
+ni una solución óptima. Su ventaja es la simplicidad y suavidad de la trayectoria resultante. Su 
+implementación se encuentra en el planificador cinemático del código \ref{lst:kinematics_planner}. \\
+
+\subsection{Implementación propia 2: \textit{retiming} dinámico por par articular}
+Además del escalado cinemático, se implementa un escalado temporal dinámico basado en el
+modelo dinámico del robot. El objetivo es garantizar que el par articular requerido cumple:
+\[
+\forall i \in \{1,\dots,6\},\ \forall t \in [0,T], \qquad |\tau_i(t)| \le \tau_{i,\max}.
+\]
+
+Dado que el par escala con el tiempo según la ecuación básica de movimiento (ec. \ref{eq:movimiento_estandar})
+y que bajo un escalado temporal \(t \rightarrow k t\) se cumple:
+\[
+\dot{q} \rightarrow \frac{\dot{q}}{k}, \qquad
+\ddot{q} \rightarrow \frac{\ddot{q}}{k^2},
+\]
+el par disminuye al aumentar \(k\). Esto permite plantear una búsqueda binaria sobre \(k\):
+
+\begin{enumerate}
+    \item Evaluar el par requerido con \(k=1\).
+    \item Si cumple límites, no se modifica la trayectoria.
+    \item Si no cumple, se realiza una búsqueda binaria en \(k \in [1, k_{\max}]\).
+    \item Para cada \(k\), se recalculan \(\dot{q}\), \(\ddot{q}\) y el par.
+    \item Se selecciona el menor \(k\) que satisface todas las restricciones.
+\end{enumerate}
+
+Este procedimiento garantiza una trayectoria dinámicamente factible sin alterar la forma
+espacial de la trayectoria, únicamente su parametrización temporal. Es sencillo,
+robusto y adecuado para trayectorias suaves generadas mediante interpolación polinómica.
+Su implementación se presenta en el replanificador cinemático del código \ref{lst:dynamics_replanner}. \\
+
+Tal como se indica en la tabla \ref{tab:actuators}, el fabricante no proporciona los valores
+reales de par máximo de cada articulación, ya que el controlador comercial opera como una ``caja negra''.
+Por este motivo, en la práctica no es posible aplicar un retiming basado en límites reales del actuador.
+Aun así, se ha implementado el algoritmo con fines didácticos, utilizando valores estimados de $\tau_{\max}$ para
+ilustrar el funcionamiento del método. Si se desea observar el efecto del escalado, basta con modificar el
+vector de pares máximos en el código.
+
+
+

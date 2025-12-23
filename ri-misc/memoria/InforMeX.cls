@@ -34,6 +34,9 @@
 \newfloat{listing}{htbp}{}
 \floatname{listing}{Código}
 
+\usepackage{caption}
+
+
 
 \usepackage{listings}
 \lstset{

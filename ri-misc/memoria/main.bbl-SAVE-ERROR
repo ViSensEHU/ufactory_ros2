@@ -273,8 +273,8 @@
       \strng{authornamehash}{77c923124be487106eadc22c65fcb8ff}
       \strng{authorfullhash}{77c923124be487106eadc22c65fcb8ff}
       \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ufactory.cc/xarm-collaborative-robot/}}
@@ -311,8 +311,8 @@
       \strng{authorbibnamehash}{b6f71dba00032e1b438395a95653b414}
       \strng{authornamehash}{b6f71dba00032e1b438395a95653b414}
       \strng{authorfullhash}{383466cf53fd420303f180af4c2681d5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IOP Conference Series: Materials Science and Engineering}
@@ -439,8 +439,8 @@
       \strng{authornamehash}{77c923124be487106eadc22c65fcb8ff}
       \strng{authorfullhash}{77c923124be487106eadc22c65fcb8ff}
       \field{extraname}{4}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ufactory.us/ufactory-studio}}
@@ -519,10 +519,10 @@
            giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {Boston, MA}%
+        {Upper Saddle River, NJ}%
       }
       \list{publisher}{1}{%
-        {Addison-Wesley}%
+        {Pearson Prentice Hall}%
       }
       \strng{namehash}{57c29b307f6e70b7216c8c696af16b58}
       \strng{fullhash}{57c29b307f6e70b7216c8c696af16b58}
@@ -534,9 +534,9 @@
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{1st}
+      \field{edition}{3rd}
       \field{title}{Introduction to Robotics: Mechanics and Control}
-      \field{year}{1986}
+      \field{year}{2005}
     \endentry
     \entry{paul1986}{report}{}
       \name{author}{1}{}{%
@@ -631,8 +631,8 @@
       \strng{authorbibnamehash}{87b7a62a01263043a997b937dfe79845}
       \strng{authornamehash}{87b7a62a01263043a997b937dfe79845}
       \strng{authorfullhash}{ee90168e098b65fb796c51b65c7348da}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-84628-641-4}
@@ -656,8 +656,8 @@
       \strng{authorbibnamehash}{9b20cab1212374ead2722ffc6828f603}
       \strng{authornamehash}{9b20cab1212374ead2722ffc6828f603}
       \strng{authorfullhash}{9b20cab1212374ead2722ffc6828f603}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Advanced Robotics: Redundancy and Optimization}
@@ -739,6 +739,114 @@
       \field{howpublished}{\url{https://github.com/ros-controls/ros2_control}}
       \field{note}{Accessed: December 17, 2025}
       \field{title}{ros2\_control: A framework for robot control in ROS 2}
+    \endentry
+    \entry{Spong2006}{book}{}
+      \name{author}{3}{}{%
+        {{hash=1e0c4c9e500fcb5128a2bb73fbbe891a}{%
+           family={Spong},
+           familyi={S\bibinitperiod},
+           given={Mark\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8346db44e6189448a4dff197f5bc47bb}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={Seth},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7175c3321a0269f1e715675f8629352e}{%
+           family={Vidyasagar},
+           familyi={V\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{d6482215384c9e79f8244e09185e7fc5}
+      \strng{fullhash}{d6482215384c9e79f8244e09185e7fc5}
+      \strng{bibnamehash}{d6482215384c9e79f8244e09185e7fc5}
+      \strng{authorbibnamehash}{d6482215384c9e79f8244e09185e7fc5}
+      \strng{authornamehash}{d6482215384c9e79f8244e09185e7fc5}
+      \strng{authorfullhash}{d6482215384c9e79f8244e09185e7fc5}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0471649908}
+      \field{title}{Robot Modeling and Control}
+      \field{year}{2006}
+    \endentry
+    \entry{bobrow1985time}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8aac4076f27aaf9a178297cc0a7c8f00}{%
+           family={Bobrow},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=46e5cf9b2668e84f9ecad7215f5e7d05}{%
+           family={Dubowsky},
+           familyi={D\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a3ffd7c2680ba022197e9a038e382470}{%
+           family={Gibson},
+           familyi={G\bibinitperiod},
+           given={John\bibnamedelima S},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications}%
+      }
+      \strng{namehash}{da698ca89c9d41880ecd012ed713b503}
+      \strng{fullhash}{da698ca89c9d41880ecd012ed713b503}
+      \strng{bibnamehash}{da698ca89c9d41880ecd012ed713b503}
+      \strng{authorbibnamehash}{da698ca89c9d41880ecd012ed713b503}
+      \strng{authornamehash}{da698ca89c9d41880ecd012ed713b503}
+      \strng{authorfullhash}{da698ca89c9d41880ecd012ed713b503}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{number}{3}
+      \field{title}{Time-optimal control of robotic manipulators along specified paths}
+      \field{volume}{4}
+      \field{year}{1985}
+      \field{pages}{3\bibrangedash 17}
+      \range{pages}{15}
+    \endentry
+    \entry{shin1986minimum}{article}{}
+      \name{author}{2}{}{%
+        {{hash=163411def426f522803d5a27828d3b8d}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Kang\bibnamedelima G},
+           giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=0ec7d028b21078c79b3dc85294c67a99}{%
+           family={McKay},
+           familyi={M\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{09e3d8f370f28cec5ef0c4a03474e874}
+      \strng{fullhash}{09e3d8f370f28cec5ef0c4a03474e874}
+      \strng{bibnamehash}{09e3d8f370f28cec5ef0c4a03474e874}
+      \strng{authorbibnamehash}{09e3d8f370f28cec5ef0c4a03474e874}
+      \strng{authornamehash}{09e3d8f370f28cec5ef0c4a03474e874}
+      \strng{authorfullhash}{09e3d8f370f28cec5ef0c4a03474e874}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Automatic Control}
+      \field{number}{6}
+      \field{title}{Minimum-time control of robotic manipulators with geometric path constraints}
+      \field{volume}{31}
+      \field{year}{1986}
+      \field{pages}{491\bibrangedash 498}
+      \range{pages}{8}
     \endentry
   \enddatalist
 \endrefsection

@@ -699,17 +699,7 @@ su límite de par es la que determina el nuevo tiempo mínimo necesario para com
 y el resto de articulaciones deben ajustarse para avanzar de manera coordinada, garantizando que
 todas lleguen al objetivo simultáneamente. \\
 
-Finalmente, es necesario diseñar un controlador, habitualmente PID \cite{barrientos2007fundamentos},
-que aplicado a cada articulación combina el modelo cinemático y dinámico del robot para generar
-las señales de mando adecuadas. Este tipo de control permite corregir errores de posición y
-velocidad mediante la acción proporcional, integral y derivativa, garantizando que la trayectoria
-planificada se ejecute de forma estable y coordinada. \\
-
-No obstante, el diseño de estos controladores 
-queda fuera del alcance de esta asignatura, ya que requiere un desarrollo más profundo con teoría 
-de regulación automática. Además, el repositorio oficial del fabricante \cite{xarm_ros2}
-ya incorpora estos controladores. \\
-
+\begin{comment}
 \subsection{Escalado temporal de la trayectoria para garantizar el cumplimiento de los límites de par}
 
 En un manipulador industrial, los actuadores suelen estar dimensionados para generar el par necesario frente
@@ -740,15 +730,7 @@ En este trabajo se ha implementado un algoritmo de retiming iterativo basado en 
 de escalado $k$. El procedimiento evalúa repetidamente el par resultante para distintos valores de $k$ hasta
 encontrar el mínimo escalado que garantiza el cumplimiento de los límites de par. Este enfoque es sencillo,
 robusto y adecuado para trayectorias suaves generadas mediante interpolación polinómica. \\
-
-No obstante, tal como se indica en la tabla~\ref{tab:actuators}, el fabricante no proporciona los valores
-reales de par máximo de cada articulación, ya que el controlador comercial opera como una ``caja negra''.
-Por este motivo, en la práctica no es posible aplicar un retiming basado en límites reales del actuador.
-Aun así, se ha implementado el algoritmo con fines didácticos, utilizando valores estimados de $\tau_{\max}$ para
-ilustrar el funcionamiento del método. Si se desea observar el efecto del escalado, basta con modificar el
-vector de pares máximos en el código mostrado en el código \ref{lst:main}. El escalado se ha programado 
-en el código \ref{lst:dynamic_replanner}.
-
+\end{comment}
 
 
 \lstinputlisting[

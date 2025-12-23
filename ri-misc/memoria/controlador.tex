@@ -1,3 +1,185 @@
 \datos{color}{}{}
 
-\section{CONTROLADOR PID}
+\section{Controlador PID}
+
+Una vez generada una trayectoria articular dinámicamente factible, es necesario disponer de un
+controlador capaz de seguirla con precisión. En este trabajo se ha implementado un controlador
+PID por articulación \cite{barrientos2007fundamentos}, combinado con el modelo dinámico del robot
+para generar el par de control adecuado en cada instante. \\
+
+El objetivo del controlador es minimizar el error entre la trayectoria deseada
+$\{q_d(t),\dot{q}_d(t),\ddot{q}_d(t)\}$ y la trayectoria real del robot
+$\{q(t),\dot{q}(t)\}$. Para ello, se define el error articular:
+
+
+
+\[
+e(t) = q_d(t) - q(t), \qquad \dot{e}(t) = \dot{q}_d(t) - \dot{q}(t),
+\]
+
+
+
+y la acción PID se aplica sobre la aceleración de referencia:
+
+
+
+\[
+\ddot{q}_{\text{ref}}(t) =
+\ddot{q}_d(t) + K_p\,e(t) + K_d\,\dot{e}(t) + K_i\!\int e(t)\,dt.
+\]
+
+
+
+A partir de esta aceleración de referencia, el par de control se obtiene mediante la ecuación
+dinámica inversa del robot:
+
+
+
+\[
+\tau_{\text{PID}}(t) =
+M(q)\,\ddot{q}_{\text{ref}}(t) +
+C(q,\dot{q})\,\dot{q}(t) +
+g(q),
+\]
+
+
+
+donde $M(q)$ es la matriz de inercia, $C(q,\dot{q})$ el término centrífugo–coriólis y $g(q)$
+el vector de gravedad. Este enfoque permite compensar la dinámica del manipulador y mejorar
+significativamente el seguimiento de la trayectoria. \\
+
+Para simular condiciones no ideales, se añade una perturbación externa arbitraria $\tau_{\text{pert}}(t)$,
+de modo que el par total aplicado es:
+\[
+\tau_{\text{total}}(t) = \tau_{\text{PID}}(t) + \tau_{\text{pert}}(t).
+\]
+
+
+La evolución real del robot se obtiene integrando la dinámica directa:
+\[
+\ddot{q}(t) =
+M^{-1}(q(t))
+\left(\tau_{\text{total}}(t) -
+C(q(t),\dot{q}(t))\,\dot{q}(t) -
+g(q(t))\right).
+\]
+
+Aunque el diseño detallado de controladores PID y su sintonización queda fuera del alcance de esta asignatura,
+en este trabajo se ha implementado con fines didácticos. De hecho, los fabricantes, por seguridad, acostumbran a proporcionar el controlador del robot como una ``caja negra'' 
+inalterable. Por tanto, esta sección es meramente académica, ya que el robot real trae su propio controlador 
+sintonizado. \\
+
+En las figuras \ref{fig:traj1}-\ref{fig:traj6} 
+se presentan las trayectorias calculadas y reales seguidas por el robot, donde se observa que las articulaciones
+4, 5 y 6 son más difíciles de controlar y requieren una correcta sintonización de constantes $K_p$, $K_d$ y $K_i$. 
+En las figuras \ref{fig:traj_art} y \ref{fig:traj_cart} se muestran las trayectorias articulares y cartesiana 
+calculadas, en la \ref{fig:vel_art} y \ref{fig:acc_art} las velocidades y articulaciones articulares calculadas y 
+en la \ref{fig:torque_all} el par articular calculado durante la trayectoria.\\
+
+La implementación se encuentra en el código \ref{lst:controller}.
+
+
+% --- Fila 1 ---
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj1.png}
+        \caption{Par articular en la articulación 1.}
+        \label{fig:traj1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj2.png}
+        \caption{Par articular en la articulación 2.}
+        \label{fig:traj2}
+    \end{minipage}
+\end{figure}
+
+% --- Fila 2 ---
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj3.png}
+        \caption{Par articular en la articulación 3.}
+        \label{fig:traj3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj4.png}
+        \caption{Par articular en la articulación 4.}
+        \label{fig:traj4}
+    \end{minipage}
+\end{figure}
+
+% --- Fila 3 ---
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj5.png}
+        \caption{Par articular en la articulación 5.}
+        \label{fig:traj5}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj6.png}
+        \caption{Par articular en la articulación 6.}
+        \label{fig:traj6}
+    \end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+
+    % --- Izquierda ---
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj_art.png}
+        \caption{Trayectoria articular.}
+        \label{fig:traj_art}
+    \end{minipage}
+    \hfill
+    % --- Derecha ---
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/traj_cart.png}
+        \caption{Trayectoria cartesiana.}
+        \label{fig:traj_cart}
+    \end{minipage}
+
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+
+    % --- Izquierda ---
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/vel_art.png}
+        \caption{Velocidades articulares.}
+        \label{fig:vel_art}
+    \end{minipage}
+    \hfill
+    % --- Derecha ---
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/controlador/acc_art.png}
+        \caption{Aceleraciones articulares.}
+        \label{fig:acc_art}
+    \end{minipage}
+
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Images/controlador/par_art.png}
+    \caption{Par articular total para las seis articulaciones durante el seguimiento.}
+    \label{fig:torque_all}
+\end{figure}

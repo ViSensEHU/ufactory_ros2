@@ -466,8 +466,8 @@
       \strng{authornamehash}{ba5ce54787abcff8c806d8a8c4d85c30}
       \strng{authorfullhash}{ba5ce54787abcff8c806d8a8c4d85c30}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the IEEE International Conference on Robotics and Automation}
@@ -497,8 +497,8 @@
       \strng{authornamehash}{c0e503339314930d140b67b5e7c55c3e}
       \strng{authorfullhash}{c0e503339314930d140b67b5e7c55c3e}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Robotics Toolbox}
@@ -530,8 +530,8 @@
       \strng{authorbibnamehash}{57c29b307f6e70b7216c8c696af16b58}
       \strng{authornamehash}{57c29b307f6e70b7216c8c696af16b58}
       \strng{authorfullhash}{57c29b307f6e70b7216c8c696af16b58}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{3rd}
@@ -558,8 +558,8 @@
       \strng{authorbibnamehash}{b5d408d4422e7a5c063f812d702e6cba}
       \strng{authornamehash}{b5d408d4422e7a5c063f812d702e6cba}
       \strng{authorfullhash}{b5d408d4422e7a5c063f812d702e6cba}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{NASA Technical Paper 1800}
@@ -587,8 +587,8 @@
       \strng{authorbibnamehash}{c675f16c785a845b4191bd1dee5606b2}
       \strng{authornamehash}{c675f16c785a845b4191bd1dee5606b2}
       \strng{authorfullhash}{c675f16c785a845b4191bd1dee5606b2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://moveit.ros.org}}
@@ -682,8 +682,8 @@
       \strng{authorbibnamehash}{713ac1bca9d1f89eb29d9be5f6f24319}
       \strng{authornamehash}{713ac1bca9d1f89eb29d9be5f6f24319}
       \strng{authorfullhash}{713ac1bca9d1f89eb29d9be5f6f24319}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Graphics Tools}
@@ -708,8 +708,8 @@
       \strng{authorbibnamehash}{5b37d2784c3c9bf078012aa6d441f04f}
       \strng{authornamehash}{5b37d2784c3c9bf078012aa6d441f04f}
       \strng{authorfullhash}{5b37d2784c3c9bf078012aa6d441f04f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics}
@@ -732,8 +732,8 @@
       \strng{authorbibnamehash}{910d91ed5a5fd0ce3cc5d4d81d35f210}
       \strng{authornamehash}{910d91ed5a5fd0ce3cc5d4d81d35f210}
       \strng{authorfullhash}{910d91ed5a5fd0ce3cc5d4d81d35f210}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ros-controls/ros2_control}}
@@ -844,9 +844,141 @@
       \field{number}{6}
       \field{title}{Minimum-time control of robotic manipulators with geometric path constraints}
       \field{volume}{31}
-      \field{year}{1986}
+      \field{year}{1985}
       \field{pages}{491\bibrangedash 498}
       \range{pages}{8}
+    \endentry
+    \entry{pham2018new}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=a759623337912c452b108251c6c11fde}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={Quang-Cuong},
+           giveni={Q\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{a759623337912c452b108251c6c11fde}
+      \strng{fullhash}{a759623337912c452b108251c6c11fde}
+      \strng{bibnamehash}{a759623337912c452b108251c6c11fde}
+      \strng{authorbibnamehash}{a759623337912c452b108251c6c11fde}
+      \strng{authornamehash}{a759623337912c452b108251c6c11fde}
+      \strng{authorfullhash}{a759623337912c452b108251c6c11fde}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Robotics: Science and Systems (RSS)}
+      \field{title}{A new approach to time-optimal path parameterization based on reachability analysis}
+      \field{year}{2018}
+    \endentry
+    \entry{verscheure2009time}{article}{}
+      \name{author}{5}{}{%
+        {{hash=d710d52f2c22db3aceca26315217c9c8}{%
+           family={Verscheure},
+           familyi={V\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d550ecee75a329a1836efd980eafa598}{%
+           family={Demeulenaere},
+           familyi={D\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod}}}%
+        {{hash=71108e4c412375ca5cc269f7faccfd33}{%
+           family={Swevers},
+           familyi={S\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f057d144bf2ec8fc59de20c6136a40d8}{%
+           family={De\bibnamedelima Schutter},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Joris},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ec732fd9120f390fd38c8132a3079900}{%
+           family={Diehl},
+           familyi={D\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{831ed14b818a7ca939971c911404b832}
+      \strng{fullhash}{2bf52577230db94c72eaf2dc232a3a8c}
+      \strng{bibnamehash}{831ed14b818a7ca939971c911404b832}
+      \strng{authorbibnamehash}{831ed14b818a7ca939971c911404b832}
+      \strng{authornamehash}{831ed14b818a7ca939971c911404b832}
+      \strng{authorfullhash}{2bf52577230db94c72eaf2dc232a3a8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Automatic Control}
+      \field{number}{10}
+      \field{title}{Time-optimal path tracking for robots: A convex optimization approach}
+      \field{volume}{54}
+      \field{year}{2009}
+      \field{pages}{2318\bibrangedash 2327}
+      \range{pages}{10}
+    \endentry
+    \entry{kunz2012timeoptimal}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2750e238d5f8fc792a35ea91c60ef5e7}{%
+           family={Kunz},
+           familyi={K\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bea76e6f0bb1d4014aa9c82e6d26c63a}{%
+           family={Stilman},
+           familyi={S\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Sydney, Australia}%
+      }
+      \strng{namehash}{9b49f5c1b1b9b6a09436b00e7768795a}
+      \strng{fullhash}{9b49f5c1b1b9b6a09436b00e7768795a}
+      \strng{bibnamehash}{9b49f5c1b1b9b6a09436b00e7768795a}
+      \strng{authorbibnamehash}{9b49f5c1b1b9b6a09436b00e7768795a}
+      \strng{authornamehash}{9b49f5c1b1b9b6a09436b00e7768795a}
+      \strng{authorfullhash}{9b49f5c1b1b9b6a09436b00e7768795a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Robotics: Science and Systems (RSS)}
+      \field{title}{Time-Optimal Trajectory Generation for Path Following with Bounded Acceleration and Velocity}
+      \field{year}{2012}
+    \endentry
+    \entry{pham2018toppra}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a759623337912c452b108251c6c11fde}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={Quang-Cuong},
+           giveni={Q\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a759623337912c452b108251c6c11fde}
+      \strng{fullhash}{a759623337912c452b108251c6c11fde}
+      \strng{bibnamehash}{a759623337912c452b108251c6c11fde}
+      \strng{authorbibnamehash}{a759623337912c452b108251c6c11fde}
+      \strng{authornamehash}{a759623337912c452b108251c6c11fde}
+      \strng{authorfullhash}{a759623337912c452b108251c6c11fde}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Robotics}
+      \field{number}{3}
+      \field{title}{A New Approach to Time-Optimal Path Parameterization based on Reachability Analysis}
+      \field{volume}{34}
+      \field{year}{2018}
+      \field{pages}{645\bibrangedash 659}
+      \range{pages}{15}
     \endentry
   \enddatalist
 \endrefsection
