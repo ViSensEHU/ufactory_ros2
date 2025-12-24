@@ -1,8 +1,0 @@
-Baricentro:
-    2.7750    2.8000    2.9750
-
-Precisión (mm):
-    0.3021
-
-Repetibilidad (mm):
-    0.3847
