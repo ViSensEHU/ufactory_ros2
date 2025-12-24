@@ -1,2 +1,0 @@
-# CMAKE generated file: DO NOT EDIT!
-# Timestamp file for compiler generated dependencies management for topic_tools_interfaces_s__rosidl_typesupport_c.
