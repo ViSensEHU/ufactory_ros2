@@ -1,8 +1,0 @@
-Transformación total T_0^6 simbólica:
-... [muy larga para exponer]
- 
-Transformación total T_0^6 numérica:
-[1.0,    0,    0, 207.0003735]
-[  0, -1.0,    0,           0]
-[  0,    0, -1.0, 112.0020111]
-[  0,    0,    0,         1.0]

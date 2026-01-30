@@ -1,9 +1,0 @@
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/uninstall.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/camera_robot_uninstall.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/test.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/edit_cache.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/rebuild_cache.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/list_install_components.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/install.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/install/local.dir
-/home/javierac/vpc_ws/camera_robot/build/camera_robot/CMakeFiles/install/strip.dir
