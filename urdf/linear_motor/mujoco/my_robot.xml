@@ -1,0 +1,30 @@
+<mujoco model="my_robot">
+  <compiler angle="radian" meshdir="../meshes/" />
+  <asset>
+    <mesh name="FixedBase.stl" file="FixedBase.stl" />
+    <mesh name="MovingLink.stl" file="MovingLink.stl" />
+  </asset>
+
+  <default>
+    <geom rgba="0.8 0.6 0.4 1"/>
+  </default>
+
+  <worldbody>
+    <light pos="0 0 10" dir="0 0 -1" diffuse="1 1 1"/>
+    <geom type="plane" size="5 5 0.1" rgba=".9 .9 .9 1"/>
+    <body name="base_link" pos="0 0 1" euler="0 0 0">
+      <inertial pos="0 0 0" mass="10" diaginertia="0.1000 0.1000 0.1000"/>
+      <geom pos="0.0000 0.0000 0.0000" euler="1.5700 0.0000 0.0000" rgba="0.8235 0.5176 0.5176 1.0" group="1" type="mesh" mesh="FixedBase.stl" />
+      <geom pos="0.0000 0.0000 0.0000" euler="1.5708 0.0000 0.0000" rgba="1 0 0 0.5" group="0" type="mesh" mesh="FixedBase.stl" />
+      <body name="link_2" pos="0.0000 0.0000 0.0000" euler="0.0000 0.0000 0.0000">
+        <joint name="joint_1" type="slide" axis="0.0000 1.0000 0.0000" range="0 0.63" damping="0" frictionloss="0"/>
+        <inertial pos="0 0 0" mass="1" diaginertia="0.1000 0.1000 0.1000"/>
+        <geom pos="0.0000 0.0000 0.0000" euler="1.5708 0.0000 0.0000" rgba="0.2314 0.5098 0.9647 1.0" group="1" type="mesh" mesh="MovingLink.stl" />
+        <geom pos="0.0000 0.0000 0.0000" euler="0.0000 0.0000 0.0000" rgba="1 0 0 0.5" group="0" type="cylinder" size="0.0500 0.2500" />
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="joint_1_servo" joint="joint_1" kp="50" />
+  </actuator>
+</mujoco>
