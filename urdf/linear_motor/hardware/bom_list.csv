@@ -1,2 +1,0 @@
-Joint Name,Type,Motor Type,Motor ID,Direction,Armature,Lower Limit,Upper Limit
-joint_1,prismatic,Go1-M8010-6,0,1,0,0,0.63
