@@ -12,7 +12,7 @@ docker run -it --rm \
     -v ./xarm_ros2:/home/$USER/xarm_ros2 \
     -v ./control_ws:/home/$USER/control_ws \
     --name xarm_ros2 \
-    xarm_ros2:jazzy
+    visensehu/xarm_jazzy:v1
 
 
 # --network host \

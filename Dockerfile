@@ -1,4 +1,4 @@
-FROM osrf/ros:jazzy-desktop-full
+FROM visensehu/mycobot_280:v1
 
 ENV DEBIAN_FRONTEND=noninteractive
 
