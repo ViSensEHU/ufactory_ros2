@@ -7,7 +7,7 @@ def setup(db: og.Database):
     db.state.robot = Articulation("/UF_ROBOT")
 
     # Joint del sensor
-    sensor_joint_prim_path = "/UF_ROBOT/TorqSensor/ft_sensor_root_joint"
+    sensor_joint_prim_path = "/UF_ROBOT/ft_sensor/FixedJoint"
     sensor_joint_prim = get_prim_at_path(sensor_joint_prim_path)
     sensor_joint_name = sensor_joint_prim.GetName()
 
