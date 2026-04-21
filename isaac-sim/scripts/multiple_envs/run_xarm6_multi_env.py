@@ -20,7 +20,7 @@ from isaaclab.utils import configclass
 USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
 
 # --- Robot config ---
-"""XARM6_CONFIG = ArticulationCfg(
+XARM6_CONFIG = ArticulationCfg(
     prim_path="{ENV_REGEX_NS}/Robot",
     spawn=sim_utils.UsdFileCfg(usd_path=USD_PATH),
     init_state=ArticulationCfg.InitialStateCfg(
@@ -58,10 +58,16 @@ USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
             stiffness=2.07821,
             damping=0.00083,
         ),
+        "drive_joint": ImplicitActuatorCfg(
+            joint_names_expr=["drive_joint"],
+            effort_limit_sim=20.0,
+            stiffness=0.54539,
+            damping=0.00022,
+        ),
     }
-)"""
+)
 
-XARM6_CONFIG = ArticulationCfg(
+"""XARM6_CONFIG = ArticulationCfg(
     prim_path="{ENV_REGEX_NS}/Robot",
     spawn=sim_utils.UsdFileCfg(usd_path=USD_PATH),
     init_state=ArticulationCfg.InitialStateCfg(
@@ -76,7 +82,7 @@ XARM6_CONFIG = ArticulationCfg(
             velocity_limit=None,   # usa velocity limit del USD
         )
     }
-)
+)"""
 
 
 
@@ -101,7 +107,7 @@ def run_sim(sim, scene):
 
     while simulation_app.is_running():
 
-        if count % 700 == 0:
+        if count % 500 == 0:
             print("[INFO] Resetting robots...")
             count = 0
 
@@ -125,11 +131,15 @@ def run_sim(sim, scene):
         t = torch.tensor(sim_time, device=target_pos.device)
 
         # joint1 → movimiento sinusoidal suave
-        target_pos[:, 0] = 0.7854 #1.5708 #0.5 * torch.sin(2 * torch.pi * 0.5 * t)
+        #target_pos[:, 0] = 0.7854 #1.5708 #0.5 * torch.sin(2 * torch.pi * 0.5 * t)
 
-        target_pos[:, 1] = -0.5236
+        target_pos[:, 1] = 0.0#-0.5236
 
-        target_pos[:, 2] = -0.5236
+        target_pos[:, 2] = -0.90#-0.5236
+
+        # Mover drive_joint con un seno
+        target_pos[:, 6] = 0.0#0.3 * torch.sin(2 * torch.pi * 0.5 * t)
+
 
         # enviar comando
         scene["robot"].set_joint_position_target(target_pos)
