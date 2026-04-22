@@ -16,9 +16,10 @@ simulation_app = app_launcher.app
 import isaaclab.sim as sim_utils
 
 
-#USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/xArm6_sensorFuerza_motorLineal.usd"
+#USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceOneArtRoot2_xArm6_sensorFuerza_motorLineal.usd"
+#USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
 
-USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
+USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceNoScript.usd"
 
 def design_scene():
     """Create ground plane + load your robot USD."""

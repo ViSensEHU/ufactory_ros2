@@ -19,9 +19,18 @@ from isaaclab.utils import configclass
 
 #USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
 #USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanciable_xArm6_sensorFuerza_motorLineal.usd"
-USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceOneArtRoot2_xArm6_sensorFuerza_motorLineal.usd"
+#USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceOneArtRoot2_xArm6_sensorFuerza_motorLineal.usd"
+
+USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceNoScript.usd"
 
 # --- Robot config ---
+# Crear un Xform rotado dentro del namespace del robot
+"""sim_utils.prims.create_prim(
+    prim_path="{ENV_REGEX_NS}/RobotXform",
+    prim_type="Xform",
+    orientation=(0.7071, 0, 0, 0.7071)   # +90° en X
+)"""
+
 XARM6_CONFIG = ArticulationCfg(
     prim_path="{ENV_REGEX_NS}/Robot",
     spawn=sim_utils.UsdFileCfg(usd_path=USD_PATH),
@@ -63,11 +72,6 @@ XARM6_CONFIG = ArticulationCfg(
             joint_names_expr=["drive_joint"],
             stiffness=0.54539,
             damping=0.00022,
-        ),
-        "linear_motor": ImplicitActuatorCfg(
-            joint_names_expr=["Component2_to_BaseLink"],
-            stiffness=16000,
-            damping=2800,
         ),
     }
 )
