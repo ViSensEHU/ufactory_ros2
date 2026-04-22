@@ -17,14 +17,16 @@ from isaaclab.actuators import ImplicitActuatorCfg, IdealPDActuatorCfg
 from isaaclab.assets import AssetBaseCfg
 from isaaclab.utils import configclass
 
-USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
+#USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/javi_xarm6.usd"
+#USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanciable_xArm6_sensorFuerza_motorLineal.usd"
+USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceOneArtRoot2_xArm6_sensorFuerza_motorLineal.usd"
 
 # --- Robot config ---
 XARM6_CONFIG = ArticulationCfg(
     prim_path="{ENV_REGEX_NS}/Robot",
     spawn=sim_utils.UsdFileCfg(usd_path=USD_PATH),
     init_state=ArticulationCfg.InitialStateCfg(
-        pos=(0.0, 0.0, 0.1),
+        pos=(0.0, 0.0, 0.3),
     ),
     actuators={
         "joint1": ImplicitActuatorCfg(
@@ -54,15 +56,18 @@ XARM6_CONFIG = ArticulationCfg(
         ),
         "joint6": ImplicitActuatorCfg(
             joint_names_expr=["joint6"],
-            effort_limit_sim=20.0,
             stiffness=2.07821,
             damping=0.00083,
         ),
         "drive_joint": ImplicitActuatorCfg(
             joint_names_expr=["drive_joint"],
-            effort_limit_sim=20.0,
             stiffness=0.54539,
             damping=0.00022,
+        ),
+        "linear_motor": ImplicitActuatorCfg(
+            joint_names_expr=["Component2_to_BaseLink"],
+            stiffness=16000,
+            damping=2800,
         ),
     }
 )
@@ -140,6 +145,7 @@ def run_sim(sim, scene):
         # Mover drive_joint con un seno
         target_pos[:, 6] = 0.0#0.3 * torch.sin(2 * torch.pi * 0.5 * t)
 
+        target_pos[:, 7] = -0.3
 
         # enviar comando
         scene["robot"].set_joint_position_target(target_pos)
