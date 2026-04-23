@@ -24,18 +24,21 @@ from isaaclab.utils import configclass
 USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceNoScript.usd"
 
 # --- Robot config ---
-# Crear un Xform rotado dentro del namespace del robot
-"""sim_utils.prims.create_prim(
-    prim_path="{ENV_REGEX_NS}/RobotXform",
-    prim_type="Xform",
-    orientation=(0.7071, 0, 0, 0.7071)   # +90° en X
-)"""
-
 XARM6_CONFIG = ArticulationCfg(
     prim_path="{ENV_REGEX_NS}/Robot",
     spawn=sim_utils.UsdFileCfg(usd_path=USD_PATH),
     init_state=ArticulationCfg.InitialStateCfg(
-        pos=(0.0, 0.0, 0.3),
+        pos=(0.0, 0.0, 0.05),
+        rot=(0.7071068, 0.7071068, 0.0, 0.0),
+        joint_pos={
+            "joint1": 0.0,
+            "joint2": -0.15,
+            "joint3": -0.15,
+            "joint4": 0.0,
+            "joint5": 0.0,
+            "joint6": 0.0,
+            "drive_joint": 0.0,
+        },
     ),
     actuators={
         "joint1": ImplicitActuatorCfg(
@@ -72,6 +75,11 @@ XARM6_CONFIG = ArticulationCfg(
             joint_names_expr=["drive_joint"],
             stiffness=0.54539,
             damping=0.00022,
+        ),
+        "linear_motor": ImplicitActuatorCfg(
+            joint_names_expr=["Component2_to_BaseLink"],
+            stiffness=16000.0,
+            damping=2800.0,
         ),
     }
 )
@@ -131,27 +139,35 @@ def run_sim(sim, scene):
 
             scene.reset()
 
-        # ---------------------------------------------------------
-        # CONTROL POR POSICIÓN: mover joint1 y joint3
-        # ---------------------------------------------------------
-        target_pos = scene["robot"].data.default_joint_pos.clone()
-
         # convertir sim_time → tensor
-        t = torch.tensor(sim_time, device=target_pos.device)
-
+        #t = torch.tensor(sim_time, device=target_pos.device)
         # joint1 → movimiento sinusoidal suave
         #target_pos[:, 0] = 0.7854 #1.5708 #0.5 * torch.sin(2 * torch.pi * 0.5 * t)
-
-        target_pos[:, 1] = 0.0#-0.5236
-
-        target_pos[:, 2] = -0.90#-0.5236
-
         # Mover drive_joint con un seno
-        target_pos[:, 6] = 0.0#0.3 * torch.sin(2 * torch.pi * 0.5 * t)
+        #target_pos[:, 6] = 0.0#0.3 * torch.sin(2 * torch.pi * 0.5 * t)
 
-        target_pos[:, 7] = -0.3
+        joint_names = scene["robot"].joint_names 
+        joint_indices = list(range(len(joint_names)))
+        joint_idx_map = {name: idx for idx, name in enumerate(joint_names)}
+        target_pos = scene["robot"].data.default_joint_pos.clone()
 
-        # enviar comando
+        # mover joint1
+        target_pos[:, joint_idx_map["joint1"]] = 0.4
+        # mover joint2
+        target_pos[:, joint_idx_map["joint2"]] = 0.0
+        # mover joint3
+        target_pos[:, joint_idx_map["joint3"]] = -0.5
+        # mover joint4
+        target_pos[:, joint_idx_map["joint4"]] = 0.0
+        # mover joint5
+        target_pos[:, joint_idx_map["joint5"]] = 0.0
+        # mover joint6
+        target_pos[:, joint_idx_map["joint6"]] = 0.0
+        # mover pinza
+        target_pos[:, joint_idx_map["drive_joint"]] = 0.5
+        # mover motor lineal
+        target_pos[:, joint_idx_map["Component2_to_BaseLink"]] = 0.3
+
         scene["robot"].set_joint_position_target(target_pos)
         # ---------------------------------------------------------
 
