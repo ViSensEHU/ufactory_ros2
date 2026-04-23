@@ -21,7 +21,7 @@ from isaaclab.utils import configclass
 #USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanciable_xArm6_sensorFuerza_motorLineal.usd"
 #USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceOneArtRoot2_xArm6_sensorFuerza_motorLineal.usd"
 
-USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/xarm6_motorlineal_montaje/instanceNoScript.usd"
+USD_PATH = "/isaac-sim/projects/ufactory_ros2/isaac-sim/scripts/instanceNoScript.usd"   
 
 # --- Robot config ---
 XARM6_CONFIG = ArticulationCfg(
@@ -43,47 +43,62 @@ XARM6_CONFIG = ArticulationCfg(
     actuators={
         "joint1": ImplicitActuatorCfg(
             joint_names_expr=["joint1"],
-            stiffness=73.29828,
-            damping=0.02932,
+            stiffness=None,#73.29828, #Con None no se modifica nada del USD.
+            damping=None,#0.02932,
         ),
         "joint2": ImplicitActuatorCfg(
             joint_names_expr=["joint2"],
-            stiffness=114.32549,
-            damping=0.04573,
+            stiffness=None,#114.32549,
+            damping=None,#0.04573,
         ),
         "joint3": ImplicitActuatorCfg(
             joint_names_expr=["joint3"],
-            stiffness=95.28044,
-            damping=0.03811,
+            stiffness=None,#95.28044,
+            damping=None,#0.03811,
         ),
         "joint4": ImplicitActuatorCfg(
             joint_names_expr=["joint4"],
-            stiffness=283.06,
-            damping=0.11322,
+            stiffness=None,#283.06,
+            damping=None,#0.11322,
         ),
         "joint5": ImplicitActuatorCfg(
             joint_names_expr=["joint5"],
-            stiffness=9.7635,
-            damping=0.00391,
+            stiffness=None,#9.7635,
+            damping=None,#0.00391,
         ),
         "joint6": ImplicitActuatorCfg(
             joint_names_expr=["joint6"],
-            stiffness=2.07821,
-            damping=0.00083,
+            stiffness=None,#2.07821,
+            damping=None,#0.00083,
         ),
         "drive_joint": ImplicitActuatorCfg(
             joint_names_expr=["drive_joint"],
-            stiffness=0.54539,
-            damping=0.00022,
+            stiffness=None,#0.54539,
+            damping=None,#0.00022,
         ),
         "linear_motor": ImplicitActuatorCfg(
             joint_names_expr=["Component2_to_BaseLink"],
-            stiffness=16000.0,
-            damping=2800.0,
+            stiffness=None,#16000.0,
+            damping=None,#2800.0,
         ),
     }
 )
 
+#UsdFileCfg
+"""rigid_props=sim_utils.RigidBodyPropertiesCfg(
+            disable_gravity=False,
+            max_depenetration_velocity=5.0,
+        ),
+        articulation_props=sim_utils.ArticulationRootPropertiesCfg(
+            articulation_enabled=True,
+            enabled_self_collisions=True, 
+            solver_position_iteration_count=32, 
+            solver_velocity_iteration_count=1,
+            sleep_threshold=0.005,
+            stabilization_threshold=0.001
+        ),"""
+
+# IdealPDActuatorCfg
 """XARM6_CONFIG = ArticulationCfg(
     prim_path="{ENV_REGEX_NS}/Robot",
     spawn=sim_utils.UsdFileCfg(usd_path=USD_PATH),
@@ -100,8 +115,6 @@ XARM6_CONFIG = ArticulationCfg(
         )
     }
 )"""
-
-
 
 # --- Scene config ---
 @configclass
@@ -124,7 +137,7 @@ def run_sim(sim, scene):
 
     while simulation_app.is_running():
 
-        if count % 500 == 0:
+        if count % 150 == 0:
             print("[INFO] Resetting robots...")
             count = 0
 
