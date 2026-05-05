@@ -18,6 +18,30 @@ Ejecutar ``./isaaclab.sh -p scripts/reinforcement_learning/skrl/train.py --task 
 # Para controlar el robot real desde MoveIt
 ``ros2 launch xarm_moveit_config xarm6_moveit_realmove.launch.py robot_ip:=192.168.1.238 auto_enable:=true``
 
+Para lanzar el controller sin moveit2: ``ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.238``
+
+```
+cd ~/dev_ws/
+# launch xarm_driver_node:
+ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.117
+
+# enable all joints:
+ros2 service call /xarm/motion_enable xarm_msgs/srv/SetInt16ById "{id: 8, data: 1}"
+
+# disable
+ros2 service call /xarm/motion_enable xarm_msgs/srv/SetInt16ById "{id: 8, data: 0}"
+
+# set proper mode (0) and state (0)
+ros2 service call /xarm/set_mode xarm_msgs/srv/SetInt16 "{data: 0}"
+ros2 service call /xarm/set_state xarm_msgs/srv/SetInt16 "{data: 0}"
+
+# Cartesian linear motion: (unit: mm, rad)
+ros2 service call /xarm/set_position xarm_msgs/srv/MoveCartesian "{pose: [300, 0, 250, 3.14, 0, 0], speed: 50, acc: 500, mvtime: 0}"   
+
+# joint motion for xArm6: (unit: rad)
+ros2 service call /xarm/set_servo_angle xarm_msgs/srv/MoveJoint "{angles: [-0.58, 0, 0, 0, 0, 0], speed: 0.35, acc: 10, mvtime: 0}"
+```
+
 ``ros2 service call /xarm/set_servo_angle xarm_msgs/srv/MoveJoint "{angles: [0.5, 0.0, 0.0, 0.0, 0.0, 0.0], speed: 0.5, acc: 0.5, wait: true}"``
 
 ``ros2 service call /xarm/set_servo_angle xarm_msgs/srv/MoveJoint "{angles: [0.0, -0.7, -0.95, 0.0, 0.0, 0.0], speed: 0.5, acc: 0.5, wait: true}"``
