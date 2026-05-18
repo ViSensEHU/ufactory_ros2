@@ -1,0 +1,37 @@
+[0.860s] Invoking command in '/home/isaac_sim/ros2_ws/src/xarm6_policy_infer': PYTHONPATH=/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xarm6_policy_infer build --build-base /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build install --record /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log --single-version-externally-managed install_data
+[1.162s] running egg_info
+[1.162s] creating ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info
+[1.185s] writing ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/PKG-INFO
+[1.185s] writing dependency_links to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/dependency_links.txt
+[1.186s] writing entry points to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/entry_points.txt
+[1.186s] writing requirements to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/requires.txt
+[1.186s] writing top-level names to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/top_level.txt
+[1.186s] writing manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+[1.230s] reading manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+[1.231s] writing manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+[1.231s] running build
+[1.231s] running build_py
+[1.231s] creating /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build
+[1.231s] creating /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib
+[1.232s] creating /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer
+[1.232s] copying xarm6_policy_infer/__init__.py -> /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer
+[1.232s] copying xarm6_policy_infer/node.py -> /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer
+[1.233s] running install
+[1.240s] running install_lib
+[1.259s] creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer
+[1.259s] copying /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer/__init__.py -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer
+[1.259s] copying /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer/node.py -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer
+[1.260s] byte-compiling /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer/__init__.py to __init__.cpython-312.pyc
+[1.260s] byte-compiling /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer/node.py to node.cpython-312.pyc
+[1.262s] running install_data
+[1.262s] creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index
+[1.262s] creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index/resource_index
+[1.262s] creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index/resource_index/packages
+[1.262s] copying resource/xarm6_policy_infer -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index/resource_index/packages
+[1.262s] copying package.xml -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/xarm6_policy_infer
+[1.262s] running install_egg_info
+[1.290s] Copying ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer-0.0.0-py3.12.egg-info
+[1.291s] running install_scripts
+[1.441s] Installing infer script to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/xarm6_policy_infer
+[1.441s] writing list of installed files to '/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log'
+[1.485s] Invoked command in '/home/isaac_sim/ros2_ws/src/xarm6_policy_infer' returned '0': PYTHONPATH=/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xarm6_policy_infer build --build-base /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build install --record /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log --single-version-externally-managed install_data

@@ -11,6 +11,7 @@ docker run -it --rm \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ./xarm_ros2:/home/$USER/xarm_ros2 \
     -v ./control_ws:/home/$USER/control_ws \
+    -v ./ros2_ws:/home/$USER/ros2_ws \
     --name xarm_ros2 \
     visensehu/xarm_jazzy:v1
 

@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info
+writing ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/PKG-INFO
+writing dependency_links to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/dependency_links.txt
+writing entry points to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/entry_points.txt
+writing requirements to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/requires.txt
+writing top-level names to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/top_level.txt
+writing manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+reading manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+writing manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build
+creating /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib
+creating /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer
+copying xarm6_policy_infer/__init__.py -> /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer
+copying xarm6_policy_infer/node.py -> /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer
+running install
+running install_lib
+creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer
+copying /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer/__init__.py -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer
+copying /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build/lib/xarm6_policy_infer/node.py -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer
+byte-compiling /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer/node.py to node.cpython-312.pyc
+running install_data
+creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index
+creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index/resource_index
+creating /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index/resource_index/packages
+copying resource/xarm6_policy_infer -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/ament_index/resource_index/packages
+copying package.xml -> /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/share/xarm6_policy_infer
+running install_egg_info
+Copying ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer-0.0.0-py3.12.egg-info
+running install_scripts
+Installing infer script to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/xarm6_policy_infer
+writing list of installed files to '/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log'

@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/PKG-INFO
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/dependency_links.txt
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/entry_points.txt
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/requires.txt
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/top_level.txt
+../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/zip-safe
+resource/xarm6_policy_infer
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
+xarm6_policy_infer/__init__.py
+xarm6_policy_infer/node.py
