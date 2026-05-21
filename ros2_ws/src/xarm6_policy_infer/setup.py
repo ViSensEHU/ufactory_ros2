@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'infer = xarm6_policy_infer.node:main'
+            'test_infer = xarm6_policy_infer.test_node:main',
+            'infer = xarm6_policy_infer.real_node:main',
         ],
     },
 )

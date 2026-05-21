@@ -1,0 +1,22 @@
+[0.812s] Invoking command in '/home/isaac_sim/ros2_ws/src/xarm6_policy_infer': PYTHONPATH=/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xarm6_policy_infer build --build-base /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build install --record /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log --single-version-externally-managed install_data
+[1.053s] running egg_info
+[1.069s] writing ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/PKG-INFO
+[1.069s] writing dependency_links to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/dependency_links.txt
+[1.070s] writing entry points to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/entry_points.txt
+[1.070s] writing requirements to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/requires.txt
+[1.070s] writing top-level names to ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/top_level.txt
+[1.102s] reading manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+[1.102s] writing manifest file '../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info/SOURCES.txt'
+[1.103s] running build
+[1.103s] running build_py
+[1.103s] running install
+[1.108s] running install_lib
+[1.127s] running install_data
+[1.128s] running install_egg_info
+[1.149s] removing '/home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer-0.0.0-py3.12.egg-info' (and everything under it)
+[1.149s] Copying ../../build/xarm6_policy_infer/xarm6_policy_infer.egg-info to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages/xarm6_policy_infer-0.0.0-py3.12.egg-info
+[1.149s] running install_scripts
+[1.269s] Installing infer script to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/xarm6_policy_infer
+[1.270s] Installing test_infer script to /home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/xarm6_policy_infer
+[1.270s] writing list of installed files to '/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log'
+[1.296s] Invoked command in '/home/isaac_sim/ros2_ws/src/xarm6_policy_infer' returned '0': PYTHONPATH=/home/isaac_sim/ros2_ws/build/xarm6_policy_infer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isaac_sim/ros2_ws/install/xarm6_policy_infer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xarm6_policy_infer build --build-base /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/build install --record /home/isaac_sim/ros2_ws/build/xarm6_policy_infer/install.log --single-version-externally-managed install_data

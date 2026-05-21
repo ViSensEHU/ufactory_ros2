@@ -92,3 +92,54 @@ pose:
     w: 1.0
 "
 ```
+
+```bash
+ros2 topic pub /goal_pose geometry_msgs/PoseStamped "
+header:
+  frame_id: 'base_link'
+pose:
+  position:
+    x: 0.8
+    y: 1.0
+    z: 1.0
+  orientation:
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+"
+```
+
+```bash
+ros2 topic pub /goal_pose geometry_msgs/PoseStamped "
+header:
+  frame_id: 'base_link'
+pose:
+  position:
+    x: 0.2
+    y: 0.5
+    z: 0.5
+  orientation:
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+"
+```
+
+```bash
+ros2 topic pub /goal_pose geometry_msgs/PoseStamped "
+header:
+  frame_id: 'base_link'
+pose:
+  position:
+    x: 0.15
+    y: 0.15
+    z: 0.5
+  orientation:
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+"
+```
