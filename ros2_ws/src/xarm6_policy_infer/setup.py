@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'test_infer = xarm6_policy_infer.test_node:main',
             'infer = xarm6_policy_infer.real_node:main',
+            'filter_infer = xarm6_policy_infer.real_filter_node:main',
         ],
     },
 )

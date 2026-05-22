@@ -13,5 +13,6 @@ test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 xarm6_policy_infer/__init__.py
+xarm6_policy_infer/real_filter_node.py
 xarm6_policy_infer/real_node.py
 xarm6_policy_infer/test_node.py
