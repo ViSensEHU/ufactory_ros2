@@ -53,3 +53,41 @@ Códigos de error: https://github.com/xArm-Developer/xArm-Python-SDK/blob/master
 ros2 topic echo /xarm/robot_states
 
 ros2 service type /xarm/motion_enable
+
+# Para controlar el motor lineal desde ROS2
+
+Hay que activar los servicios del motor lineal. Eso se hace en ``xarm_ros2/xarm_api/config/xarm_params.yaml`` o en la versión compilada en ``/home/xarm_ws/install/xarm_api/share/xarm_api/config/xarm_params.yaml``
+
+```yaml
+set_linear_motor_stop: false
+clean_linear_motor_error: false
+get_linear_motor_pos: true
+get_linear_motor_status: true
+get_linear_motor_error: true
+get_linear_motor_is_enabled: true
+get_linear_motor_on_zero: true
+get_linear_motor_sci: true 
+get_err_warn_code: false
+get_linear_motor_sco: true    
+set_linear_motor_enable: true 
+set_linear_motor_speed: true
+set_linear_motor_back_origin: true 
+set_linear_motor_pos: true         
+```
+
+
+```bash
+ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.211
+```
+
+```bash
+?? ros2 service call /xarm/set_linear_motor_enable xarm_msgs/srv/SetInt16 "{data: 1}" ??
+```
+
+```bash
+ros2 service call /xarm/get_linear_motor_is_enabled xarm_msgs/srv/GetInt16 "{}"
+```
+
+```bash
+ros2 service call /xarm/set_linear_motor_pos xarm_msgs/srv/LinearMotorSetPos "{pos: 650, speed: 150, wait: true, timeout: 100.0, auto_enable: true}"
+```
