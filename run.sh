@@ -1,19 +1,37 @@
 #en el host es necesario: sudo prime-select nvidia
 # y al ejecutar "glxinfo | grep "OpenGL renderer" que aparezca NVIDIA
-xhost +local:docker
-docker run -it --rm \
-    --gpus all \
-    --runtime=nvidia \
-    -e USER=$USER \
-    -e DISPLAY=$DISPLAY \
-    -e NVIDIA_VISIBLE_DEVICES=all \
-    -e NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v ./xarm_ros2:/home/$USER/xarm_ros2 \
-    -v ./control_ws:/home/$USER/control_ws \
-    --name xarm_ros2 \
-    visensehu/xarm_jazzy:v1
+#xhost +local:docker
+#docker run -it --rm \
+#    --gpus all \
+#    --runtime=nvidia \
+#    --network=host \
+#    -e USER=$USER \
+#    -e DISPLAY=$DISPLAY \
+#    -e NVIDIA_VISIBLE_DEVICES=all \
+#    -e NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute \
+#    -e RMW_IMPLEMENTATION=rmw_fastrtps_cpp \
+#    -v /tmp/.X11-unix:/tmp/.X11-unix \
+#    -v ./xarm_ros2:/home/$USER/xarm_ros2 \
+#    -v ./control_ws:/home/$USER/control_ws \
+#    --name xarm_ros2 \
+#    visensehu/xarm_jazzy:v1
 
+xhost +local:docker
+docker run -e DISPLAY=$DISPLAY \
+           -e USER=$USER \
+           -e NVIDIA_VISIBLE_DEVICES=all \
+           -e NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute \
+           --runtime=nvidia \
+           -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+           --device /dev/dri:/dev/dri \
+           -it \
+           --rm \
+           --network=host \
+           --gpus all \
+           --name xarm_ros2 \
+           -v ./xarm_ros2:/home/$USER/xarm_ros2 \
+           -v ./control_ws:/home/$USER/control_ws \
+           arambarricalvoj/xarm_ros2:jazzy_isaacsim
 
 # --network host \
 # -v /dev/shm:/dev/shm \

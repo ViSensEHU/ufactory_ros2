@@ -1,0 +1,4 @@
+[console_scripts]
+filter_infer = xarm6_policy_infer.real_filter_node:main
+infer = xarm6_policy_infer.real_node:main
+test_infer = xarm6_policy_infer.test_node:main

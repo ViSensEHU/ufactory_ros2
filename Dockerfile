@@ -1,6 +1,15 @@
-FROM visensehu/mycobot_280:v1
+FROM osrf/ros:jazzy-desktop-full
 
 ENV DEBIAN_FRONTEND=noninteractive
+
+# Crear el directorio de configuración de ROS 2
+RUN mkdir -p /root/.ros
+
+# Copiar el archivo de configuración Fast DDS
+COPY fastdds.xml /root/.ros/fastdds.xml
+
+# Definir la variable de entorno para que Fast DDS use este archivo
+ENV FASTRTPS_DEFAULT_PROFILES_FILE=/root/.ros/fastdds.xml
 
 # Utilidades básicas
 RUN apt-get update && apt-get install -y \
@@ -38,3 +47,4 @@ RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc && \
     echo "source /home/xarm_ws/install/setup.bash" >> ~/.bashrc
 
 WORKDIR /home/xarm_ws
+

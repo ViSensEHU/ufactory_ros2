@@ -18,6 +18,8 @@ Ejecutar ``./isaaclab.sh -p scripts/reinforcement_learning/skrl/train.py --task 
 # Para controlar el robot real desde MoveIt
 ``ros2 launch xarm_moveit_config xarm6_moveit_realmove.launch.py robot_ip:=192.168.1.238 auto_enable:=true``
 
+``ros2 launch xarm_moveit_config uf850_moveit_realmove.launch.py robot_ip:=192.168.1.234 auto_enable:=true``
+
 Para lanzar el controller sin moveit2: ``ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.238``
 
 ```
