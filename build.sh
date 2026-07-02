@@ -1,1 +1,1 @@
-docker build -t xarm_ros2:jazzy .
+docker build -t xarm_ros2:jazzy-vision .

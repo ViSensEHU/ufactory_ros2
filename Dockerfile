@@ -1,4 +1,4 @@
-FROM visensehu/mycobot_280:v1
+FROM osrf/ros:jazzy-desktop-full
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -8,12 +8,28 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     build-essential \
     mesa-utils \
+    usbutils \
     && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get upgrade -y ros-jazzy-diagnostic-updater
 
 # Instalar MoveIt 2 (no viene en desktop-full)
 RUN apt-get update && apt-get install -y \
     ros-jazzy-moveit \
     ros-jazzy-joint-state-publisher-gui \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar RealSense SDK 2.0 desde repos ROS (librealsense2)
+RUN apt-get update && apt-get install -y \
+    ros-jazzy-librealsense2* \
+    ros-jazzy-realsense2-camera \
+    ros-jazzy-realsense2-description \
+    && rm -rf /var/lib/apt/lists/*
+
+# Librerías de visión por computador
+RUN apt-get update && apt-get install -y \
+    python3-opencv \
+    ros-jazzy-cv-bridge \
     && rm -rf /var/lib/apt/lists/*
 
 # Crear workspace
