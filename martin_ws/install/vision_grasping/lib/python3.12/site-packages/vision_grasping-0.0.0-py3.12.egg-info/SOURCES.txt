@@ -17,3 +17,6 @@ vision_grasping/app.py
 vision_grasping/cv_grasp_detector.py
 vision_grasping/settings.py
 vision_grasping/utils.py
+vision_grasping/helpers/__init__.py
+vision_grasping/helpers/covariance.py
+vision_grasping/helpers/matrix_funcs.py

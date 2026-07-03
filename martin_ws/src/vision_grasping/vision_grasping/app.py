@@ -29,7 +29,9 @@ from .settings import (WIN_NAME,
                        GRASPING_MIN_Z
                        )
 from .cv_grasp_detector import CVGraspDetector
-from .utils import compute_crop_and_intrinsics, get_combined_img
+from .utils import (compute_crop_and_intrinsics, 
+                    get_combined_img,
+                    compute_goal_pose)
 
 class GraspDetectorNode(Node):
     def __init__(self):
@@ -317,6 +319,18 @@ class GraspDetectorNode(Node):
         future.add_done_callback(self._on_move_done)
 
     
+    def compute_goal_pose(self, result):
+        return compute_goal_pose(
+            result,
+            self.xarm6_pose,
+            self.euler_eef_to_color_opt,
+            self.euler_color_to_depth_opt,
+            self.gripper_z_mm,
+            self.grasping_min_z,
+            self.grasping_range,
+            self.min_result_z
+        )
+    
     def perform_grasp_sequence(self, goal):
         # 1. Ir al punto detectado
         self.set_xarm6_position(goal)
@@ -327,7 +341,7 @@ class GraspDetectorNode(Node):
         self.set_xarm6_position(down)
 
         # 3. Cerrar gripper
-        self.close_gripper()
+        #self.close_gripper()
 
         # 4. Levantar
         lift = goal.copy()
@@ -339,7 +353,7 @@ class GraspDetectorNode(Node):
         self.set_xarm6_position(release)
 
         # 6. Abrir gripper
-        self.open_gripper()
+        #self.open_gripper()
 
         # 7. Volver a DETECT_XYZ
         detect = [self.detect_x, self.detect_y, self.detect_z, 3.14, 0, 0]

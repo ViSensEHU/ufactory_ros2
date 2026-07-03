@@ -4,9 +4,10 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.executors import MultiThreadedExecutor
 
 from sensor_msgs.msg import Image, CameraInfo
+from xarm_msgs.srv import MoveCartesian
 from xarm_msgs.srv import GetFloat32List
 
-
+import time
 import numpy as np
 import cv2
 from cv_bridge import CvBridge
@@ -28,7 +29,9 @@ from .settings import (WIN_NAME,
                        GRASPING_MIN_Z
                        )
 from .cv_grasp_detector import CVGraspDetector
-from .utils import compute_crop_and_intrinsics, get_combined_img
+from .utils import (compute_crop_and_intrinsics, 
+                    get_combined_img,
+                    compute_goal_pose)
 
 class GraspDetectorNode(Node):
     def __init__(self):
@@ -37,6 +40,9 @@ class GraspDetectorNode(Node):
         self.get_logger().info('Nodo vision_grasping iniciado.')
 
         self.cb_group = ReentrantCallbackGroup()
+
+        self.last_cmd_time = 0.0
+        self.cmd_interval = 0.05   # 20 FPS
 
         # --- Robots ---
         self.xarm6_pose = None
@@ -72,6 +78,7 @@ class GraspDetectorNode(Node):
         self.grasp_debug_image_pub = self.create_publisher(Image, 
                                                '/grasp/debug_image', 
                                                10)
+
 
         # -----------------------------
         # --- SUSCRIPCIONES ---
@@ -127,6 +134,13 @@ class GraspDetectorNode(Node):
         # Esperar a que el servicio esté disponible
         #while not self.robot_pos_client.wait_for_service(timeout_sec=1.0):
         #    self.get_logger().warn('Esperando servicio /ufactory/get_position...')
+
+        # Movimiento cartesiano (en espacio de la tarea)
+        self.moveit_client = self.create_client(MoveCartesian, 
+                                                '/xarm/set_position')
+        while not self.moveit_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().warn("Esperando servicio /xarm/set_position...")
+
 
 
     # ----------------------------------------------------------------------
@@ -226,14 +240,25 @@ class GraspDetectorNode(Node):
                 self.xarm6_pose[2]
             )
 
+            if result is not None:
+                # Convertir grasp a coordenadas reales (copiar lógica de RobotGrasp.grasp())
+                goal = self.compute_goal_pose(result)
+                # Mover robot
+                #self.set_xarm6_position(goal)
+                # Secuencia de grasp (bajar, cerrar, levantar, soltar)
+                self.perform_grasp_sequence(goal)
+            
             combined = get_combined_img(color_crop, grasp_img)
             msg = self.bridge.cv2_to_imgmsg(combined, encoding='bgr8')
             self.grasp_debug_image_pub.publish(msg)
 
+            
+
+
         
 
     # ----------------------------------------------------------------------
-    # --- SERVICE FUNCTIONS ---
+    # --- SERVICE DONE-CALLBACK FUNCTIONS ---
     # ----------------------------------------------------------------------
     def _on_xarm6_position(self, future):
         if future.result() is None:
@@ -241,6 +266,13 @@ class GraspDetectorNode(Node):
             return
         self.xarm6_pose = future.result().datas
         self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
+    
+    def _on_move_done(self, future):
+        if future.result() is None:
+            self.get_logger().error("Error ejecutando movimiento")
+        else:
+            self.get_logger().info("Movimiento ejecutado correctamente")
+
 
     def get_xarm6_position(self):
         # Esperar a que el servicio esté disponible
@@ -274,6 +306,60 @@ class GraspDetectorNode(Node):
 
         # Devolver altura del EEF (robot_pos[2])
         return self.uf850_pose[2]"""
+        
+    def set_xarm6_position(self, goal):
+        req = MoveCartesian.Request()
+        req.pose = goal              # goal = [x, y, z, roll, pitch, yaw]
+        req.speed = 50               # ajusta según tu robot
+        req.acc = 500
+        req.mvtime = 0
+        req.wait = True
+
+        future = self.moveit_client.call_async(req)
+        future.add_done_callback(self._on_move_done)
+
+    
+    def compute_goal_pose(self, result):
+        return compute_goal_pose(
+            result,
+            self.xarm6_pose,
+            self.euler_eef_to_color_opt,
+            self.euler_color_to_depth_opt,
+            self.gripper_z_mm,
+            self.grasping_min_z,
+            self.grasping_range,
+            self.min_result_z
+        )
+    
+    def perform_grasp_sequence(self, goal):
+        # 1. Ir al punto detectado
+        self.set_xarm6_position(goal)
+
+        # 2. Bajar
+        down = goal.copy()
+        down[2] -= 50   # ejemplo: bajar 50 mm
+        self.set_xarm6_position(down)
+
+        # 3. Cerrar gripper
+        #self.close_gripper()
+
+        # 4. Levantar
+        lift = goal.copy()
+        lift[2] += 100
+        self.set_xarm6_position(lift)
+
+        # 5. Ir a RELEASE_XYZ
+        release = [self.release_x, self.release_y, self.release_z, 3.14, 0, 0]
+        self.set_xarm6_position(release)
+
+        # 6. Abrir gripper
+        #self.open_gripper()
+
+        # 7. Volver a DETECT_XYZ
+        detect = [self.detect_x, self.detect_y, self.detect_z, 3.14, 0, 0]
+        self.set_xarm6_position(detect)
+
+
 
 
 """def main(args=None):
