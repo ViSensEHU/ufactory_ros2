@@ -2,3 +2,6 @@
 	path = xarm_ros2
 	url = https://github.com/xArm-Developer/xarm_ros2.git
 	branch = jazzy
+[submodule "ufactory_vision"]
+	path = ufactory_vision
+	url = git@github.com:xArm-Developer/ufactory_vision.git
