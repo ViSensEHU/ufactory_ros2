@@ -1,0 +1,2 @@
+[console_scripts]
+vision_node = vision_grasping.app:main

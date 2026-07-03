@@ -1,0 +1,40 @@
+[0.487s] Invoking command in '/home/javierarambarricalvo/martin_ws/src/vision_grasping': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/vision_grasping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_grasping build --build-base /home/javierarambarricalvo/martin_ws/build/vision_grasping/build install --record /home/javierarambarricalvo/martin_ws/build/vision_grasping/install.log --install-scripts $base/lib/vision_grasping --single-version-externally-managed install_data
+[0.604s] running egg_info
+[0.604s] creating ../../build/vision_grasping/vision_grasping.egg-info
+[0.610s] writing ../../build/vision_grasping/vision_grasping.egg-info/PKG-INFO
+[0.610s] writing dependency_links to ../../build/vision_grasping/vision_grasping.egg-info/dependency_links.txt
+[0.611s] writing entry points to ../../build/vision_grasping/vision_grasping.egg-info/entry_points.txt
+[0.611s] writing requirements to ../../build/vision_grasping/vision_grasping.egg-info/requires.txt
+[0.611s] writing top-level names to ../../build/vision_grasping/vision_grasping.egg-info/top_level.txt
+[0.611s] writing manifest file '../../build/vision_grasping/vision_grasping.egg-info/SOURCES.txt'
+[0.624s] reading manifest file '../../build/vision_grasping/vision_grasping.egg-info/SOURCES.txt'
+[0.624s] writing manifest file '../../build/vision_grasping/vision_grasping.egg-info/SOURCES.txt'
+[0.624s] running build
+[0.624s] running build_py
+[0.624s] creating /home/javierarambarricalvo/martin_ws/build/vision_grasping/build
+[0.624s] creating /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib
+[0.624s] creating /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping
+[0.624s] copying vision_grasping/__init__.py -> /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping
+[0.624s] copying vision_grasping/cv_grasp_detector.py -> /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping
+[0.626s] copying vision_grasping/app.py -> /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping
+[0.626s] running install
+[0.633s] running install_lib
+[0.639s] creating /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping
+[0.640s] copying /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping/__init__.py -> /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping
+[0.640s] copying /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping/cv_grasp_detector.py -> /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping
+[0.640s] copying /home/javierarambarricalvo/martin_ws/build/vision_grasping/build/lib/vision_grasping/app.py -> /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping
+[0.640s] byte-compiling /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping/__init__.py to __init__.cpython-312.pyc
+[0.640s] byte-compiling /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping/cv_grasp_detector.py to cv_grasp_detector.cpython-312.pyc
+[0.641s] byte-compiling /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping/app.py to app.cpython-312.pyc
+[0.642s] running install_data
+[0.642s] creating /home/javierarambarricalvo/martin_ws/install/vision_grasping/share/ament_index
+[0.642s] creating /home/javierarambarricalvo/martin_ws/install/vision_grasping/share/ament_index/resource_index
+[0.642s] creating /home/javierarambarricalvo/martin_ws/install/vision_grasping/share/ament_index/resource_index/packages
+[0.642s] copying resource/vision_grasping -> /home/javierarambarricalvo/martin_ws/install/vision_grasping/share/ament_index/resource_index/packages
+[0.642s] copying package.xml -> /home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping
+[0.643s] running install_egg_info
+[0.649s] Copying ../../build/vision_grasping/vision_grasping.egg-info to /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping-0.0.0-py3.12.egg-info
+[0.649s] running install_scripts
+[0.699s] Installing vision_node script to /home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/vision_grasping
+[0.699s] writing list of installed files to '/home/javierarambarricalvo/martin_ws/build/vision_grasping/install.log'
+[0.713s] Invoked command in '/home/javierarambarricalvo/martin_ws/src/vision_grasping' returned '0': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/vision_grasping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_grasping build --build-base /home/javierarambarricalvo/martin_ws/build/vision_grasping/build install --record /home/javierarambarricalvo/martin_ws/build/vision_grasping/install.log --install-scripts $base/lib/vision_grasping --single-version-externally-managed install_data
