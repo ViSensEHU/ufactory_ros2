@@ -4,6 +4,8 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.executors import MultiThreadedExecutor
 
 from sensor_msgs.msg import Image, CameraInfo
+from xarm_msgs.srv import GetFloat32List
+
 
 import numpy as np
 import cv2
@@ -26,7 +28,7 @@ from .settings import (WIN_NAME,
                        GRASPING_MIN_Z
                        )
 from .cv_grasp_detector import CVGraspDetector
-from .utils import compute_crop_and_intrinsics
+from .utils import compute_crop_and_intrinsics, get_combined_img
 
 class GraspDetectorNode(Node):
     def __init__(self):
@@ -35,6 +37,10 @@ class GraspDetectorNode(Node):
         self.get_logger().info('Nodo vision_grasping iniciado.')
 
         self.cb_group = ReentrantCallbackGroup()
+
+        # --- Robots ---
+        self.xarm6_pose = None
+        self.uf850_pose = None
 
         # --- Colas internas del detector ---
         self.depth_img_que = Queue(1)
@@ -63,6 +69,10 @@ class GraspDetectorNode(Node):
                           self.process_frame,
                           callback_group=self.cb_group)  # 20 FPS
         
+        self.grasp_debug_image_pub = self.create_publisher(Image, 
+                                               '/grasp/debug_image', 
+                                               10)
+
         # -----------------------------
         # --- SUSCRIPCIONES ---
         # -----------------------------
@@ -95,6 +105,29 @@ class GraspDetectorNode(Node):
         )
 
         self.get_logger().info('Esperando CameraInfo del depth...')
+
+        # -----------------------------
+        # --- SERVICIOS ---
+        # -----------------------------
+
+        # Posicion cartesiana del robot:
+        # posicion mm (3) + orientacion rad (3) 
+        self.xarm6_pos_client = self.create_client(
+            GetFloat32List,
+            '/xarm/get_position',
+            callback_group=self.cb_group
+        )
+
+        """self.uf850_pos_client = self.create_client(
+            GetFloat32List,
+            '/ufactory/get_position',
+            callback_group=self.cb_group
+        )"""
+        
+        # Esperar a que el servicio esté disponible
+        #while not self.robot_pos_client.wait_for_service(timeout_sec=1.0):
+        #    self.get_logger().warn('Esperando servicio /ufactory/get_position...')
+
 
     # ----------------------------------------------------------------------
     # --- CALLBACKS ---
@@ -182,7 +215,65 @@ class GraspDetectorNode(Node):
         # Pasar color al detector
         self.grasp_detector._color_img = color_crop
 
-        # Aquí más adelante llamaremos a get_grasp_img()
+        # Obtener posicion del robot
+        self.get_xarm6_position()
+
+        if self.xarm6_pose is not None:
+            # Identificación y reconocimiento de la pelota
+            grasp_img, result = self.grasp_detector.get_grasp_img(
+                depth_crop,
+                self.depth_camera_k_crop,
+                self.xarm6_pose[2]
+            )
+
+            combined = get_combined_img(color_crop, grasp_img)
+            msg = self.bridge.cv2_to_imgmsg(combined, encoding='bgr8')
+            self.grasp_debug_image_pub.publish(msg)
+
+        
+
+    # ----------------------------------------------------------------------
+    # --- SERVICE FUNCTIONS ---
+    # ----------------------------------------------------------------------
+    def _on_xarm6_position(self, future):
+        if future.result() is None:
+            self.get_logger().error('Error llamando a /xarm/get_position')
+            return
+        self.xarm6_pose = future.result().datas
+        self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
+
+    def get_xarm6_position(self):
+        # Esperar a que el servicio esté disponible
+        while not self.xarm6_pos_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().warn('Esperando servicio /xarm/get_position...')
+
+        req = GetFloat32List.Request()
+        future = self.xarm6_pos_client.call_async(req)
+        future.add_done_callback(self._on_xarm6_position)
+
+        #rclpy.spin_until_future_complete(self, future)
+        #if future.result() is None:
+        #    self.get_logger().error('Error llamando a /xarm/get_position')
+        #    return None
+        # Guardar pose completa en la clase
+        #self.xarm6_pose = future.result().datas
+        # Imprimir por pantalla la pose recibida
+        #self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
+
+    """def get_uf850_position(self):
+        req = GetFloat32List.Request()
+        future = self.uf850_pos_client.call_async(req)
+        rclpy.spin_until_future_complete(self, future)
+
+        if future.result() is None:
+            self.get_logger().error('Error llamando a /ufactory/get_position')
+            return None
+
+        # Guardar pose completa en la clase
+        self.xarm6_pose = future.result().datas
+
+        # Devolver altura del EEF (robot_pos[2])
+        return self.uf850_pose[2]"""
 
 
 """def main(args=None):
