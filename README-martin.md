@@ -11,9 +11,9 @@ cd /home/xarm_ws/
 colcon build
 source /home/xarm_ws/install/setup.bash
 
-cd /home/javierarambarricalvo/martin_ws/
+cd /home/$USER/martin_ws/
 colcon build
-source /home/javierarambarricalvo/martin_ws/install/setup.bash
+source /home/$USER/martin_ws/install/setup.bash
 
 root@078f02917823:/home/javierarambarricalvo/martin_ws# ros2 run realsense2_camera realsense2_camera_node
 

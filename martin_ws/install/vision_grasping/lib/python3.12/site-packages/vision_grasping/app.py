@@ -6,6 +6,7 @@ from rclpy.executors import MultiThreadedExecutor
 from sensor_msgs.msg import Image, CameraInfo
 from xarm_msgs.srv import MoveCartesian
 from xarm_msgs.srv import GetFloat32List
+from xarm_msgs.msg import RobotMsg
 
 import time
 import numpy as np
@@ -22,13 +23,13 @@ from .settings import (WIN_NAME,
                        EULER_EEF_TO_COLOR_OPT,
                        EULER_COLOR_TO_DEPTH_OPT,
                        GRASPING_RANGE,
-                       DETECT_XYZ,
-                       RELEASE_XYZ,
+                       DETECT_XYZ_RPY,
+                       RELEASE_XYZ_RPY,
                        LIFT_OFFSET_Z,
                        GRIPPER_Z_MM,
                        GRASPING_MIN_Z
                        )
-from .cv_grasp_detector import CVGraspDetector
+from .cv_grasp_detector import DEPTH_VALID_MIN, CVGraspDetector
 from .utils import (compute_crop_and_intrinsics, 
                     get_combined_img,
                     compute_goal_pose)
@@ -47,6 +48,8 @@ class GraspDetectorNode(Node):
         # --- Robots ---
         self.xarm6_pose = None
         self.uf850_pose = None
+        self.xarm6_state = None
+        self.xarm6_last_state = 0
 
         # --- Colas internas del detector ---
         self.depth_img_que = Queue(1)
@@ -56,6 +59,7 @@ class GraspDetectorNode(Node):
         self.depth_camera_k = None
         self.detector_initialized = False
         self.grasp_detector = None
+        self.GRASP_STATUS = 0
 
         # --- CV Bridge ---
         self.bridge = CvBridge()
@@ -83,6 +87,14 @@ class GraspDetectorNode(Node):
         # -----------------------------
         # --- SUSCRIPCIONES ---
         # -----------------------------
+
+        self.create_subscription(
+            RobotMsg,
+            '/xarm/robot_states',
+            self.robot_states_callback,
+            10,
+            callback_group=self.cb_group
+        )
         
         # Intrinsecas del depth (profundidad)
         self.create_subscription(
@@ -141,11 +153,38 @@ class GraspDetectorNode(Node):
         while not self.moveit_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().warn("Esperando servicio /xarm/set_position...")
 
+        self.set_xarm6_position(DETECT_XYZ_RPY)  # Ir a la posición inicial de detección
+
+        self.euler_eef_to_color_opt = EULER_EEF_TO_COLOR_OPT
+        self.euler_color_to_depth_opt = EULER_COLOR_TO_DEPTH_OPT
+        self.gripper_z_mm = GRIPPER_Z_MM
+        self.grasping_min_z = GRASPING_MIN_Z
+        self.grasping_range = GRASPING_RANGE
+        self.min_result_z = DEPTH_VALID_MIN
+        
+        # Mapeos requeridos en perform_grasp_sequence
+        self.detect_x, self.detect_y, self.detect_z = DETECT_XYZ_RPY[0], DETECT_XYZ_RPY[1], DETECT_XYZ_RPY[2]
+        self.release_x, self.release_y, self.release_z = RELEASE_XYZ_RPY[0], RELEASE_XYZ_RPY[1], RELEASE_XYZ_RPY[2]
+
+        # Flag de control para evitar ejecuciones concurrentes de la secuencia física
+        self.is_moving = False
+
+
+
 
 
     # ----------------------------------------------------------------------
     # --- CALLBACKS ---
     # ----------------------------------------------------------------------
+    def robot_states_callback(self, msg: RobotMsg):
+        self.xarm6_last_state = self.xarm6_state
+        self.xarm6_state = msg.state
+        # Actualizar pose del robot
+        if self.xarm6_last_state == 1 and self.xarm6_state == 2:
+            self.GRASP_STATUS += 1
+
+        # self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
+
 
     # Callback de la informacion de la cámara de profundidad:
     # inicializa el detector cuando llega el primer CameraInfo
@@ -208,49 +247,62 @@ class GraspDetectorNode(Node):
 
     # Callback del procesamiento de vision (depth + color)
     def process_frame(self):
-        if self.color_image is None or self.depth_image is None:
-            return
-        if self.crop_size is None:
-            return
-
-        self.get_logger().info('process_frame ejecutado')
-
-        # Recortar color y depth
-        color_crop = self.color_image[
-            self.crop_y_inx:self.crop_y_inx + self.crop_size,
-            self.crop_x_inx:self.crop_x_inx + self.crop_size,
-        ]
-
-        depth_crop = self.depth_image[
-            self.crop_y_inx:self.crop_y_inx + self.crop_size,
-            self.crop_x_inx:self.crop_x_inx + self.crop_size,
-        ]
-
-        # Pasar color al detector
-        self.grasp_detector._color_img = color_crop
-
-        # Obtener posicion del robot
-        self.get_xarm6_position()
-
-        if self.xarm6_pose is not None:
-            # Identificación y reconocimiento de la pelota
-            grasp_img, result = self.grasp_detector.get_grasp_img(
-                depth_crop,
-                self.depth_camera_k_crop,
-                self.xarm6_pose[2]
-            )
-
-            if result is not None:
-                # Convertir grasp a coordenadas reales (copiar lógica de RobotGrasp.grasp())
-                goal = self.compute_goal_pose(result)
-                # Mover robot
-                #self.set_xarm6_position(goal)
-                # Secuencia de grasp (bajar, cerrar, levantar, soltar)
-                self.perform_grasp_sequence(goal)
+        if self.GRASP_STATUS == 1:
+            if self.color_image is None or self.depth_image is None:
+                return
+            if self.crop_size is None:
+                return
             
-            combined = get_combined_img(color_crop, grasp_img)
-            msg = self.bridge.cv2_to_imgmsg(combined, encoding='bgr8')
-            self.grasp_debug_image_pub.publish(msg)
+            if self.is_moving:
+                return
+
+            # self.get_logger().info('process_frame ejecutado')
+
+            # Recortar color y depth
+            color_crop = self.color_image[
+                self.crop_y_inx:self.crop_y_inx + self.crop_size,
+                self.crop_x_inx:self.crop_x_inx + self.crop_size,
+            ]
+
+            depth_crop = self.depth_image[
+                self.crop_y_inx:self.crop_y_inx + self.crop_size,
+                self.crop_x_inx:self.crop_x_inx + self.crop_size,
+            ]
+
+            # Pasar color al detector
+            self.grasp_detector._color_img = color_crop
+
+            # Obtener posicion del robot
+            self.get_xarm6_position()
+
+            if self.xarm6_pose is not None:
+                # Identificación y reconocimiento de la pelota
+                grasp_img, result = self.grasp_detector.get_grasp_img(
+                    depth_crop,
+                    self.depth_camera_k_crop,
+                    self.xarm6_pose[2]
+                )
+
+                # self.get_logger().info(f'Resultado del grasp: {result}')
+
+                if result is not None:
+                    # self.get_logger().info(f'Pelota detectada en: {result["center"]}, z={result["z"]:.2f} mm, quality={result["quality"]:.2f}')
+                    # Convertir grasp a coordenadas reales (copiar lógica de RobotGrasp.grasp())
+                    goal = self.compute_goal_pose(result)
+                    
+                    # --- REEMPLAZAR LA LLAMADA DIRECTA POR ESTA VALIDACIÓN ---
+                    if goal is not None:
+                        # self.get_logger().info(f'Objetivo válido calculado: {goal}')
+                        # Mover robot
+                        self.set_xarm6_position(goal)
+                        # Secuencia de grasp (bajar, cerrar, levantar, soltar)
+                        self.perform_grasp_sequence(goal)
+                    else:
+                        self.get_logger().warn('Objetivo fuera de rango seguro o inválido algebraicamente. Ignorando movimiento.')
+                
+                combined = get_combined_img(color_crop, grasp_img)
+                msg = self.bridge.cv2_to_imgmsg(combined, encoding='bgr8')
+                self.grasp_debug_image_pub.publish(msg)
 
             
 
@@ -265,7 +317,7 @@ class GraspDetectorNode(Node):
             self.get_logger().error('Error llamando a /xarm/get_position')
             return
         self.xarm6_pose = future.result().datas
-        self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
+        # self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
     
     def _on_move_done(self, future):
         if future.result() is None:
@@ -308,14 +360,16 @@ class GraspDetectorNode(Node):
         return self.uf850_pose[2]"""
         
     def set_xarm6_position(self, goal):
+        self.get_logger().info(f'Llamando a /xarm/set_position con: {goal}')
         req = MoveCartesian.Request()
-        req.pose = goal              # goal = [x, y, z, roll, pitch, yaw]
-        req.speed = 50               # ajusta según tu robot
-        req.acc = 500
-        req.mvtime = 0
+        req.pose = [float(val) for val in goal]              # goal = [x, y, z, roll, pitch, yaw]
+        req.speed = 50.0               # ajusta según tu robot
+        req.acc = 500.0
+        req.mvtime = 0.0
         req.wait = True
 
         future = self.moveit_client.call_async(req)
+
         future.add_done_callback(self._on_move_done)
 
     
@@ -332,32 +386,34 @@ class GraspDetectorNode(Node):
         )
     
     def perform_grasp_sequence(self, goal):
+        # self.get_logger().info('Iniciando secuencia de grasping...')
         # 1. Ir al punto detectado
         self.set_xarm6_position(goal)
 
-        # 2. Bajar
-        down = goal.copy()
-        down[2] -= 50   # ejemplo: bajar 50 mm
-        self.set_xarm6_position(down)
+        # # 2. Bajar
+        # down = goal.copy()
+        # self.get_logger().info('Bajando el robot')
+        # down[2] -= 50   # ejemplo: bajar 50 mm
+        # self.set_xarm6_position(down)
 
-        # 3. Cerrar gripper
-        #self.close_gripper()
+        # # 3. Cerrar gripper
+        # #self.close_gripper()
 
-        # 4. Levantar
-        lift = goal.copy()
-        lift[2] += 100
-        self.set_xarm6_position(lift)
+        # # 4. Levantar
+        # lift = goal.copy()
+        # lift[2] += 100
+        # self.set_xarm6_position(lift)
 
-        # 5. Ir a RELEASE_XYZ
-        release = [self.release_x, self.release_y, self.release_z, 3.14, 0, 0]
-        self.set_xarm6_position(release)
+        # # 5. Ir a RELEASE_XYZ
+        # release = [self.release_x, self.release_y, self.release_z, 3.14, 0, 0]
+        # self.set_xarm6_position(release)
 
-        # 6. Abrir gripper
-        #self.open_gripper()
+        # # 6. Abrir gripper
+        # #self.open_gripper()
 
-        # 7. Volver a DETECT_XYZ
-        detect = [self.detect_x, self.detect_y, self.detect_z, 3.14, 0, 0]
-        self.set_xarm6_position(detect)
+        # # 7. Volver a DETECT_XYZ
+        # detect = [self.detect_x, self.detect_y, self.detect_z, 3.14, 0, 0]
+        # self.set_xarm6_position(detect)
 
 
 

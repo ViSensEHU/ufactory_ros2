@@ -1,5 +1,8 @@
 # settings.py
 
+import math
+
+
 WIN_NAME   = 'RealSense-D435'
 CAM_WIDTH  = 640
 CAM_HEIGHT = 480
@@ -20,10 +23,10 @@ EULER_COLOR_TO_DEPTH_OPT = [0.015, 0, 0, 0, 0, 0]
 GRASPING_RANGE = [-180, 650, -480, 480] # [x_min, x_max, y_min, y_max]
 
 # initial detection position
-DETECT_XYZ     = [220.5, 0, 575] # [x, y, z]
+DETECT_XYZ_RPY     = [220.5, 0, 575, math.radians(180), 0.0, 0.0] # [x, y, z, yaw]
 
 # release grasping pos
-RELEASE_XYZ    = [0, 360.5, 488] # [x, y, z]
+RELEASE_XYZ_RPY    = [0, 360.5, 488, math.radians(180), 0.0, 0.0] # [x, y, z, yaw]
 
 # lift offset based on DETECT_XYZ[2] after grasping or release
 LIFT_OFFSET_Z  = 0 # lift_height = DETECT_XYZ[2] + LIFT_OFFSET_Z

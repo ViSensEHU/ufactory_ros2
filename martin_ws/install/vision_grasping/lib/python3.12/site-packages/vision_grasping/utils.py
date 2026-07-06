@@ -53,33 +53,41 @@ def compute_goal_pose(result,
     Replica la parte matemática del método RobotGrasp.grasp(),
     devolviendo únicamente GOAL_POS para ROS2.
     """
+    if eef_pose is None:
+        return None
 
-    # result = (x, y, z, angle)
-    d = [result.x, result.y, result.z, result.angle]
+    # 1. Convertir la pose actual del robot (flange) a METROS para el cálculo de matrices
+    eef_pose_m = list(eef_pose)
+    eef_pose_m[0] /= 1000.0  # x de mm a metros
+    eef_pose_m[1] /= 1000.0  # y de mm a metros
+    eef_pose_m[2] /= 1000.0  # z de mm a metros
+
+    # result contiene x, y, z en mm desde el detector
+    d = [result["x"], result["y"], result["z"], result["angle"]]
 
     # Si la profundidad es demasiado baja, no es válido
     if d[2] <= min_result_z:
         return None
 
-    # 1. Pose del grasp en el frame de la cámara de profundidad
-    gp = [d[0], d[1], d[2], 0, 0, -d[3]]  # xyzrpy en metros
+    # 2. Pose del grasp en el frame de la cámara de profundidad (en metros)
+    gp = [d[0]/1000.0, d[1]/1000.0, d[2]/1000.0, 0, 0, -d[3]]
 
-    # 2. Transformación depthOpt → base
+    # 3. Transformación depthOpt → base usando la pose corregida en metros
     mat_depthOpt_in_base = (
-        euler2mat(eef_pose) *
+        euler2mat(eef_pose_m) * 
         euler2mat(euler_eef_to_color_opt) *
         euler2mat(euler_color_to_depth_opt)
     )
 
     gp_base = convert_pose(gp, mat_depthOpt_in_base)
 
-    # 3. Corregir yaw
+    # 4. Corregir yaw
     if gp_base[5] < -np.pi:
         gp_base[5] += np.pi
     elif gp_base[5] > 0:
         gp_base[5] -= np.pi
 
-    # 4. Construir GOAL_POS
+    # 5. Construir GOAL_POS volviendo a escalar a milímetros para los servicios del xArm
     x_mm = gp_base[0] * 1000
     y_mm = gp_base[1] * 1000
     z_mm = gp_base[2] * 1000 + gripper_z_mm
@@ -88,13 +96,18 @@ def compute_goal_pose(result,
     pitch = 0
     yaw = math.degrees(gp_base[5] + np.pi)
 
-    # 5. Validar altura mínima
+    # 6. Validar altura mínima
     if z_mm < grasping_min_z:
         z_mm = grasping_min_z
 
-    # 6. Validar rango
+    # 7. Validar rango geométrico en milímetros
     if x_mm < grasping_range[0] or x_mm > grasping_range[1] or \
        y_mm < grasping_range[2] or y_mm > grasping_range[3]:
         return None
 
-    return [x_mm, y_mm, z_mm, roll, pitch, yaw]
+    return [float(x_mm),
+        float(y_mm),
+        float(z_mm),
+        float(roll),
+        float(pitch),
+        float(yaw)]

@@ -32,9 +32,9 @@ CIRCULARITY_MIN = 0.73
 ASPECT_RATIO_MAX = 1.26  # ratio eje_mayor/eje_menor máximo permitido
                           # pelota ≈ 1.0-1.1, cuadrado ≈ 1.3-1.5
 
-# Rango de profundidad válida en metros
-DEPTH_VALID_MIN = 0.05
-DEPTH_VALID_MAX = 1.20
+# Rango de profundidad válida en milimetros (para descartar ruido y objetos demasiado cercanos/lejanos)
+DEPTH_VALID_MIN = 10.0   # 10 mm (1 cm)
+DEPTH_VALID_MAX = 1200.0 # 1200 mm (1.2 metros)
 
 # Apertura de garra proporcional al tamaño detectado (escala píxeles)
 GRIPPER_WIDTH_FACTOR = 1.4
@@ -196,7 +196,16 @@ class CVGraspDetector:
         grasp_img = self._vis(depth_image, invalid_contours, valid_objects, best, color_mask)
         
         # RETORNA EL ÁNGULO DINÁMICO EN LUGAR DE 0.0
-        return grasp_img, [x_cam, y_cam, z, float(ang_b), width_px, depth_center]
+        return grasp_img, {
+            "x": float(x_cam),
+            "y": float(y_cam),
+            "z": float(z),
+            "angle": float(ang_b),
+            "width_px": float(width_px),
+            "depth_center": float(depth_center),
+            "center": (float(cx_b), float(cy_b)),
+            "quality": float(1.0)  # Métrica fija de calidad para el logger de app.py
+        }
 
     def _color_mask(self, color_img):
         hsv = cv2.cvtColor(color_img, cv2.COLOR_BGR2HSV)
