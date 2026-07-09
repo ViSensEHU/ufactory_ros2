@@ -1,0 +1,24 @@
+[0.382s] Invoking command in '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/src/vision_grasping': PYTHONPATH=/home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_grasping build --build-base /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/build install --record /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/install.log --install-scripts $base/lib/vision_grasping --single-version-externally-managed install_data
+[0.474s] running egg_info
+[0.477s] writing ../../build/vision_grasping/vision_grasping.egg-info/PKG-INFO
+[0.478s] writing dependency_links to ../../build/vision_grasping/vision_grasping.egg-info/dependency_links.txt
+[0.478s] writing entry points to ../../build/vision_grasping/vision_grasping.egg-info/entry_points.txt
+[0.478s] writing requirements to ../../build/vision_grasping/vision_grasping.egg-info/requires.txt
+[0.478s] writing top-level names to ../../build/vision_grasping/vision_grasping.egg-info/top_level.txt
+[0.486s] reading manifest file '../../build/vision_grasping/vision_grasping.egg-info/SOURCES.txt'
+[0.486s] writing manifest file '../../build/vision_grasping/vision_grasping.egg-info/SOURCES.txt'
+[0.486s] running build
+[0.487s] running build_py
+[0.487s] copying vision_grasping/app.py -> /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/build/lib/vision_grasping
+[0.487s] running install
+[0.489s] running install_lib
+[0.493s] copying /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/build/lib/vision_grasping/app.py -> /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping
+[0.494s] byte-compiling /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping/app.py to app.cpython-312.pyc
+[0.495s] running install_data
+[0.495s] running install_egg_info
+[0.499s] removing '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping-0.0.0-py3.12.egg-info' (and everything under it)
+[0.500s] Copying ../../build/vision_grasping/vision_grasping.egg-info to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/python3.12/site-packages/vision_grasping-0.0.0-py3.12.egg-info
+[0.500s] running install_scripts
+[0.537s] Installing vision_node script to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/vision_grasping
+[0.537s] writing list of installed files to '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/install.log'
+[0.559s] Invoked command in '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/src/vision_grasping' returned '0': PYTHONPATH=/home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/vision_grasping/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_grasping build --build-base /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/build install --record /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/vision_grasping/install.log --install-scripts $base/lib/vision_grasping --single-version-externally-managed install_data

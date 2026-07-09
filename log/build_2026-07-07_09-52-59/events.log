@@ -1,0 +1,123 @@
+[0.000000] (-) TimerEvent: {}
+[0.000925] (realsense_gazebo_plugin) JobQueued: {'identifier': 'realsense_gazebo_plugin', 'dependencies': OrderedDict()}
+[0.001480] (uf_ros_lib) JobQueued: {'identifier': 'uf_ros_lib', 'dependencies': OrderedDict()}
+[0.001725] (vision_grasping) JobQueued: {'identifier': 'vision_grasping', 'dependencies': OrderedDict()}
+[0.001769] (xarm_description) JobQueued: {'identifier': 'xarm_description', 'dependencies': OrderedDict()}
+[0.001845] (xarm_msgs) JobQueued: {'identifier': 'xarm_msgs', 'dependencies': OrderedDict()}
+[0.001873] (xarm_sdk) JobQueued: {'identifier': 'xarm_sdk', 'dependencies': OrderedDict()}
+[0.001958] (mbot_demo) JobQueued: {'identifier': 'mbot_demo', 'dependencies': OrderedDict({'uf_ros_lib': '/home/martinalangua/Desktop/ufactory_ros2/install/uf_ros_lib'})}
+[0.002004] (tfm_martin) JobQueued: {'identifier': 'tfm_martin', 'dependencies': OrderedDict({'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs'})}
+[0.002033] (xarm_api) JobQueued: {'identifier': 'xarm_api', 'dependencies': OrderedDict({'xarm_description': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description', 'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs', 'xarm_sdk': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk'})}
+[0.002062] (xarm_controller) JobQueued: {'identifier': 'xarm_controller', 'dependencies': OrderedDict({'xarm_description': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description', 'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs', 'xarm_sdk': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk', 'xarm_api': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_api'})}
+[0.002104] (xarm_gazebo) JobQueued: {'identifier': 'xarm_gazebo', 'dependencies': OrderedDict({'uf_ros_lib': '/home/martinalangua/Desktop/ufactory_ros2/install/uf_ros_lib', 'xarm_description': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description', 'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs', 'xarm_sdk': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk', 'xarm_api': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_api', 'xarm_controller': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_controller'})}
+[0.002156] (xarm_moveit_config) JobQueued: {'identifier': 'xarm_moveit_config', 'dependencies': OrderedDict({'uf_ros_lib': '/home/martinalangua/Desktop/ufactory_ros2/install/uf_ros_lib', 'xarm_description': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description', 'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs', 'xarm_sdk': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk', 'xarm_api': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_api', 'xarm_controller': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_controller', 'xarm_gazebo': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_gazebo'})}
+[0.002228] (xarm_moveit_servo) JobQueued: {'identifier': 'xarm_moveit_servo', 'dependencies': OrderedDict({'uf_ros_lib': '/home/martinalangua/Desktop/ufactory_ros2/install/uf_ros_lib', 'xarm_description': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description', 'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs', 'xarm_sdk': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk', 'xarm_api': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_api', 'xarm_controller': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_controller', 'xarm_gazebo': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_gazebo', 'xarm_moveit_config': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_moveit_config'})}
+[0.002320] (xarm_planner) JobQueued: {'identifier': 'xarm_planner', 'dependencies': OrderedDict({'uf_ros_lib': '/home/martinalangua/Desktop/ufactory_ros2/install/uf_ros_lib', 'xarm_description': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description', 'xarm_msgs': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs', 'xarm_sdk': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk', 'xarm_api': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_api', 'xarm_controller': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_controller', 'xarm_gazebo': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_gazebo', 'xarm_moveit_config': '/home/martinalangua/Desktop/ufactory_ros2/install/xarm_moveit_config'})}
+[0.002414] (xarm_msgs) JobStarted: {'identifier': 'xarm_msgs'}
+[0.004619] (xarm_description) JobStarted: {'identifier': 'xarm_description'}
+[0.005890] (xarm_sdk) JobStarted: {'identifier': 'xarm_sdk'}
+[0.007852] (uf_ros_lib) JobStarted: {'identifier': 'uf_ros_lib'}
+[0.009762] (realsense_gazebo_plugin) JobStarted: {'identifier': 'realsense_gazebo_plugin'}
+[0.010968] (vision_grasping) JobStarted: {'identifier': 'vision_grasping'}
+[0.012746] (xarm_msgs) JobProgress: {'identifier': 'xarm_msgs', 'progress': 'cmake'}
+[0.012994] (xarm_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/martinalangua/Desktop/ufactory_ros2/xarm_ros2/xarm_msgs', '-DCMAKE_INSTALL_PREFIX=/home/martinalangua/Desktop/ufactory_ros2/install/xarm_msgs'], 'cwd': '/home/martinalangua/Desktop/ufactory_ros2/build/xarm_msgs', 'env': OrderedDict({'SUDO_GID': '1001', 'MAIL': '/var/mail/root', 'USER': 'root', 'HOME': '/root', 'COLORTERM': 'truecolor', 'SUDO_UID': '1001', 'LOGNAME': 'root', 'TERM': 'xterm-256color', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XAUTHORITY': '/run/user/1001/.mutter-Xwaylandauth.MUKNR3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SUDO_COMMAND': '/usr/bin/colcon build', 'SHELL': '/bin/bash', 'SUDO_USER': 'martinalangua', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/martinalangua/Desktop/ufactory_ros2/build/xarm_msgs', 'COLCON': '1'}), 'shell': False}
+[0.014205] (xarm_description) JobProgress: {'identifier': 'xarm_description', 'progress': 'cmake'}
+[0.014500] (xarm_description) Command: {'cmd': ['/usr/bin/cmake', '/home/martinalangua/Desktop/ufactory_ros2/xarm_ros2/xarm_description', '-DCMAKE_INSTALL_PREFIX=/home/martinalangua/Desktop/ufactory_ros2/install/xarm_description'], 'cwd': '/home/martinalangua/Desktop/ufactory_ros2/build/xarm_description', 'env': OrderedDict({'SUDO_GID': '1001', 'MAIL': '/var/mail/root', 'USER': 'root', 'HOME': '/root', 'COLORTERM': 'truecolor', 'SUDO_UID': '1001', 'LOGNAME': 'root', 'TERM': 'xterm-256color', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XAUTHORITY': '/run/user/1001/.mutter-Xwaylandauth.MUKNR3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SUDO_COMMAND': '/usr/bin/colcon build', 'SHELL': '/bin/bash', 'SUDO_USER': 'martinalangua', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/martinalangua/Desktop/ufactory_ros2/build/xarm_description', 'COLCON': '1'}), 'shell': False}
+[0.015311] (xarm_sdk) JobProgress: {'identifier': 'xarm_sdk', 'progress': 'cmake'}
+[0.015342] (xarm_sdk) Command: {'cmd': ['/usr/bin/cmake', '/home/martinalangua/Desktop/ufactory_ros2/xarm_ros2/xarm_sdk', '-DCMAKE_INSTALL_PREFIX=/home/martinalangua/Desktop/ufactory_ros2/install/xarm_sdk'], 'cwd': '/home/martinalangua/Desktop/ufactory_ros2/build/xarm_sdk', 'env': OrderedDict({'SUDO_GID': '1001', 'MAIL': '/var/mail/root', 'USER': 'root', 'HOME': '/root', 'COLORTERM': 'truecolor', 'SUDO_UID': '1001', 'LOGNAME': 'root', 'TERM': 'xterm-256color', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XAUTHORITY': '/run/user/1001/.mutter-Xwaylandauth.MUKNR3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SUDO_COMMAND': '/usr/bin/colcon build', 'SHELL': '/bin/bash', 'SUDO_USER': 'martinalangua', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/martinalangua/Desktop/ufactory_ros2/build/xarm_sdk', 'COLCON': '1'}), 'shell': False}
+[0.099758] (-) TimerEvent: {}
+[0.105898] (realsense_gazebo_plugin) JobProgress: {'identifier': 'realsense_gazebo_plugin', 'progress': 'cmake'}
+[0.105962] (realsense_gazebo_plugin) Command: {'cmd': ['/usr/bin/cmake', '/home/martinalangua/Desktop/ufactory_ros2/xarm_ros2/thirdparty/realsense_gazebo_plugin', '-DCMAKE_INSTALL_PREFIX=/home/martinalangua/Desktop/ufactory_ros2/install/realsense_gazebo_plugin'], 'cwd': '/home/martinalangua/Desktop/ufactory_ros2/build/realsense_gazebo_plugin', 'env': OrderedDict({'SUDO_GID': '1001', 'MAIL': '/var/mail/root', 'USER': 'root', 'HOME': '/root', 'COLORTERM': 'truecolor', 'SUDO_UID': '1001', 'LOGNAME': 'root', 'TERM': 'xterm-256color', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XAUTHORITY': '/run/user/1001/.mutter-Xwaylandauth.MUKNR3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SUDO_COMMAND': '/usr/bin/colcon build', 'SHELL': '/bin/bash', 'SUDO_USER': 'martinalangua', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/martinalangua/Desktop/ufactory_ros2/build/realsense_gazebo_plugin', 'COLCON': '1'}), 'shell': False}
+[0.109995] (xarm_description) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.110450] (xarm_msgs) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.111600] (xarm_description) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:19 (find_package):\n'}
+[0.112117] (xarm_description) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.112414] (xarm_description) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.112631] (xarm_description) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.112737] (xarm_description) StderrLine: {'line': b'\n'}
+[0.113106] (xarm_description) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.113216] (xarm_description) StderrLine: {'line': b'  any of the following names:\n'}
+[0.113479] (xarm_description) StderrLine: {'line': b'\n'}
+[0.113715] (xarm_description) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.113819] (xarm_description) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.113951] (xarm_description) StderrLine: {'line': b'\n'}
+[0.114060] (xarm_description) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.114161] (xarm_description) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.114260] (xarm_description) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.114361] (xarm_description) StderrLine: {'line': b'  has been installed.\n'}
+[0.114460] (xarm_description) StderrLine: {'line': b'\n'}
+[0.114559] (xarm_description) StderrLine: {'line': b'\x1b[0m\n'}
+[0.114656] (xarm_msgs) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:19 (find_package):\n'}
+[0.114771] (xarm_msgs) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.114873] (xarm_msgs) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.114971] (xarm_msgs) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.115076] (xarm_msgs) StderrLine: {'line': b'\n'}
+[0.115176] (xarm_msgs) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.115273] (xarm_msgs) StderrLine: {'line': b'  any of the following names:\n'}
+[0.115369] (xarm_msgs) StderrLine: {'line': b'\n'}
+[0.115469] (xarm_msgs) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.115561] (xarm_msgs) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.115651] (xarm_msgs) StderrLine: {'line': b'\n'}
+[0.115740] (xarm_msgs) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.115830] (xarm_msgs) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.115921] (xarm_msgs) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.116029] (xarm_msgs) StderrLine: {'line': b'  has been installed.\n'}
+[0.116125] (xarm_msgs) StderrLine: {'line': b'\n'}
+[0.116221] (xarm_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.116309] (xarm_sdk) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.116404] (xarm_sdk) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:25 (find_package):\n'}
+[0.116451] (xarm_sdk) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.116493] (xarm_sdk) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.116533] (xarm_sdk) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.116576] (xarm_sdk) StderrLine: {'line': b'\n'}
+[0.116618] (xarm_sdk) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.116661] (xarm_sdk) StderrLine: {'line': b'  any of the following names:\n'}
+[0.116708] (xarm_sdk) StderrLine: {'line': b'\n'}
+[0.116752] (xarm_sdk) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.116794] (xarm_sdk) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.116836] (xarm_sdk) StderrLine: {'line': b'\n'}
+[0.116878] (xarm_sdk) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.116920] (xarm_sdk) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.116962] (xarm_sdk) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.117010] (xarm_sdk) StderrLine: {'line': b'  has been installed.\n'}
+[0.117053] (xarm_sdk) StderrLine: {'line': b'\n'}
+[0.117095] (xarm_sdk) StderrLine: {'line': b'\x1b[0m\n'}
+[0.117139] (xarm_sdk) CommandEnded: {'returncode': 1}
+[0.117262] (xarm_msgs) CommandEnded: {'returncode': 1}
+[0.117353] (xarm_description) CommandEnded: {'returncode': 1}
+[0.124126] (realsense_gazebo_plugin) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:17 (find_package):\n'}
+[0.124253] (realsense_gazebo_plugin) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.124294] (realsense_gazebo_plugin) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.124327] (realsense_gazebo_plugin) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.124358] (realsense_gazebo_plugin) StderrLine: {'line': b'\n'}
+[0.124389] (realsense_gazebo_plugin) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.124422] (realsense_gazebo_plugin) StderrLine: {'line': b'  any of the following names:\n'}
+[0.124454] (realsense_gazebo_plugin) StderrLine: {'line': b'\n'}
+[0.124486] (realsense_gazebo_plugin) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.124518] (realsense_gazebo_plugin) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.124549] (realsense_gazebo_plugin) StderrLine: {'line': b'\n'}
+[0.124580] (realsense_gazebo_plugin) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.124611] (realsense_gazebo_plugin) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.124643] (realsense_gazebo_plugin) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.124674] (realsense_gazebo_plugin) StderrLine: {'line': b'  has been installed.\n'}
+[0.124705] (realsense_gazebo_plugin) StderrLine: {'line': b'\n'}
+[0.124736] (realsense_gazebo_plugin) StderrLine: {'line': b'\x1b[0m\n'}
+[0.124767] (realsense_gazebo_plugin) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.199934] (-) TimerEvent: {}
+[0.210096] (xarm_sdk) JobEnded: {'identifier': 'xarm_sdk', 'rc': 1}
+[0.211972] (xarm_msgs) JobEnded: {'identifier': 'xarm_msgs', 'rc': 1}
+[0.213480] (xarm_description) JobEnded: {'identifier': 'xarm_description', 'rc': 1}
+[0.214522] (realsense_gazebo_plugin) JobEnded: {'identifier': 'realsense_gazebo_plugin', 'rc': 'SIGINT'}
+[0.214824] (vision_grasping) JobEnded: {'identifier': 'vision_grasping', 'rc': 'SIGINT'}
+[0.300083] (-) TimerEvent: {}
+[0.394427] (uf_ros_lib) JobEnded: {'identifier': 'uf_ros_lib', 'rc': 'SIGINT'}
+[0.400166] (-) TimerEvent: {}
+[0.404800] (mbot_demo) JobSkipped: {'identifier': 'mbot_demo'}
+[0.404829] (tfm_martin) JobSkipped: {'identifier': 'tfm_martin'}
+[0.404840] (xarm_api) JobSkipped: {'identifier': 'xarm_api'}
+[0.404847] (xarm_controller) JobSkipped: {'identifier': 'xarm_controller'}
+[0.404853] (xarm_gazebo) JobSkipped: {'identifier': 'xarm_gazebo'}
+[0.404859] (xarm_moveit_config) JobSkipped: {'identifier': 'xarm_moveit_config'}
+[0.404867] (xarm_moveit_servo) JobSkipped: {'identifier': 'xarm_moveit_servo'}
+[0.404874] (xarm_planner) JobSkipped: {'identifier': 'xarm_planner'}
+[0.404881] (-) EventReactorShutdown: {}

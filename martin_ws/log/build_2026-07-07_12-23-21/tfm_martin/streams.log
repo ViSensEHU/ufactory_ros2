@@ -1,0 +1,24 @@
+[0.383s] Invoking command in '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/tfm_martin_old': PYTHONPATH=/home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/build install --record /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data
+[0.476s] running egg_info
+[0.480s] writing ../build/tfm_martin/tfm_martin.egg-info/PKG-INFO
+[0.480s] writing dependency_links to ../build/tfm_martin/tfm_martin.egg-info/dependency_links.txt
+[0.480s] writing entry points to ../build/tfm_martin/tfm_martin.egg-info/entry_points.txt
+[0.480s] writing requirements to ../build/tfm_martin/tfm_martin.egg-info/requires.txt
+[0.480s] writing top-level names to ../build/tfm_martin/tfm_martin.egg-info/top_level.txt
+[0.489s] reading manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.489s] writing manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.489s] running build
+[0.489s] running build_py
+[0.490s] running install
+[0.492s] running install_lib
+[0.496s] running install_data
+[0.497s] running install_egg_info
+[0.501s] removing '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin-0.0.0-py3.12.egg-info' (and everything under it)
+[0.501s] Copying ../build/tfm_martin/tfm_martin.egg-info to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin-0.0.0-py3.12.egg-info
+[0.502s] running install_scripts
+[0.538s] Installing coordinador script to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.538s] Installing coordinador_celda_colaborativa script to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.538s] Installing prueba script to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.538s] Installing run script to /home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.538s] writing list of installed files to '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/install.log'
+[0.553s] Invoked command in '/home/martinalangua/Desktop/ufactory_ros2/martin_ws/tfm_martin_old' returned '0': PYTHONPATH=/home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/martinalangua/Desktop/ufactory_ros2/martin_ws/install/tfm_martin/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/build install --record /home/martinalangua/Desktop/ufactory_ros2/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data

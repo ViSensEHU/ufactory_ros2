@@ -1,0 +1,31 @@
+[0.099s] Invoking command in '/home/martinalangua/Desktop/ufactory_ros2/build/realsense_gazebo_plugin': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/martinalangua/Desktop/ufactory_ros2/xarm_ros2/thirdparty/realsense_gazebo_plugin -DCMAKE_INSTALL_PREFIX=/home/martinalangua/Desktop/ufactory_ros2/install/realsense_gazebo_plugin
+[0.133s] -- The C compiler identification is GNU 13.3.0
+[0.165s] -- The CXX compiler identification is GNU 13.3.0
+[0.174s] -- Detecting C compiler ABI info
+[0.219s] -- Detecting C compiler ABI info - done
+[0.225s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.225s] -- Detecting C compile features
+[0.225s] -- Detecting C compile features - done
+[0.230s] -- Detecting CXX compiler ABI info
+[0.283s] -- Detecting CXX compiler ABI info - done
+[0.290s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.290s] -- Detecting CXX compile features
+[0.291s] -- Detecting CXX compile features - done
+[0.296s] -- Configuring incomplete, errors occurred!
+[0.296s] [31mCMake Error at CMakeLists.txt:17 (find_package):
+[0.296s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.296s]   has asked CMake to find a package configuration file provided by
+[0.297s]   "ament_cmake", but CMake did not find one.
+[0.297s] 
+[0.297s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.297s]   any of the following names:
+[0.297s] 
+[0.297s]     ament_cmakeConfig.cmake
+[0.297s]     ament_cmake-config.cmake
+[0.297s] 
+[0.297s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.297s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.297s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.297s]   has been installed.
+[0.297s] 
+[0.297s] [0m

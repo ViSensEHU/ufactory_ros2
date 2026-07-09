@@ -1,3 +1,5 @@
+import math
+
 import rclpy
 from rclpy.node import Node
 from rclpy.callback_groups import ReentrantCallbackGroup
@@ -6,6 +8,7 @@ from rclpy.executors import MultiThreadedExecutor
 from sensor_msgs.msg import Image, CameraInfo
 from xarm_msgs.srv import MoveCartesian
 from xarm_msgs.srv import GetFloat32List
+from xarm_msgs.srv import GetFloat32
 from xarm_msgs.msg import RobotMsg
 
 import time
@@ -59,7 +62,11 @@ class GraspDetectorNode(Node):
         self.depth_camera_k = None
         self.detector_initialized = False
         self.grasp_detector = None
+        self.INIT_STATUS = True
         self.GRASP_STATUS = 0
+        self.GOAL_POS = None
+        self.CURR_POS = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        self.gripper_position = 850.0
 
         # --- CV Bridge ---
         self.bridge = CvBridge()
@@ -75,7 +82,7 @@ class GraspDetectorNode(Node):
         # -----------------------------
         # --- TIMERS ---
         # -----------------------------
-        self.create_timer(0.05, 
+        self.create_timer(1.0, 
                           self.process_frame,
                           callback_group=self.cb_group)  # 20 FPS
         
@@ -154,6 +161,7 @@ class GraspDetectorNode(Node):
             self.get_logger().warn("Esperando servicio /xarm/set_position...")
 
         self.set_xarm6_position(DETECT_XYZ_RPY)  # Ir a la posición inicial de detección
+        self.get_xarm6_position()
 
         self.euler_eef_to_color_opt = EULER_EEF_TO_COLOR_OPT
         self.euler_color_to_depth_opt = EULER_COLOR_TO_DEPTH_OPT
@@ -178,10 +186,69 @@ class GraspDetectorNode(Node):
     # ----------------------------------------------------------------------
     def robot_states_callback(self, msg: RobotMsg):
         self.xarm6_last_state = self.xarm6_state
-        self.xarm6_state = msg.state
-        # Actualizar pose del robot
-        if self.xarm6_last_state == 1 and self.xarm6_state == 2:
-            self.GRASP_STATUS += 1
+        self.xarm6_state = msg.state  # 1: RUNNING, 2: SLEEPING
+
+        # Extraer posición TCP actual (Pasando la orientación de Radianes a Grados)
+        curr_x = msg.pose[0]
+        curr_y = msg.pose[1]
+        curr_z = msg.pose[2]
+        curr_roll = math.degrees(msg.pose[3])
+        curr_pitch = math.degrees(msg.pose[4])
+        curr_yaw = math.degrees(msg.pose[5])
+        
+        self.CURR_POS = [curr_x, curr_y, curr_z, curr_roll, curr_pitch, curr_yaw]
+
+        # Secuencia de inicialización: cuando el robot pasa de 1: RUNNING a 2: SLEEPING por primera vez, se considera que la inicialización ha terminado
+        if self.xarm6_last_state == 1 and self.xarm6_state == 2 and self.INIT_STATUS == True:
+            self.INIT_STATUS = False
+
+        # Si no hay un objetivo de agarre fijado por la cámara, salimos
+        if self.GOAL_POS is None:
+            return
+
+        # --- MÁQUINA DE ESTADOS REACTIVA POR FASES ---
+        # Si el robot ha llegado a centrarse horizontalmente sobre el objeto (Tolerancia de 2mm)
+        if abs(curr_x - self.GOAL_POS[0]) < 2.0 and abs(curr_y - self.GOAL_POS[1]) < 2.0:
+            if self.GRASP_STATUS == 0:
+                self.GRASP_STATUS = 1
+        #     elif self.GRASP_STATUS == 1:
+        #         self.GRASP_STATUS = 2
+        #     elif self.GRASP_STATUS == 2:
+        #         # --- FASE 2: ORDENAR EL DESCENSO EN Z ---
+        #         self.get_logger().info("Alineación XY alcanzada. Bajando verticalmente en Z hacia el objeto...")
+        #         self.GRASP_STATUS = 3
+                
+        #         # Enviamos el objetivo completo (utilizando ahora sí la Z de agarre real en el fondo)
+        #         self.set_xarm6_position_async(self.GOAL_POS, speed=50.0)
+
+        # # --- FASE 3: DETECCIÓN DE FIN DE MOVIMIENTO EN EL FONDO ---
+        # # Si el brazo termina de moverse (pasa de 1: RUNNING a 2: SLEEPING) en pleno descenso (Estado 3)
+        # if self.xarm6_last_state == 1 and self.xarm6_state == 2 and self.GRASP_STATUS == 3:
+        #     self.get_logger().info("¡Robot en posición de fondo! Cerrando pinza sobre la pieza...")
+        #     self.GRASP_STATUS = 4
+            
+        #     # TODO: Añade aquí tu llamada al servicio para cerrar el gripper físicamente
+        #     # p.ej: self.call_gripper_service(position=0)
+
+        # # --- FASE 4: CONDICIÓN DE AGARRE EFECTIVO Y RETIRADA ---
+        # # Si la pinza está en proceso de agarre y detectamos que cerró por debajo del umbral de 200
+        # if self.GRASP_STATUS == 4 and self.gripper_position < 200.0:
+        #     self.get_logger().info("Objeto asegurado en el gripper. Elevando el brazo...")
+        #     self.GRASP_STATUS = 5
+            
+        #     # Calculamos una Z alta sumando 100mm a la posición vertical actual
+        #     z_retirada = curr_z + 100.0
+        #     escape_pose = [curr_x, curr_y, z_retirada, 180.0, 0.0, curr_yaw]
+            
+        #     self.set_xarm6_position_async(escape_pose, speed=80.0)
+
+
+
+
+        
+
+        # if self.xarm6_last_state == 1 and self.xarm6_state == 2 and self.GRASP_STATUS == 0:
+        #     self.GRASP_STATUS = 1
 
         # self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
 
@@ -247,14 +314,15 @@ class GraspDetectorNode(Node):
 
     # Callback del procesamiento de vision (depth + color)
     def process_frame(self):
-        if self.GRASP_STATUS == 1:
+        if self.INIT_STATUS == False:
+            self.get_logger().info('NO ESTOY EN INICIO, DEBERIA IR A LA PELOTA')
             if self.color_image is None or self.depth_image is None:
+                #self.get_logger().info('NO COLOR IMAGE')
                 return
             if self.crop_size is None:
+                #self.get_logger().info('NO CROP SIZE')
                 return
-            
-            if self.is_moving:
-                return
+    
 
             # self.get_logger().info('process_frame ejecutado')
 
@@ -273,9 +341,10 @@ class GraspDetectorNode(Node):
             self.grasp_detector._color_img = color_crop
 
             # Obtener posicion del robot
-            self.get_xarm6_position()
+            # self.get_xarm6_position()
 
             if self.xarm6_pose is not None:
+                self.get_logger().info('ENTRO EN XARM6 POSE')
                 # Identificación y reconocimiento de la pelota
                 grasp_img, result = self.grasp_detector.get_grasp_img(
                     depth_crop,
@@ -286,17 +355,31 @@ class GraspDetectorNode(Node):
                 # self.get_logger().info(f'Resultado del grasp: {result}')
 
                 if result is not None:
-                    # self.get_logger().info(f'Pelota detectada en: {result["center"]}, z={result["z"]:.2f} mm, quality={result["quality"]:.2f}')
+                    self.get_logger().info('RESULT NOT NONE')
+                    self.get_logger().info(f'Pelota detectada en: {result["center"]}, z={result["z"]:.2f} mm, quality={result["quality"]:.2f}')
                     # Convertir grasp a coordenadas reales (copiar lógica de RobotGrasp.grasp())
-                    goal = self.compute_goal_pose(result)
+                    goal_pose = self.compute_goal_pose(result)
                     
                     # --- REEMPLAZAR LA LLAMADA DIRECTA POR ESTA VALIDACIÓN ---
-                    if goal is not None:
-                        # self.get_logger().info(f'Objetivo válido calculado: {goal}')
-                        # Mover robot
-                        self.set_xarm6_position(goal)
-                        # Secuencia de grasp (bajar, cerrar, levantar, soltar)
-                        self.perform_grasp_sequence(goal)
+                    if goal_pose is not None:
+                        self.get_logger().info('GOAL NOT NONE')
+                        # FASE 1 DE MOVIMIENTO XY + YAW
+                        if self.GRASP_STATUS == 0:
+                            # self.get_logger().info(f'Objetivo válido calculado: {goal}')
+                            # Mover robot
+                            self.GOAL_POS = goal_pose
+                            z_segura = max(self.CURR_POS[2], 380.0)
+                            approach_pose = [
+                                self.GOAL_POS[0],  # X objetivo
+                                self.GOAL_POS[1],  # Y objetivo
+                                z_segura,          # Z alta de seguridad
+                                math.radians(180.0),             # Roll forzado
+                                math.radians(0.0),               # Pitch forzado
+                                math.radians(self.GOAL_POS[5])   # Yaw dinámico calculado
+                            ]
+                            self.set_xarm6_position_approach(approach_pose)
+                            # Secuencia de grasp (bajar, cerrar, levantar, soltar)
+                            #self.perform_grasp_sequence(goal_pose)
                     else:
                         self.get_logger().warn('Objetivo fuera de rango seguro o inválido algebraicamente. Ignorando movimiento.')
                 
@@ -317,7 +400,7 @@ class GraspDetectorNode(Node):
             self.get_logger().error('Error llamando a /xarm/get_position')
             return
         self.xarm6_pose = future.result().datas
-        # self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
+        self.get_logger().info(f'Pose XArm6 recibida: {self.xarm6_pose}')
     
     def _on_move_done(self, future):
         if future.result() is None:
@@ -362,11 +445,24 @@ class GraspDetectorNode(Node):
     def set_xarm6_position(self, goal):
         self.get_logger().info(f'Llamando a /xarm/set_position con: {goal}')
         req = MoveCartesian.Request()
-        req.pose = [float(val) for val in goal]              # goal = [x, y, z, roll, pitch, yaw]
-        req.speed = 50.0               # ajusta según tu robot
+        req.pose = [float(val) for val in goal] # goal = [x, y, z, roll, pitch, yaw]
+        req.speed = 70.0               
         req.acc = 500.0
         req.mvtime = 0.0
-        req.wait = True
+        req.wait = False
+
+        future = self.moveit_client.call_async(req)
+
+        future.add_done_callback(self._on_move_done)
+
+    def set_xarm6_position_approach(self, goal):
+        self.get_logger().info(f'Llamando a /xarm/set_position con: {goal}')
+        req = MoveCartesian.Request()
+        req.pose = [float(val) for val in goal] # goal = [x, y, z, roll, pitch, yaw]
+        req.speed = 50.0               
+        req.acc = 500.0
+        req.mvtime = 0.0
+        req.wait = False
 
         future = self.moveit_client.call_async(req)
 
