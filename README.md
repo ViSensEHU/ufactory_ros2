@@ -35,6 +35,9 @@ ros2 service call /xarm/motion_enable xarm_msgs/srv/SetInt16ById "{id: 8, data: 
 ros2 service call /xarm/set_mode xarm_msgs/srv/SetInt16 "{data: 0}"
 ros2 service call /xarm/set_state xarm_msgs/srv/SetInt16 "{data: 0}"
 
+# si activamos el modo 7, poder comandar una posición y cambiarla sin esperar a que termine el movimiento
+ros2 service call /xarm/set_mode xarm_msgs/srv/SetInt16 "{data: 7}"
+
 # Cartesian linear motion: (unit: mm, rad)
 ros2 service call /xarm/set_position xarm_msgs/srv/MoveCartesian "{pose: [300, 0, 250, 3.14, 0, 0], speed: 50, acc: 500, mvtime: 0}"   
 
