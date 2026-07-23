@@ -1,5 +1,0 @@
-[console_scripts]
-coordinador = tfm_martin.coordinador_xarm_motorlin_850:main
-coordinador_celda_colaborativa = tfm_martin.coordinador_celda_colaborativa:main
-prueba = tfm_martin.prueba:main
-run = tfm_martin.prueba_motor_lineal:main

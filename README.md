@@ -1,3 +1,622 @@
+# Reset camera SW
+Buscar el puerto de la cámara:
+```bash
+lsusb
+```
+
+Debería salir algo parecido a ``Bus 002 Device 004: ID 8086:0b07 Intel Corp. RealSense D435``.
+
+Para el caso del ejemplo, comprobar que existe la ruta:
+```bash
+ls -l /dev/bus/usb/002/004
+```
+
+Debería salir algo parecido a ``crw-rw-r-- 1 root root 189, 131 jul 23 10:09 /dev/bus/usb/002/004``.
+
+Resetear la cámara:
+```bash
+sudo usbreset 002/004
+```
+
+En Docker, ejecutar el nodo de la cámara:
+```bash
+ros2 run realsense2_camera realsense2_camera_node --ros-args -p align_depth.enable:=true -p pointcloud.enable:=true
+```
+
+nodo gmm (no se podrá usar porque al ir moviendose la camara, el fondo cambia y por tanto, gmm no sirve):
+```bash
+ros2 run gmm_ros2 gmm_node
+```
+<br><br>
+
+
+
+
+# Intel RealSense D435 en ROS 2
+
+Configuración y explicación de la cámara Intel RealSense D435 usando `realsense2_camera` en ROS 2.
+
+## 1. Introducción
+
+La Intel RealSense D435 es una cámara RGB-D que combina:
+
+- Cámara RGB (color).
+- Dos cámaras infrarrojas (IR) para estimación de profundidad.
+- Un proyector infrarrojo que ayuda al sistema estéreo en condiciones difíciles.
+
+La cámara publica imágenes 2D y también puede generar nubes de puntos 3D.
+
+En ROS 2 se utiliza el paquete:
+
+```
+realsense2_camera
+```
+
+---
+
+# 2. Arquitectura de datos
+
+La cámara funciona de esta manera:
+
+```
+                RealSense D435
+                     |
+       +-------------+-------------+
+       |                           |
+     RGB                         Depth
+       |                           |
+color/image_raw          depth/image_rect_raw
+                                   |
+                                   |
+                         cálculo de profundidad
+                                   |
+                                   |
+                    +--------------+--------------+
+                    |                             |
+              Imagen Depth                 PointCloud
+                    |                             |
+              DepthCloud RViz              PointCloud2 RViz
+```
+
+---
+
+# 3. Lanzar la cámara
+
+Ejemplo básico:
+
+```bash
+ros2 run realsense2_camera realsense2_camera_node
+```
+
+Con alineamiento de profundidad y generación de nube de puntos:
+
+```bash
+ros2 run realsense2_camera realsense2_camera_node \
+  --ros-args \
+  -p align_depth.enable:=true \
+  -p pointcloud.enable:=true
+```
+
+---
+
+# 4. Tópicos publicados
+
+Comprobar:
+
+```bash
+ros2 topic list | grep camera
+```
+
+Ejemplo:
+
+```
+/camera/camera/color/image_raw
+
+/camera/camera/depth/image_rect_raw
+
+/camera/camera/aligned_depth_to_color/image_raw
+
+/camera/camera/depth/color/points
+```
+
+---
+
+# 5. Imagen RGB
+
+La cámara RGB publica:
+
+```
+/camera/camera/color/image_raw
+```
+
+Tipo:
+
+```
+sensor_msgs/msg/Image
+```
+
+Se puede visualizar en RViz usando:
+
+```
+Add -> Image
+```
+
+---
+
+# 6. Imagen de profundidad (Depth)
+
+La cámara publica profundidad:
+
+```
+/camera/camera/depth/image_rect_raw
+```
+
+Tipo:
+
+```
+sensor_msgs/msg/Image
+```
+
+Cada píxel representa distancia.
+
+Normalmente el formato es:
+
+```
+16UC1
+```
+
+donde el valor representa distancia en milímetros.
+
+Ejemplo:
+
+```
+1000 = 1 metro
+2000 = 2 metros
+```
+
+---
+
+# 7. Depth alineado con RGB
+
+Activando:
+
+```
+align_depth.enable:=true
+```
+
+se publica:
+
+```
+/camera/camera/aligned_depth_to_color/image_raw
+```
+
+Esto significa:
+
+- Cada píxel de profundidad corresponde al mismo píxel de la imagen RGB.
+- Es útil para detectar objetos en color y obtener su distancia.
+
+Ejemplo:
+
+```
+RGB pixel:
+    (320,240)
+
+Depth pixel:
+    (320,240)
+
+Distancia:
+    0.75 metros
+```
+
+---
+
+# 8. PointCloud2
+
+Activando:
+
+```
+pointcloud.enable:=true
+```
+
+la cámara genera directamente una nube 3D:
+
+```
+/camera/camera/depth/color/points
+```
+
+Tipo:
+
+```
+sensor_msgs/msg/PointCloud2
+```
+
+Cada punto contiene:
+
+```
+X
+Y
+Z
+Color RGB
+```
+
+Ejemplo:
+
+```
+Punto 3D:
+
+x = 0.12 m
+y = -0.03 m
+z = 0.75 m
+```
+
+---
+
+# 9. Visualizar en RViz
+
+## Opción recomendada: PointCloud2
+
+En RViz:
+
+```
+Add
+ |
+ + PointCloud2
+```
+
+Seleccionar:
+
+```
+/camera/camera/depth/color/points
+```
+
+Configurar:
+
+```
+Fixed Frame:
+camera_link
+```
+
+o un frame del robot conectado mediante TF.
+
+---
+
+# 10. ¿Qué es DepthCloud?
+
+DepthCloud es un display antiguo de RViz.
+
+No recibe una nube de puntos.
+
+Recibe:
+
+```
+sensor_msgs/msg/Image
+```
+
+y calcula internamente:
+
+```
+Depth Image
+      +
+Camera Info
+      |
+      v
+Puntos 3D
+```
+
+Necesita:
+
+Imagen:
+
+```
+/camera/camera/aligned_depth_to_color/image_raw
+```
+
+Información de cámara:
+
+```
+/camera/camera/aligned_depth_to_color/camera_info
+```
+
+---
+
+## Diferencia entre DepthCloud y PointCloud2
+
+| | DepthCloud | PointCloud2 |
+|-|-|-|
+| Entrada | Imagen Depth | Nube 3D |
+| Cálculo de puntos | RViz | Cámara |
+| CPU usada | Mayor | Menor |
+| Uso recomendado | Visualización rápida | Robótica |
+| Tipo ROS | Image | PointCloud2 |
+
+Para robots se recomienda:
+
+```
+PointCloud2
+```
+
+---
+
+# 11. Infrarrojo estéreo de la RealSense D435
+
+La D435 no obtiene profundidad midiendo directamente distancia.
+
+Utiliza visión estéreo.
+
+Tiene:
+
+```
+        IR izquierda          IR derecha
+
+             \                 /
+              \               /
+               \             /
+
+              Objeto
+
+```
+
+Las dos cámaras infrarrojas ven la misma escena desde posiciones diferentes.
+
+La diferencia entre ambas imágenes se llama:
+
+```
+disparidad (disparity)
+```
+
+Con la disparidad se calcula la profundidad:
+
+```
+Más diferencia entre imágenes
+        |
+        v
+Objeto más cerca
+
+
+Menos diferencia
+        |
+        v
+Objeto más lejos
+```
+
+---
+
+# 12. ¿Para qué sirven las cámaras infrarrojas?
+
+Las cámaras IR permiten:
+
+## 1. Obtener profundidad
+
+Son las responsables del cálculo 3D.
+
+Sin ellas:
+
+```
+RGB solamente
+=
+imagen 2D
+```
+
+Con ellas:
+
+```
+RGB + IR estéreo
+=
+posición 3D
+```
+
+---
+
+## 2. Funcionan con poca luz
+
+La cámara RGB necesita iluminación.
+
+Las cámaras IR pueden trabajar:
+
+- En interiores.
+- Con poca luz.
+- Sin depender del color.
+
+---
+
+## 3. Evitan problemas con texturas pobres
+
+Una pared blanca no tiene características visuales.
+
+El sistema estéreo puede tener dificultades.
+
+Por eso la D435 tiene un:
+
+```
+IR emitter
+```
+
+que proyecta un patrón infrarrojo.
+
+Ese patrón crea textura artificial:
+
+```
+Pared lisa:
+
+########
+
+
+Con patrón IR:
+
+# . ## . #
+ . ## . #
+# . ## .
+```
+
+Esto ayuda al cálculo de profundidad.
+
+---
+
+# 13. Activar/desactivar infrarrojos
+
+Ver parámetros:
+
+```bash
+ros2 param list /camera/camera
+```
+
+Ejemplo:
+
+Desactivar infrarrojos:
+
+```bash
+-p enable_infra1:=false
+-p enable_infra2:=false
+```
+
+Mantener profundidad:
+
+```bash
+-p enable_depth:=true
+```
+
+---
+
+# 14. Configuración recomendada para robótica
+
+Para manipulación con robots:
+
+```bash
+ros2 run realsense2_camera realsense2_camera_node \
+  --ros-args \
+  -p enable_depth:=true \
+  -p enable_color:=true \
+  -p align_depth.enable:=true \
+  -p pointcloud.enable:=true \
+  -p depth_module.depth_profile:=848x480x30 \
+  -p rgb_camera.color_profile:=640x480x30
+```
+
+Ventajas:
+
+- 30 FPS.
+- Buena precisión.
+- Menor consumo CPU.
+- Adecuado para ROS 2 y RViz.
+
+---
+
+# 15. Comprobaciones útiles
+
+Ver tópicos:
+
+```bash
+ros2 topic list | grep camera
+```
+
+Ver tipo:
+
+```bash
+ros2 topic type /camera/camera/depth/color/points
+```
+
+Debe devolver:
+
+```
+sensor_msgs/msg/PointCloud2
+```
+
+Ver frecuencia:
+
+```bash
+ros2 topic hz /camera/camera/depth/color/points
+```
+
+Ver TF:
+
+```bash
+ros2 run tf2_tools view_frames
+```
+
+---
+
+# 16. Resumen
+
+Para robots:
+
+Usar:
+
+```
+RealSense
+    |
+    |
+/camera/camera/depth/color/points
+    |
+    |
+RViz PointCloud2
+```
+
+No usar:
+
+```
+DepthCloud
+```
+
+salvo para pruebas rápidas.
+
+La D435 calcula profundidad mediante:
+
+```
+Cámaras IR estéreo
+        +
+        |
+        v
+Disparidad
+        |
+        v
+Profundidad
+        |
+        v
+PointCloud 3D
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 # Generar .urdf del .xacro de xArm6 de UFactory (pendiente de documentar con más detalle)
 Dentro del contenedor de Docker de ROS2:
 1. ```cd /home/isaac_sim/projects/ufactory_ros2/xarm_ros2```
@@ -91,3 +710,5 @@ ros2 service call /xarm/get_linear_motor_is_enabled xarm_msgs/srv/GetInt16 "{}"
 ```bash
 ros2 service call /xarm/set_linear_motor_pos xarm_msgs/srv/LinearMotorSetPos "{pos: 650, speed: 150, wait: true, timeout: 100.0, auto_enable: true}"
 ```
+
+-->

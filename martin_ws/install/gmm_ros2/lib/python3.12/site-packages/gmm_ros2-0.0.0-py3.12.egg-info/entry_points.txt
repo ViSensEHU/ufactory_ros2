@@ -1,0 +1,2 @@
+[console_scripts]
+gmm_node = gmm_ros2.gmm_node:main
