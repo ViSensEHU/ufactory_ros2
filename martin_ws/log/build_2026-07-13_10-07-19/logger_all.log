@@ -1,0 +1,193 @@
+[0.049s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.049s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78f1253ddf10>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78f12553a840>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78f12553a840>>, mixin_verb=('build',))
+[0.066s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.066s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.066s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.066s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.066s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.066s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.066s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.066s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.066s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.066s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/javierarambarricalvo/martin_ws'
+[0.066s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.067s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extensions ['ignore', 'ignore_ament_install']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extension 'ignore'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extension 'ignore_ament_install'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extensions ['colcon_pkg']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extension 'colcon_pkg'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extensions ['colcon_meta']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extension 'colcon_meta'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extensions ['ros']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_grasping) by extension 'ros'
+[0.080s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vision_grasping' with type 'ros.ament_python' and name 'vision_grasping'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extensions ['ignore', 'ignore_ament_install']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extension 'ignore'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extension 'ignore_ament_install'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extensions ['colcon_pkg']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extension 'colcon_pkg'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extensions ['colcon_meta']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extension 'colcon_meta'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extensions ['ros']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(tfm_martin_old) by extension 'ros'
+[0.081s] DEBUG:colcon.colcon_core.package_identification:Package 'tfm_martin_old' with type 'ros.ament_python' and name 'tfm_martin'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extensions ['ignore', 'ignore_ament_install']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'ignore'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'ignore_ament_install'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extensions ['colcon_pkg']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'colcon_pkg'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extensions ['colcon_meta']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'colcon_meta'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extensions ['ros']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'ros'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extensions ['cmake', 'python']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'cmake'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'python'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extensions ['python_setup_py']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(vision_motor_lin) by extension 'python_setup_py'
+[0.081s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.081s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.081s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.081s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.081s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'cmake_args' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'cmake_target' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'cmake_clean_cache' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'cmake_clean_first' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'cmake_force_configure' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'ament_cmake_args' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'catkin_cmake_args' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'tfm_martin' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.090s] DEBUG:colcon.colcon_core.verb:Building package 'tfm_martin' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/javierarambarricalvo/martin_ws/build/tfm_martin', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/javierarambarricalvo/martin_ws/install/tfm_martin', 'merge_install': False, 'path': '/home/javierarambarricalvo/martin_ws/tfm_martin_old', 'symlink_install': False, 'test_result_base': None}
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'cmake_args' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'cmake_target' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'cmake_clean_cache' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'cmake_clean_first' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'cmake_force_configure' from command line to 'False'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'ament_cmake_args' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'catkin_cmake_args' from command line to 'None'
+[0.090s] Level 5:colcon.colcon_core.verb:set package 'vision_grasping' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.090s] DEBUG:colcon.colcon_core.verb:Building package 'vision_grasping' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/javierarambarricalvo/martin_ws/build/vision_grasping', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/javierarambarricalvo/martin_ws/install/vision_grasping', 'merge_install': False, 'path': '/home/javierarambarricalvo/martin_ws/src/vision_grasping', 'symlink_install': False, 'test_result_base': None}
+[0.090s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.091s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.091s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/javierarambarricalvo/martin_ws/tfm_martin_old' with build type 'ament_python'
+[0.092s] Level 1:colcon.colcon_core.shell:create_environment_hook('tfm_martin', 'ament_prefix_path')
+[0.093s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/hook/ament_prefix_path.ps1'
+[0.094s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/hook/ament_prefix_path.dsv'
+[0.094s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/hook/ament_prefix_path.sh'
+[0.095s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.095s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.098s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/javierarambarricalvo/martin_ws/src/vision_grasping' with build type 'ament_python'
+[0.098s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision_grasping', 'ament_prefix_path')
+[0.098s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/hook/ament_prefix_path.ps1'
+[0.098s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/hook/ament_prefix_path.dsv'
+[0.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/hook/ament_prefix_path.sh'
+[0.099s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.099s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.200s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/javierarambarricalvo/martin_ws/tfm_martin_old'
+[0.200s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.200s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.299s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/javierarambarricalvo/martin_ws/src/vision_grasping'
+[0.299s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.299s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.542s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: update_catalog, build_ext, bdist_rpm, check, bdist_dumb, install_lib, setopt, compile_catalog, build_py, build_scripts, rotate, install, test, build, build_clib, alias, bdist, sdist, register, dist_info, install_egg_info, symlink_data, install_scripts, saveopts, easy_install, upload, extract_messages, develop, init_catalog, upload_docs, clean, editable_wheel, install_data, egg_info, bdist_wheel, install_headers, bdist_egg
+[0.546s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/javierarambarricalvo/martin_ws/src/vision_grasping': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/vision_grasping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_grasping build --build-base /home/javierarambarricalvo/martin_ws/build/vision_grasping/build install --record /home/javierarambarricalvo/martin_ws/build/vision_grasping/install.log --install-scripts $base/lib/vision_grasping --single-version-externally-managed install_data
+[0.547s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: update_catalog, build_ext, bdist_rpm, check, bdist_dumb, install_lib, setopt, compile_catalog, build_py, build_scripts, rotate, install, test, build, build_clib, alias, bdist, sdist, register, dist_info, install_egg_info, symlink_data, install_scripts, saveopts, easy_install, upload, extract_messages, develop, init_catalog, upload_docs, clean, editable_wheel, install_data, egg_info, bdist_wheel, install_headers, bdist_egg
+[0.548s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/javierarambarricalvo/martin_ws/tfm_martin_old': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/javierarambarricalvo/martin_ws/build/tfm_martin/build install --record /home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data
+[0.769s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/javierarambarricalvo/martin_ws/src/vision_grasping' returned '0': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/vision_grasping/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_grasping build --build-base /home/javierarambarricalvo/martin_ws/build/vision_grasping/build install --record /home/javierarambarricalvo/martin_ws/build/vision_grasping/install.log --install-scripts $base/lib/vision_grasping --single-version-externally-managed install_data
+[0.771s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping' for CMake module files
+[0.771s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping' for CMake config files
+[0.772s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib'
+[0.772s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping/bin'
+[0.772s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/pkgconfig/vision_grasping.pc'
+[0.772s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping/lib/python3.12/site-packages'
+[0.772s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision_grasping', 'pythonpath')
+[0.772s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/hook/pythonpath.ps1'
+[0.773s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/hook/pythonpath.dsv'
+[0.773s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/hook/pythonpath.sh'
+[0.773s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/vision_grasping/bin'
+[0.773s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vision_grasping)
+[0.773s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/package.ps1'
+[0.774s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/package.dsv'
+[0.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/package.sh'
+[0.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/package.bash'
+[0.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/vision_grasping/package.zsh'
+[0.774s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/javierarambarricalvo/martin_ws/install/vision_grasping/share/colcon-core/packages/vision_grasping)
+[0.775s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin' for CMake module files
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin' for CMake config files
+[0.776s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/javierarambarricalvo/martin_ws/tfm_martin_old' returned '0': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/javierarambarricalvo/martin_ws/build/tfm_martin/build install --record /home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib'
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin/bin'
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/pkgconfig/tfm_martin.pc'
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages'
+[0.776s] Level 1:colcon.colcon_core.shell:create_environment_hook('tfm_martin', 'pythonpath')
+[0.776s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/hook/pythonpath.ps1'
+[0.776s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/hook/pythonpath.dsv'
+[0.777s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/hook/pythonpath.sh'
+[0.777s] Level 1:colcon.colcon_core.environment:checking '/home/javierarambarricalvo/martin_ws/install/tfm_martin/bin'
+[0.777s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tfm_martin)
+[0.777s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/package.ps1'
+[0.777s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/package.dsv'
+[0.777s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/package.sh'
+[0.777s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/package.bash'
+[0.778s] INFO:colcon.colcon_core.shell:Creating package script '/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/package.zsh'
+[0.778s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/javierarambarricalvo/martin_ws/install/tfm_martin/share/colcon-core/packages/tfm_martin)
+[0.778s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.778s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.778s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.778s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.782s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[0.782s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.782s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.782s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.783s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[0.783s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.783s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/javierarambarricalvo/martin_ws/install/local_setup.ps1'
+[0.784s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/javierarambarricalvo/martin_ws/install/_local_setup_util_ps1.py'
+[0.784s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/javierarambarricalvo/martin_ws/install/setup.ps1'
+[0.785s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/javierarambarricalvo/martin_ws/install/local_setup.sh'
+[0.785s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/javierarambarricalvo/martin_ws/install/_local_setup_util_sh.py'
+[0.785s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/javierarambarricalvo/martin_ws/install/setup.sh'
+[0.786s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/javierarambarricalvo/martin_ws/install/local_setup.bash'
+[0.786s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/javierarambarricalvo/martin_ws/install/setup.bash'
+[0.787s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/javierarambarricalvo/martin_ws/install/local_setup.zsh'
+[0.787s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/javierarambarricalvo/martin_ws/install/setup.zsh'

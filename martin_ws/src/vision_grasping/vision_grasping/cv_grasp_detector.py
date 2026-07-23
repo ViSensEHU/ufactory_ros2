@@ -33,8 +33,8 @@ ASPECT_RATIO_MAX = 1.26  # ratio eje_mayor/eje_menor máximo permitido
                           # pelota ≈ 1.0-1.1, cuadrado ≈ 1.3-1.5
 
 # Rango de profundidad válida en metros
-DEPTH_VALID_MIN = 0.05
-DEPTH_VALID_MAX = 1.20
+DEPTH_VALID_MIN = 0.05 *1
+DEPTH_VALID_MAX = 1.20 *1
 
 # Apertura de garra proporcional al tamaño detectado (escala píxeles)
 GRIPPER_WIDTH_FACTOR = 1.4
@@ -81,6 +81,7 @@ class CVGraspDetector:
 
     def get_grasp_img(self, depth_image, depth_cam_k, robot_z):
         if self._color_img is None:
+            print("self._color_img is None")
             return self._vis_empty(depth_image), None
 
         color_img = self._color_img
@@ -156,6 +157,7 @@ class CVGraspDetector:
                 invalid_contours.append(cnt)
 
         if not valid_objects:
+            print("no valid_objects")
             return self._vis(depth_image, invalid_contours, [], None, color_mask), None
 
         # 3. Selección temporal del mejor candidato
@@ -173,6 +175,7 @@ class CVGraspDetector:
         patch = patch[(patch > DEPTH_VALID_MIN) & (patch < DEPTH_VALID_MAX)]
 
         if len(patch) == 0:
+            print("len patch es cero")
             return self._vis(depth_image, invalid_contours, valid_objects, None, color_mask), None
 
         patch.sort()

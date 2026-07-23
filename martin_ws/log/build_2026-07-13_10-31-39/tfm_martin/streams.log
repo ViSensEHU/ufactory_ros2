@@ -1,0 +1,24 @@
+[0.453s] Invoking command in '/home/javierarambarricalvo/martin_ws/tfm_martin_old': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/javierarambarricalvo/martin_ws/build/tfm_martin/build install --record /home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data
+[0.567s] running egg_info
+[0.574s] writing ../build/tfm_martin/tfm_martin.egg-info/PKG-INFO
+[0.574s] writing dependency_links to ../build/tfm_martin/tfm_martin.egg-info/dependency_links.txt
+[0.574s] writing entry points to ../build/tfm_martin/tfm_martin.egg-info/entry_points.txt
+[0.574s] writing requirements to ../build/tfm_martin/tfm_martin.egg-info/requires.txt
+[0.574s] writing top-level names to ../build/tfm_martin/tfm_martin.egg-info/top_level.txt
+[0.587s] reading manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.588s] writing manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.588s] running build
+[0.588s] running build_py
+[0.588s] running install
+[0.590s] running install_lib
+[0.597s] running install_data
+[0.597s] running install_egg_info
+[0.604s] removing '/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin-0.0.0-py3.12.egg-info' (and everything under it)
+[0.604s] Copying ../build/tfm_martin/tfm_martin.egg-info to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin-0.0.0-py3.12.egg-info
+[0.605s] running install_scripts
+[0.656s] Installing coordinador script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.656s] Installing coordinador_celda_colaborativa script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.656s] Installing prueba script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.656s] Installing run script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.656s] writing list of installed files to '/home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log'
+[0.670s] Invoked command in '/home/javierarambarricalvo/martin_ws/tfm_martin_old' returned '0': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/javierarambarricalvo/martin_ws/build/tfm_martin/build install --record /home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data

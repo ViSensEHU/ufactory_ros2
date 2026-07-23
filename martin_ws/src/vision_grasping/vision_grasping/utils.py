@@ -55,14 +55,15 @@ def compute_goal_pose(result,
     """
 
     # result = (x, y, z, angle)
-    d = [result.x, result.y, result.z, result.angle]
+    # d = [result.x, result.y, result.z, result.angle]
+    d = [result[0], result[1], result[2], result[3]]
 
     # Si la profundidad es demasiado baja, no es válido
     if d[2] <= min_result_z:
         return None
 
     # 1. Pose del grasp en el frame de la cámara de profundidad
-    gp = [d[0], d[1], d[2], 0, 0, -d[3]]  # xyzrpy en metros
+    gp = [d[0]/1000.0, d[1]/1000.0, d[2]/1000.0, 0, 0, -d[3]]  # xyzrpy en metros
 
     # 2. Transformación depthOpt → base
     mat_depthOpt_in_base = (
@@ -80,9 +81,9 @@ def compute_goal_pose(result,
         gp_base[5] -= np.pi
 
     # 4. Construir GOAL_POS
-    x_mm = gp_base[0] * 1000
-    y_mm = gp_base[1] * 1000
-    z_mm = gp_base[2] * 1000 + gripper_z_mm
+    x_mm = gp_base[0] * 1
+    y_mm = gp_base[1] * 1
+    z_mm = gp_base[2] * 1 + gripper_z_mm
 
     roll = 180
     pitch = 0

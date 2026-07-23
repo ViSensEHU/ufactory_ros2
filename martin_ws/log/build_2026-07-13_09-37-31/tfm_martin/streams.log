@@ -1,0 +1,80 @@
+[0.452s] Invoking command in '/home/javierarambarricalvo/martin_ws/tfm_martin_old': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/javierarambarricalvo/martin_ws/build/tfm_martin/build install --record /home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data
+[0.562s] running egg_info
+[0.562s] creating ../build/tfm_martin/tfm_martin.egg-info
+[0.568s] writing ../build/tfm_martin/tfm_martin.egg-info/PKG-INFO
+[0.568s] writing dependency_links to ../build/tfm_martin/tfm_martin.egg-info/dependency_links.txt
+[0.568s] writing entry points to ../build/tfm_martin/tfm_martin.egg-info/entry_points.txt
+[0.568s] writing requirements to ../build/tfm_martin/tfm_martin.egg-info/requires.txt
+[0.568s] writing top-level names to ../build/tfm_martin/tfm_martin.egg-info/top_level.txt
+[0.568s] writing manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.581s] reading manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.581s] writing manifest file '../build/tfm_martin/tfm_martin.egg-info/SOURCES.txt'
+[0.581s] running build
+[0.581s] running build_py
+[0.582s] creating /home/javierarambarricalvo/martin_ws/build/tfm_martin/build
+[0.582s] creating /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib
+[0.582s] creating /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] copying tfm_martin/prueba_motor_lineal.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] copying tfm_martin/coordinador_celda_colaborativa.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] copying tfm_martin/__init__.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] copying tfm_martin/cv_grasp_detector.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] copying tfm_martin/prueba.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] copying tfm_martin/coordinador_xarm_motorlin_850.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin
+[0.582s] creating /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera
+[0.582s] copying tfm_martin/camera/utils.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera
+[0.582s] copying tfm_martin/camera/__init__.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera
+[0.582s] copying tfm_martin/camera/rs_camera.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera
+[0.582s] copying tfm_martin/camera/depthai_camera.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera
+[0.582s] creating /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers
+[0.582s] copying tfm_martin/helpers/__init__.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers
+[0.582s] copying tfm_martin/helpers/matrix_funcs.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers
+[0.582s] copying tfm_martin/helpers/covariance.py -> /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers
+[0.582s] running install
+[0.585s] running install_lib
+[0.592s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/prueba_motor_lineal.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera/utils.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera/__init__.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera/rs_camera.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/camera/depthai_camera.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/coordinador_celda_colaborativa.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/__init__.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/cv_grasp_detector.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/prueba.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers/__init__.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers/matrix_funcs.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/helpers/covariance.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers
+[0.592s] copying /home/javierarambarricalvo/martin_ws/build/tfm_martin/build/lib/tfm_martin/coordinador_xarm_motorlin_850.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin
+[0.592s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/prueba_motor_lineal.py to prueba_motor_lineal.cpython-312.pyc
+[0.593s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera/utils.py to utils.cpython-312.pyc
+[0.593s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera/__init__.py to __init__.cpython-312.pyc
+[0.593s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera/rs_camera.py to rs_camera.cpython-312.pyc
+[0.594s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/camera/depthai_camera.py to depthai_camera.cpython-312.pyc
+[0.594s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/coordinador_celda_colaborativa.py to coordinador_celda_colaborativa.cpython-312.pyc
+[0.597s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/__init__.py to __init__.cpython-312.pyc
+[0.597s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/cv_grasp_detector.py to cv_grasp_detector.cpython-312.pyc
+[0.598s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/prueba.py to prueba.cpython-312.pyc
+[0.599s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers/__init__.py to __init__.cpython-312.pyc
+[0.599s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers/matrix_funcs.py to matrix_funcs.cpython-312.pyc
+[0.599s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/helpers/covariance.py to covariance.cpython-312.pyc
+[0.599s] byte-compiling /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin/coordinador_xarm_motorlin_850.py to coordinador_xarm_motorlin_850.cpython-312.pyc
+[0.601s] running install_data
+[0.601s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/ament_index
+[0.601s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/ament_index/resource_index
+[0.601s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/ament_index/resource_index/packages
+[0.601s] copying resource/tfm_martin -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/ament_index/resource_index/packages
+[0.601s] copying package.xml -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin
+[0.601s] creating /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/launch
+[0.601s] copying launch/aplicacion.launch.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/launch
+[0.601s] copying launch/xarm_motor_lin.launch.py -> /home/javierarambarricalvo/martin_ws/install/tfm_martin/share/tfm_martin/launch
+[0.601s] running install_egg_info
+[0.609s] Copying ../build/tfm_martin/tfm_martin.egg-info to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages/tfm_martin-0.0.0-py3.12.egg-info
+[0.609s] running install_scripts
+[0.659s] Installing coordinador script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.659s] Installing coordinador_celda_colaborativa script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.659s] Installing prueba script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.659s] Installing run script to /home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/tfm_martin
+[0.659s] writing list of installed files to '/home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log'
+[0.674s] Invoked command in '/home/javierarambarricalvo/martin_ws/tfm_martin_old' returned '0': PYTHONPATH=/home/javierarambarricalvo/martin_ws/build/tfm_martin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/javierarambarricalvo/martin_ws/install/tfm_martin/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/tfm_martin build --build-base /home/javierarambarricalvo/martin_ws/build/tfm_martin/build install --record /home/javierarambarricalvo/martin_ws/build/tfm_martin/install.log --install-scripts $base/lib/tfm_martin --single-version-externally-managed install_data
