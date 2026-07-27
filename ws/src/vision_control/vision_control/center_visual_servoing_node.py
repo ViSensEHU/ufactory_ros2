@@ -245,8 +245,12 @@ class CenterVisualServoing(Node):
         self.image_width = 640
         self.image_height = 480
 
-        self.cx = self.image_width / 2.0
-        self.cy = self.image_height / 2.0
+        # Centro de la pinza (traslación cámara)
+        self.u_ref = 375.0
+        self.v_ref = 352.0
+
+        """self.cx = self.image_width / 2.0
+        self.cy = self.image_height / 2.0"""
 
         # Zona muerta
         self.deadband_px = 20
@@ -276,8 +280,10 @@ class CenterVisualServoing(Node):
         v = float(msg.y)
         radius = float(msg.z)
 
-        error_u = u - self.cx
-        error_v = v - self.cy
+        error_u = u - self.u_ref #self.cx
+        error_v = v - self.v_ref #self.cy
+
+        self.get_logger().info("REFS")
 
         # Zona muerta
         if abs(error_u) < self.deadband_px:
