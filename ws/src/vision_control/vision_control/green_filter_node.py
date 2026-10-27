@@ -3,6 +3,7 @@
 import rclpy
 from rclpy.node import Node
 
+from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
@@ -33,6 +34,12 @@ class GreenFilterNode(Node):
         self.debug_pub = self.create_publisher(
             Image,
             '/green_ball/debug_image',
+            10
+        )
+
+        self.center_pub = self.create_publisher(
+            Point,
+            '/green_ball/center',
             10
         )
 
@@ -87,6 +94,16 @@ class GreenFilterNode(Node):
 
                 (x, y), radius = cv2.minEnclosingCircle(
                     largest_contour
+                )
+
+                center_msg = Point()
+                center_msg.x = float(x)
+                center_msg.y = float(y)
+                center_msg.z = float(radius)
+
+                self.center_pub.publish(center_msg)
+                self.get_logger().info(
+                    f'Ball detected: x={x:.1f}, y={y:.1f}, r={radius:.1f}'
                 )
 
                 center = (int(x), int(y))
