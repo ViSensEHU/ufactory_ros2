@@ -1,21 +1,6 @@
-# 
-Solucionar error de la hora, cambiar la fecha y hora desde terminal:
-```bash
-sudo timedatectl set-time "2026-10-27 11:24:00"
-```
-
-Instalar imagen ROS2 Jazzy ARM64 con OpenCV
-```bash
-docker build -f Dockerfile-rpi5 -t ros2-arm64-jazzy-vision .
-```
-
-```bash
-ros2 run vision_control green_filter
-```
-
 # UFactory ROS2 - ViSens
 
-Dockerfile no está bien (en desarrollo)
+Dockerfile PC-AMD64 no está bien (hay que revisarlo)
 
 ## Descargar Tilix
 ```bash
@@ -230,3 +215,97 @@ ros2 service call /xarm/set_linear_motor_pos xarm_msgs/srv/LinearMotorSetPos "{p
 ```
 
 -->
+
+# Vision
+
+Para visión utilizaremos "computación distribuida". Prerrequisito: https://github.com/ViSensEHU/rpi5-cameras
+
+Las cámaras están conectadas a una Raspberri Pi 5 (8 GB RAM) cada una. Estas RPi ejecutarán los nodos de visión de la solución de ejemplo y mandarán por un tema de ROS2 (*topic*) la posición y el error de la pelota verde.
+
+Después, el PC recibirá esa información por ROS2, y la utilizará para ejecutar el controlador desarrollador y el *driver* del robot de UFactory. 
+
+A continuación se exponen los pasos seguidos para ejecutar la aplicación de ejemplo desarrollada.
+
+## Raspberry Pi 5
+Encender la Raspbery Pi 5 del robot xArm6. Conectarse por SHH (la contraseña es `xarm6`):
+```bash
+ssh xarm6@192.168.1.102
+```
+
+Hay que abrir varias terminales, por lo que se recomienda usar VSCode conectado a este dispositivo mediante SSH (`Open a remote window`):
+
+![`Open a remote window` en VSCode](img/vscode_ssh.png)
+
+Terminal 1:
+```bash
+cd /home/xarm6/Documents/rpi5-cameras
+./run_rpi.sh
+```
+
+Una vez dentro del contenedor de la imagen de Docker, ejecutar el nodo de la cámara del robot:
+```bash
+ros2 launch realsense2_camera rs_launch.py camera_namespace:=xarm6 camera_name:=realsense
+```
+
+Terminal 2:
+```bash
+docker exec -it ros2_jazzy_realsense_vision bash
+cd cd /home/xarm6/Documents/ufactory_ros2/ws
+colcon build --packages-select vision_control
+source install/setup.bash
+ros2 launch vision_control green_follower.launch.py 
+```
+
+<br>
+
+**NOTA**: para que la transmisión de la cámara por red funcione correctamente, es recomendable desconectar la Raspberry Pi 5 de `eduroam` (y en general, de cualquier otra red que no se utilice para la comunicación, y de cualquier otra red con el mismo *gateway*):
+```bash
+sudo nmcli connection down id eduroam
+```
+
+Para volver a activar la conexión a internet (pedirá las credenciales de `eduroam`):
+```bash
+sudo nmcli --ask connection up id eduroam
+```
+
+
+<!--
+Solucionar error de la hora, cambiar la fecha y hora desde terminal:
+```bash
+sudo timedatectl set-time "2026-10-27 11:24:00"
+```
+
+```bash
+ros2 run vision_control green_filter
+```
+-->
+
+## PC
+Terminal 1:
+```bash
+cd /home/$USER/Documents/ufactory_ros2
+./run_eib.sh
+ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.211
+```
+
+Terminal 2:
+```bash
+docker exec -it xarm_ros2 bash
+ros2 service call /xarm/motion_enable xarm_msgs/srv/SetInt16ById "{id: 8, data: 1}"
+ros2 service call /xarm/set_mode xarm_msgs/srv/SetInt16 "{data: 7}"
+ros2 service call /xarm/set_state xarm_msgs/srv/SetInt16 "{data: 0}"
+cd /home/javierarambarricalvo/ws
+colcon build --packages-select vision_control
+source install/setup.bash
+ros2 run vision_control xarm_visual_servo_controller
+```
+
+Si queremos visualizar las imágenes, podemos abrir RViz2 en la Terminal 3:
+```bash
+docker exec -it xarm_ros2 bash
+cd /home/javierarambarricalvo/ws
+source install/setup.bash
+rviz2
+```
+
+![`Visualización en RViz2](img/rviz2_vision.png)

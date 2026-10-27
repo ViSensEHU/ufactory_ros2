@@ -29,6 +29,7 @@ setup(
         'console_scripts': [
             'green_filter_node = vision_control.green_filter_node:main',
             'center_vs_node = vision_control.center_visual_servoing_node:main',
+            'xarm_visual_servo_controller = vision_control.xarm_visual_servo_controller:main',
         ],
     },
 )
