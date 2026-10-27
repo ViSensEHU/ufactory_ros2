@@ -1,3 +1,18 @@
+# 
+Solucionar error de la hora, cambiar la fecha y hora desde terminal:
+```bash
+sudo timedatectl set-time "2026-10-27 11:24:00"
+```
+
+Instalar imagen ROS2 Jazzy ARM64 con OpenCV
+```bash
+docker build -f Dockerfile-rpi5 -t ros2-arm64-jazzy-vision .
+```
+
+```bash
+ros2 run vision_control green_filter
+```
+
 # UFactory ROS2 - ViSens
 
 Dockerfile no está bien (en desarrollo)

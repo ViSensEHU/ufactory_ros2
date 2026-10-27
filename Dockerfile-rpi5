@@ -1,0 +1,25 @@
+FROM ros:jazzy-ros-base-noble
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# OpenCV, NumPy y herramientas de desarrollo
+# ROS 2: conversión y transporte de imágenes
+RUN apt-get update && apt-get install -y \
+    python3-opencv \
+    python3-numpy \
+    ros-jazzy-cv-bridge \
+    ros-jazzy-image-transport \
+    ros-jazzy-sensor-msgs \
+    ros-jazzy-librealsense2* \
+    ros-jazzy-realsense2-camera \
+    ros-jazzy-realsense2-description \
+    usbutils \
+    v4l-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Cargar ROS 2 automáticamente en las terminales interactivas
+RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc
+
+WORKDIR /workspace
+
+CMD ["bash"]
