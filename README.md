@@ -216,6 +216,27 @@ ros2 service call /xarm/set_linear_motor_pos xarm_msgs/srv/LinearMotorSetPos "{p
 
 -->
 
+# Gripper
+Activar los servicios correspondientes en `xarm_ros2/install/xarm_api/share/xarm_api/config/xarm_params.yaml`.
+
+El fichero `xarm_params.yaml` ya lo incluye a modo de ejemplo.
+
+```bash
+ros2 service call /xarm/set_gripper_enable xarm_msgs/srv/SetInt16 "{data: 1}"
+```
+
+```bash
+ros2 service call /xarm/set_gripper_mode xarm_msgs/srv/SetInt16 "{data: 0}"
+```
+
+```bash
+ros2 service call /xarm/set_gripper_speed xarm_msgs/srv/SetFloat32 "{data: 1500.0}"
+```
+
+```bash
+ros2 service call /xarm/set_gripper_position xarm_msgs/srv/GripperMove "{pos: 850}"
+```
+
 # Vision
 
 Para visión utilizaremos "computación distribuida". Prerrequisito: https://github.com/ViSensEHU/rpi5-cameras

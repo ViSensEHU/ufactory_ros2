@@ -4,7 +4,7 @@ sudo docker run -it --rm \
     -e USER=$USER \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v ./ws:/home/$USER/ws \
+    -v "$(pwd)":/home/javierarambarricalvo/Documents/ufactory_ros2:rw \
     --device /dev/dri:/dev/dri \
     --name xarm_ros2 \
     visensehu/xarm_ros2:jazzy
