@@ -30,7 +30,9 @@ setup(
             'center_vs_node = vision_control.center_visual_servoing_node:main',
             'xarm_visual_servo_controller = vision_control.xarm_visual_servo_controller:main',
             'xarm_visual_servo_controller_lifecycle = vision_control.xarm_visual_servo_controller_lifecycle:main',
-            'main = vision_control.main_fsm:main',
+            'tracking_node = vision_control.tracking_node:main',
+            'grasping_node = vision_control.grasping_node:main',
+            'main_fsm_node = vision_control.main_fsm:main',
         ],
     },
 )

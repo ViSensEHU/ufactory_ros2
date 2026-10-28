@@ -4,21 +4,29 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    xarm_visual_servo_controller_lifecycle_node = Node(
+    tracking_node = Node(
         package='vision_control',
-        executable='xarm_visual_servo_controller_lifecycle',
-        name='xarm_visual_servo_controller_lifecycle',
+        executable='tracking_node',
+        name='tracking',
+        output='screen'
+    )
+
+    grasping_node = Node(
+        package='vision_control',
+        executable='grasping_node',
+        name='grasping',
         output='screen'
     )
 
     main_node = Node(
         package='vision_control',
-        executable='main',
-        name='main',
+        executable='main_fsm_node',
+        name='main_fsm',
         output='screen'
     )
 
     return LaunchDescription([
-        xarm_visual_servo_controller_lifecycle_node,
+        tracking_node,
+        grasping_node,
         main_node,
     ])

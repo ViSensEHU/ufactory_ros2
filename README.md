@@ -319,6 +319,7 @@ cd /home/javierarambarricalvo/ws
 colcon build --packages-select vision_control
 source install/setup.bash
 ros2 run vision_control xarm_visual_servo_controller
+ros2 launch vision_control grasping.launch.py
 ```
 
 Si queremos visualizar las imágenes, podemos abrir RViz2 en la Terminal 3:
