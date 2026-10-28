@@ -99,8 +99,8 @@ class VisualGraspFSM(Node):
         self.set_xarm_mode(7)
         self.set_xarm_state(0)
 
-        self.lifecycle_transition(Transition.TRANSITION_CONFIGURE)
-        self.lifecycle_transition(Transition.TRANSITION_ACTIVATE)
+        self.lifecycle_transition(Transition.TRANSITION_CONFIGURE, True)
+        self.lifecycle_transition(Transition.TRANSITION_ACTIVATE, True)
 
         self.get_logger().info('Tracking activado.')
 
@@ -173,14 +173,15 @@ class VisualGraspFSM(Node):
     # ==================================================
     # Lifecycle helper
     # ==================================================
-    def lifecycle_transition(self, transition_id):
+    def lifecycle_transition(self, transition_id, wait=False):
 
         req = ChangeState.Request()
         req.transition.id = transition_id
 
         future = self.change_state_client.call_async(req)
 
-        rclpy.spin_until_future_complete(self, future)
+        if wait is True:
+            rclpy.spin_until_future_complete(self, future)
 
         if future.result() is not None:
             self.get_logger().info(f'Transición {transition_id} ejecutada.')
@@ -200,11 +201,11 @@ class VisualGraspFSM(Node):
     # FSM
     # ==================================================
     def control_loop(self):
-
         if self.state == State.TRACKING:
             self.tracking_state()
 
         elif self.state == State.GRASPING:
+            print("GRASPING")
             self.grasping_state()
 
         elif self.state == State.FINISHED:
@@ -225,20 +226,24 @@ class VisualGraspFSM(Node):
 
         if self.center_counter > self.required_center_cycles:
             self.get_logger().info('Objeto alineado.')
-            self.lifecycle_transition(Transition.TRANSITION_DEACTIVATE)
-
-            self.set_xarm_mode(0)
-            self.set_xarm_state(0)
+            self.lifecycle_transition(Transition.TRANSITION_DEACTIVATE, False)
 
             self.state = State.GRASPING
+            print(self.state)
 
     # ==================================================
     # GRASPING
     # ==================================================
     def grasping_state(self):
 
+        print("MUCHO")
+
         if self.grasp_executed:
             return
+
+        print("Hola")
+        self.set_xarm_mode(0)
+        self.set_xarm_state(0)
 
         self.grasp_executed = True
 
@@ -270,7 +275,6 @@ class VisualGraspFSM(Node):
         req.wait = True
 
         future = self.move_client.call_async(req)
-        print("ESPERANDO FUTURE")
         rclpy.spin_until_future_complete(self, future)
 
     def move_relative_z(self, delta_z):
