@@ -246,8 +246,8 @@ class CenterVisualServoing(Node):
         self.image_height = 480
 
         # Centro de la pinza (traslación cámara)
-        self.u_ref = 375.0
-        self.v_ref = 352.0
+        self.u_ref = 360.0
+        self.v_ref = 382.0
 
         """self.cx = self.image_width / 2.0
         self.cy = self.image_height / 2.0"""
