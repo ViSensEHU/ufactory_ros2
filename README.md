@@ -271,7 +271,7 @@ ros2 launch realsense2_camera rs_launch.py camera_namespace:=xarm6 camera_name:=
 Terminal 2:
 ```bash
 docker exec -it ros2_jazzy_realsense_vision bash
-cd cd /home/xarm6/Documents/ufactory_ros2/ws
+cd /home/xarm6/Documents/ufactory_ros2/ws
 colcon build --packages-select vision_control
 source install/setup.bash
 ros2 launch vision_control green_follower.launch.py 
@@ -315,17 +315,21 @@ docker exec -it xarm_ros2 bash
 ros2 service call /xarm/motion_enable xarm_msgs/srv/SetInt16ById "{id: 8, data: 1}"
 ros2 service call /xarm/set_mode xarm_msgs/srv/SetInt16 "{data: 7}"
 ros2 service call /xarm/set_state xarm_msgs/srv/SetInt16 "{data: 0}"
-cd /home/javierarambarricalvo/ws
+cd /home/javierarambarricalvo/Documents/ufactory_ros2/ws
 colcon build --packages-select vision_control
 source install/setup.bash
+
+# Si solo queremos que vaya a la pelota
 ros2 run vision_control xarm_visual_servo_controller
+
+# Si queremos la aplicación de grasping, ejecutar solo:
 ros2 launch vision_control grasping.launch.py
 ```
 
 Si queremos visualizar las imágenes, podemos abrir RViz2 en la Terminal 3:
 ```bash
 docker exec -it xarm_ros2 bash
-cd /home/javierarambarricalvo/ws
+cd /home/javierarambarricalvo/Documents/ufactory_ros2/ws
 source install/setup.bash
 rviz2
 ```
