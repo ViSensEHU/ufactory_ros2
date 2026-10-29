@@ -33,6 +33,7 @@ setup(
             'tracking_node = vision_control.tracking_node:main',
             'grasping_node = vision_control.grasping_node:main',
             'main_fsm_node = vision_control.main_fsm:main',
+            'depth_test_node = vision_control.depth_test_node:main',
         ],
     },
 )
