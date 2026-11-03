@@ -2,6 +2,7 @@ FROM ros:jazzy-ros-base-noble
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# RealSense SDK 2.0 + ROS 2 wrapper
 # OpenCV, NumPy y herramientas de desarrollo
 # ROS 2: conversión y transporte de imágenes
 RUN apt-get update && apt-get install -y \
@@ -19,7 +20,5 @@ RUN apt-get update && apt-get install -y \
 
 # Cargar ROS 2 automáticamente en las terminales interactivas
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc
-
-WORKDIR /workspace
 
 CMD ["bash"]
