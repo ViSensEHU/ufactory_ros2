@@ -2,6 +2,16 @@
 
 Dockerfile PC-AMD64 no está bien (hay que revisarlo)
 
+Para descargar el repositorio descargando los submódulos:
+```bash
+git clone --recurse-submodules git@github.com:ViSensEHU/ufactory_ros2.git
+```
+
+Si se ha descargado el repositorio sin los submódulos, ejecutar:
+```bash
+git submodule update --init --recursive
+```
+
 ## Descargar Tilix
 ```bash
 sudo apt update && sudo apt install tilix -y
@@ -219,7 +229,7 @@ ros2 service call /xarm/set_linear_motor_pos xarm_msgs/srv/LinearMotorSetPos "{p
 # Gripper
 Activar los servicios correspondientes en `xarm_ros2/install/xarm_api/share/xarm_api/config/xarm_params.yaml`.
 
-El fichero `xarm_params.yaml` ya lo incluye a modo de ejemplo.
+El fichero `xarm_params.yaml` ya lo incluye a modo de ejemplo. Se puede copiar y pegar o sustituir el archivo.
 
 ```bash
 ros2 service call /xarm/set_gripper_enable xarm_msgs/srv/SetInt16 "{data: 1}"
@@ -259,7 +269,7 @@ Hay que abrir varias terminales, por lo que se recomienda usar VSCode conectado 
 
 Terminal 1:
 ```bash
-cd /home/xarm6/Documents/rpi5-cameras
+cd /home/xarm6/Documents/ufactory_ros2
 ./run_rpi.sh
 ```
 
@@ -306,6 +316,9 @@ Terminal 1:
 ```bash
 cd /home/$USER/Documents/ufactory_ros2
 ./run_eib.sh
+cd /home/$USER/Documents/ufactory_ros2/xarm_ros2
+colcon build # habiendo modificado xarm_params.yaml (activar gripper)
+source install/setup.bash
 ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.211
 ```
 
