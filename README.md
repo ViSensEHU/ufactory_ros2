@@ -25,6 +25,10 @@ sudo chmod u+x build
 ```-->
 
 ```bash
+docker build -f Dockerfile-gpu -t xarm:jazzy-yolo-gpu .
+```
+
+```bash
 docker pull visensehu/xarm_ros2:jazzy
 ```
 

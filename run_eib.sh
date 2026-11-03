@@ -7,6 +7,7 @@ sudo docker run -it --rm \
     -v "$(pwd)":/home/javierarambarricalvo/Documents/ufactory_ros2:rw \
     --device /dev/dri:/dev/dri \
     --name xarm_ros2 \
-    visensehu/xarm_ros2:jazzy
+    xarm:jazzy-yolo
+    #visensehu/xarm_ros2:jazzy
 
 # -v ./xarm_ros2:/home/$USER/xarm_ros2 \

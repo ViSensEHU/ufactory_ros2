@@ -1,0 +1,65 @@
+FROM osrf/ros:jazzy-desktop-full
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Utilidades básicas y dependencias Python
+RUN apt-get update && apt-get install -y \
+    git \
+    python3-pip \
+    python3-opencv \
+    python3-numpy \
+    python3-requests \
+    python3-matplotlib \
+    python3-yaml \
+    python3-pil \
+    python3-psutil \
+    python3-scipy \
+    python3-tqdm \
+    python3-httpx \
+    build-essential \
+    mesa-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar MoveIt 2
+RUN apt-get update && apt-get install -y \
+    ros-jazzy-moveit \
+    ros-jazzy-joint-state-publisher-gui \
+    && rm -rf /var/lib/apt/lists/*
+
+# Crear workspace y clonar xarm_ros2
+WORKDIR /home/xarm_ws/src
+
+RUN git clone https://github.com/xArm-Developer/xarm_ros2.git --recursive -b jazzy
+
+WORKDIR /home/xarm_ws
+
+# Instalar dependencias ROS 2
+RUN apt-get update && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src -r -y --rosdistro jazzy && \
+    rm -rf /var/lib/apt/lists/*
+
+# Instalar PyTorch + Torchvision con CUDA 12.6
+RUN python3 -m pip install --break-system-packages --no-cache-dir \
+    torch torchvision \
+    --index-url https://download.pytorch.org/whl/cu126
+
+# Instalar Ultralytics sin sustituir NumPy ni OpenCV de APT
+RUN python3 -m pip install --break-system-packages --no-cache-dir \
+    --no-deps ultralytics ultralytics-thop ultralytics-platform
+
+# Dependencias adicionales de Ultralytics
+RUN python3 -m pip install --break-system-packages --no-cache-dir \
+    polars requests
+
+# Compilar xarm_ros2
+RUN . /opt/ros/jazzy/setup.sh && \
+    colcon build --symlink-install
+
+# Configurar entorno ROS 2 automáticamente
+RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc && \
+    echo "source /home/xarm_ws/install/setup.bash" >> /root/.bashrc
+
+WORKDIR /home/xarm_ws
+
+CMD ["bash"]
