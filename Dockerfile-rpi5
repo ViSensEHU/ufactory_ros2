@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     python3-opencv \
     python3-numpy \
+    python3-pip \
     ros-jazzy-cv-bridge \
     ros-jazzy-image-transport \
     ros-jazzy-sensor-msgs \
@@ -17,6 +18,15 @@ RUN apt-get update && apt-get install -y \
     usbutils \
     v4l-utils \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --break-system-packages \
+    torch \
+    torchvision \
+    --index-url https://download.pytorch.org/whl/cpu
+
+RUN pip install --break-system-packages \
+    ultralytics \
+    --no-deps
 
 # Cargar ROS 2 automáticamente en las terminales interactivas
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc

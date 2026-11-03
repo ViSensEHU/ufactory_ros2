@@ -12,6 +12,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', ['launch/green_follower.launch.py']),
         ('share/' + package_name + '/launch', ['launch/grasping.launch.py']),
+        ('share/' + package_name + '/model', ['model/yolo11n.pt']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -27,6 +28,7 @@ setup(
     entry_points={
         'console_scripts': [
             'green_filter_node = vision_control.green_filter_node:main',
+            'yolo_detection_node = vision_control.yolo_detection_node:main',
             'center_vs_node = vision_control.center_visual_servoing_node:main',
             'xarm_visual_servo_controller = vision_control.xarm_visual_servo_controller:main',
             'xarm_visual_servo_controller_lifecycle = vision_control.xarm_visual_servo_controller_lifecycle:main',

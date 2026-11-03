@@ -266,7 +266,7 @@ ssh xarm6@192.168.1.102
 Si no existe la imagen Docker en la raspberry:
 ```bash
 cd /home/xarm6/Documents/ufactory_ros2
-docker build -t ros:jazzy-base-noble-realsense .
+docker build -f Dockerfile-rpi5 -t ros:jazzy-base-noble-realsense .
 ```
 
 Hay que abrir varias terminales, por lo que se recomienda usar VSCode conectado a este dispositivo mediante SSH (`Open a remote window`):
