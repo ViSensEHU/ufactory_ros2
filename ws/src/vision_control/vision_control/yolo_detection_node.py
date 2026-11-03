@@ -15,6 +15,9 @@ import cv2
 # import numpy as np
 
 from ultralytics import YOLO
+import torch
+
+import time
 
 
 class YoloDetectionNode(Node):
@@ -25,6 +28,14 @@ class YoloDetectionNode(Node):
         package_share_dir = get_package_share_directory('vision_control')
         model_path = os.path.join(package_share_dir, 'model', 'yolo11n.pt')
         self.model = YOLO(model_path)
+
+        self.get_logger().info(
+            f'CUDA available: {torch.cuda.is_available()}'
+        )
+
+        self.get_logger().info(
+            f'Device: {next(self.model.model.parameters()).device}'
+        )
 
         self.bridge = CvBridge()
 
@@ -59,6 +70,19 @@ class YoloDetectionNode(Node):
             return
 
         debug_image = frame.copy()
+
+        t0 = time.perf_counter()
+
+        results = self.model(
+            frame,
+            verbose=False
+        )
+
+        dt = time.perf_counter() - t0
+
+        self.get_logger().info(
+            f"Inference: {dt*1000:.1f} ms"
+        )
 
         results = self.model(frame, verbose=False)
         boxes = results[0].boxes
