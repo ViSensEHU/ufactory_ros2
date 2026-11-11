@@ -358,3 +358,18 @@ rviz2
 ```
 
 ![`Visualización en RViz2](img/rviz2_vision.png)
+
+# Schuko
+En la RPi iniciar la cámara:
+```bash
+ros2 launch realsense2_camera rs_launch.py camera_namespace:=xarm6 camera_name:=realsense
+```
+
+En el PC:
+```bash
+ros2 launch xarm_api xarm6_driver.launch.py robot_ip:=192.168.1.211
+```
+
+```bash
+ros2 launch vision_control schuko_grasping.launch.py
+```

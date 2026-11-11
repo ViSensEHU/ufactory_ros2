@@ -50,7 +50,7 @@ RUN python3 -m pip install --break-system-packages --no-cache-dir \
 
 # Dependencias adicionales de Ultralytics
 RUN python3 -m pip install --break-system-packages --no-cache-dir \
-    polars requests
+    polars lap requests
 
 # Compilar xarm_ros2
 RUN . /opt/ros/jazzy/setup.sh && \
