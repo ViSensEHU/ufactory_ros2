@@ -280,6 +280,9 @@ Hay que abrir varias terminales, por lo que se recomienda usar VSCode conectado 
 Terminal 1:
 ```bash
 cd /home/xarm6/Documents/ufactory_ros2
+```
+
+```bash
 ./run_rpi.sh
 ```
 
@@ -307,6 +310,17 @@ sudo nmcli connection down id eduroam
 Para volver a activar la conexión a internet (pedirá las credenciales de `eduroam`):
 ```bash
 sudo nmcli --ask connection up id eduroam
+```
+
+Para las imagenes de profundidad:
+
+```bash
+ros2 param set /xarm6/realsense align_depth.enable true
+```
+
+Para apagarla (primero hacer exit para salir del docker):
+```bash
+sudo shutdown now
 ```
 
 
@@ -338,7 +352,7 @@ docker exec -it xarm_ros2 bash
 ros2 service call /xarm/motion_enable xarm_msgs/srv/SetInt16ById "{id: 8, data: 1}"
 ros2 service call /xarm/set_mode xarm_msgs/srv/SetInt16 "{data: 7}"
 ros2 service call /xarm/set_state xarm_msgs/srv/SetInt16 "{data: 0}"
-cd /home/javierarambarricalvo/Documents/ufactory_ros2/ws
+cd /home/$USER/Documents/ufactory_ros2/ws
 colcon build --packages-select vision_control
 source install/setup.bash
 
@@ -352,7 +366,7 @@ ros2 launch vision_control grasping.launch.py
 Si queremos visualizar las imágenes, podemos abrir RViz2 en la Terminal 3:
 ```bash
 docker exec -it xarm_ros2 bash
-cd /home/javierarambarricalvo/Documents/ufactory_ros2/ws
+cd /home/$USER/Documents/ufactory_ros2/ws
 source install/setup.bash
 rviz2
 ```

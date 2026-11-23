@@ -53,6 +53,10 @@ class GraspingNode(Node):
         self.ball_depth_mm = None
         self.grasp_z_mm = 220.0
 
+        self.ball_radius_mm = 15.0
+        self.camera_to_gripper_mm = 120.0
+        self.gripper_close_drop_mm = 10.7
+
         self.center_sub = self.create_subscription(Point, '/green_ball/center', self.center_callback, 10)
         self.depth_sub = self.create_subscription(Image, '/xarm6/realsense/aligned_depth_to_color/image_raw', self.depth_callback, 10)
         
@@ -105,12 +109,44 @@ class GraspingNode(Node):
 
         self.ball_depth_mm = float(np.mean(valid_depths))
 
+
+        # ==================================================
+        # FORMULA GEOMETRICA DE DESCENSO
+        # ==================================================
+        # Z_medido         = distancia camara -> punto mas cercano de la pelota
+        # Z_centro_pelota  = Z_medido + R (el centro esta R mas alla del borde)
+        # Pinza (centro)   = a D = CAMERA_TO_GRIPPER_MM por debajo de la camara
+        # Al cerrarse,     = baja GRIPPER_CLOSE_DROP_MM adicional
+        #
+        # Para que la pinza termine en el centro de la pelota despues del cierre:
+        #   bajada = Z_centro_pelota - D - bajada_cierre
+        #          = Z_medido + R - D - bajada_cierre
+        #
+        # Con valores calibrados: bajada = Z_medido + 15 - 120 - 10.7
+        #                                    = Z_medido - 115.7
+        self.grasp_z_mm = (
+            self.ball_depth_mm
+            + self.ball_radius_mm
+            - self.camera_to_gripper_mm
+            - self.gripper_close_drop_mm
+            #+ self.DEPTH_BIAS_MM
+        )
+
+        '''
+        self.get_logger().info(
+            f'ball_depth_raw={self.ball_depth_mm:.2f} mm | '
+            f'ROI std?{np.std(valid_depths):.2f} mm | '
+            f'b-.valid={len(valid_depths)}/{roi.size}'
+        )
+        '''
+        
+
         #
         # Relación obtenida experimentalmente:
         # 350 mm -> 220 mm
         #
 
-        self.grasp_z_mm = 0.6286 * self.ball_depth_mm
+        #self.grasp_z_mm = 0.6286 * self.ball_depth_mm
     
 
     def stop_depth_subscription(self):

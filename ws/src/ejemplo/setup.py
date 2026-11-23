@@ -36,7 +36,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'ejemplo = ejemplo.ejemplo:main'
+            #'ejemplo = ejemplo.ejemplo:main'
+            'ejemplo2=ejemplo.ejemplo_con_enable_simple:main'
         ],
     },
 )

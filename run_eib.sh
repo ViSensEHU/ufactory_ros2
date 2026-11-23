@@ -4,10 +4,10 @@ sudo docker run -it --rm \
     -e USER=$USER \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v "$(pwd)":/home/javierarambarricalvo/Documents/ufactory_ros2:rw \
+    -v "$(pwd)":/home/$USER/Documents/ufactory_ros2:rw \
     --device /dev/dri:/dev/dri \
     --name xarm_ros2 \
-    xarm:jazzy-yolo
+    xarm:jazzy-yolo-cpu
     #visensehu/xarm_ros2:jazzy
 
 # -v ./xarm_ros2:/home/$USER/xarm_ros2 \
