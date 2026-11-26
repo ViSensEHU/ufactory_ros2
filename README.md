@@ -288,7 +288,7 @@ cd /home/xarm6/Documents/ufactory_ros2
 
 Una vez dentro del contenedor de la imagen de Docker, ejecutar el nodo de la cámara del robot:
 ```bash
-ros2 launch realsense2_camera rs_launch.py camera_namespace:=xarm6 camera_name:=realsense
+ros2 launch realsense2_camera rs_launch.py camera_namespace:=xarm6 camera_name:=realsense 
 ```
 
 Terminal 2:
@@ -316,6 +316,33 @@ Para las imagenes de profundidad:
 
 ```bash
 ros2 param set /xarm6/realsense align_depth.enable true
+```
+
+Para el filtro (Terminal 1 en vez del primer launch):
+
+```bash
+ros2 launch realsense2_camera rs_launch.py \
+  camera_namespace:=xarm6 \
+  camera_name:=realsense \
+  align_depth.enable:=true \
+  disparity_filter.enable:=true \
+  spatial_filter.enable:=true \
+  spatial_filter.filter_magnitude:=2.0 \
+  spatial_filter.filter_smooth_alpha:=0.6 \
+  spatial_filter.filter_smooth_delta:=8.0 \
+  spatial_filter.holes_fill:=1 \
+  temporal_filter.enable:=true \
+  temporal_filter.filter_smooth_alpha:=0.5 \
+  temporal_filter.filter_smooth_delta:=20.0 \
+  temporal_filter.holes_fill:=0 \
+  hole_filling_filter.enable:=true \
+  hole_filling_filter.holes_fill:=1
+
+```
+
+Terminal 3 — Workaround del disparity_to_depth
+```bash
+ros2 param set /xarm6/realsense disparity_to_depth.enable true
 ```
 
 Para apagarla (primero hacer exit para salir del docker):

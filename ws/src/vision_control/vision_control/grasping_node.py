@@ -53,7 +53,7 @@ class GraspingNode(Node):
         self.ball_depth_mm = None
         self.grasp_z_mm = 220.0
 
-        self.ball_radius_mm = 15.0
+        self.ball_radius_mm = 10.0
         self.camera_to_gripper_mm = 120.0
         self.gripper_close_drop_mm = 10.7
 
@@ -132,13 +132,13 @@ class GraspingNode(Node):
             #+ self.DEPTH_BIAS_MM
         )
 
-        '''
+        
         self.get_logger().info(
             f'ball_depth_raw={self.ball_depth_mm:.2f} mm | '
             f'ROI std?{np.std(valid_depths):.2f} mm | '
             f'b-.valid={len(valid_depths)}/{roi.size}'
         )
-        '''
+    
         
 
         #
